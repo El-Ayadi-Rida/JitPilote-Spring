@@ -40,7 +40,7 @@ public class User {
             name = "team_id_user",
             referencedColumnName = "teamId",
             foreignKey = @ForeignKey(
-                    name = "user_id_team_FK"
+                    name = "team_id_user_FK"
             )
     )
     private Team team;

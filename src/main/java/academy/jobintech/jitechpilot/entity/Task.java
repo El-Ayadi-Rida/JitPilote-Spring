@@ -24,7 +24,7 @@ public class Task {
     @ManyToOne
     @JoinColumn(
             name = "ticket_id_task",
-            referencedColumnName = "taskId",
+            referencedColumnName = "ticketId",
             foreignKey = @ForeignKey(
                     name = "ticket_id_task_FK"
             )

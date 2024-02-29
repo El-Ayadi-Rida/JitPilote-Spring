@@ -19,12 +19,19 @@ import java.util.Set;
 public class Team {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long team_id;
+    private Long teamId;
     private String teamName;
     private String description;
     @OneToMany(
             mappedBy = "team",
-            cascade = CascadeType.ALL
+            cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY
+    )
+    private Set<User> users = new HashSet<>();
+    @OneToMany(
+            mappedBy = "team",
+            cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY
     )
     private Set<Project> projects = new HashSet<>();
 }

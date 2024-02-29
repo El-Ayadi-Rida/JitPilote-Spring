@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -16,7 +18,7 @@ import java.time.LocalDateTime;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long userId;
 
     @Column(name="firstName")
     private String firstName;
@@ -29,13 +31,25 @@ public class User {
 
     @Column(name="email")
     private String email;
-
     @Column(name="password")
     private String password;
-
     @Column(name="role")
     private String role;
-
+    @ManyToOne
+    @JoinColumn(
+            name = "team_id_user",
+            referencedColumnName = "teamId",
+            foreignKey = @ForeignKey(
+                    name = "user_id_team_FK"
+            )
+    )
+    private Team team;
+    @OneToMany(
+            mappedBy = "user",
+            cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY
+    )
+    private Set<Ticket> tickets = new HashSet<>();
     @Column(name = "createdAt", nullable = false, updatable = false)
     private LocalDateTime createdAt;
 

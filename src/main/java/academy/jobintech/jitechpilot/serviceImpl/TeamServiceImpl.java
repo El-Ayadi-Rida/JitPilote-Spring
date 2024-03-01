@@ -3,7 +3,7 @@ package academy.jobintech.jitechpilot.serviceImpl;
 import academy.jobintech.jitechpilot.dto.ResponseTeamPage;
 import academy.jobintech.jitechpilot.dto.TeamDTO;
 import academy.jobintech.jitechpilot.entity.Team;
-import academy.jobintech.jitechpilot.mapper.TeamEntityDTOMapper;
+import academy.jobintech.jitechpilot.mapper.TeamDTOMapper;
 import academy.jobintech.jitechpilot.repository.TeamRepository;
 import academy.jobintech.jitechpilot.service.TeamService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +21,7 @@ public class TeamServiceImpl implements TeamService {
     @Autowired
     private TeamRepository teamRepository;
     @Autowired
-    private TeamEntityDTOMapper teamMapper;
+    private TeamDTOMapper teamMapper;
     @Override
     public TeamDTO createTeam(TeamDTO teamDTO) {
         Team team = teamMapper.toEntity(teamDTO);

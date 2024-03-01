@@ -6,7 +6,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 
 @Component
-public class TeamEntityDTOMapper implements EntityDTOMapper<Team, TeamDTO> {
+public class TeamDTOMapper implements EntityDTOMapper<Team, TeamDTO> {
     private ModelMapper modelMapper = new ModelMapper();
     @Override
     public Team toEntity(TeamDTO dto) {

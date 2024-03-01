@@ -3,7 +3,7 @@ package academy.jobintech.jitechpilot.serviceImpl;
 import academy.jobintech.jitechpilot.dto.ResponseProjectPage;
 import academy.jobintech.jitechpilot.dto.ProjectDTO;
 import academy.jobintech.jitechpilot.entity.Project;
-import academy.jobintech.jitechpilot.mapper.ProjectEntityDTOMapper;
+import academy.jobintech.jitechpilot.mapper.ProjectDTOMapper;
 import academy.jobintech.jitechpilot.repository.ProjectRepository;
 import academy.jobintech.jitechpilot.service.ProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +21,7 @@ public class ProjectServiceImpl implements ProjectService {
     @Autowired
     private ProjectRepository projectRepository;
     @Autowired
-    private ProjectEntityDTOMapper projectMapper;
+    private ProjectDTOMapper projectMapper;
     @Override
     public ProjectDTO createProject(ProjectDTO projectDTO) {
         Project project = projectMapper.toEntity(projectDTO);

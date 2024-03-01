@@ -6,7 +6,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ProjectEntityDTOMapper implements EntityDTOMapper<Project, ProjectDTO> {
+public class ProjectDTOMapper implements EntityDTOMapper<Project, ProjectDTO> {
     private ModelMapper modelMapper = new ModelMapper();
     @Override
     public Project toEntity(ProjectDTO dto) {

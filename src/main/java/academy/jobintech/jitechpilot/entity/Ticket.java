@@ -1,34 +1,44 @@
 package academy.jobintech.jitechpilot.entity;
 
+import academy.jobintech.jitechpilot.enums.TicketPriority;
+import academy.jobintech.jitechpilot.enums.TicketStatus;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Setter
 @Getter
-@Entity
+@ToString
+@EqualsAndHashCode
+@Entity(name = "Ticket")
+@Table(name = "ticket")
 public class Ticket {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long ticketId;
     private String title;
     private String description;
-    private String priority;
-    private String status;
+
+    @Enumerated(EnumType.STRING)
+    private TicketPriority priority;
+
+    @Enumerated(EnumType.STRING)
+    private TicketStatus status;
+
     @OneToMany(
             mappedBy = "ticket",
             orphanRemoval = true,
             cascade = CascadeType.ALL,
             fetch = FetchType.LAZY
     )
-    private Set<Task> tasks = new HashSet<>();
+    private List<Task> tasks = new ArrayList<>();
+
     @ManyToOne
     @JoinColumn(
             name = "project_id_ticket",
@@ -38,6 +48,7 @@ public class Ticket {
             )
     )
     private Project project;
+
     @ManyToOne
     @JoinColumn(
             name = "user_id_ticket",

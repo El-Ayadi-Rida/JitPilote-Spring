@@ -2,10 +2,7 @@ package academy.jobintech.jitechpilot.entity;
 
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -14,6 +11,8 @@ import java.util.Set;
 @NoArgsConstructor
 @Setter
 @Getter
+@ToString
+@EqualsAndHashCode
 @Entity(name = "Team")
 @Table(name = "team")
 public class Team {

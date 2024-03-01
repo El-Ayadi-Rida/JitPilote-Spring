@@ -12,7 +12,7 @@ import java.util.List;
  * @author Yassine CHALH
  */
 @RestController
-@RequestMapping("/api/v1/tasks")
+@RequestMapping("api/v1/tasks")
 public class TaskController{
 
     private final TaskService taskService;

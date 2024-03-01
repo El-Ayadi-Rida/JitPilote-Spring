@@ -6,7 +6,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ProjectMapper implements Mapper<Project, ProjectDTO>{
+public class ProjectEntityDTOMapper implements EntityDTOMapper<Project, ProjectDTO> {
     private ModelMapper modelMapper = new ModelMapper();
     @Override
     public Project toEntity(ProjectDTO dto) {
@@ -14,7 +14,7 @@ public class ProjectMapper implements Mapper<Project, ProjectDTO>{
     }
 
     @Override
-    public ProjectDTO toResponse(Project project) {
+    public ProjectDTO toDto(Project project) {
         return modelMapper.map(project , ProjectDTO.class);
     }
 }

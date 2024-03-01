@@ -3,10 +3,9 @@ package academy.jobintech.jitechpilot.serviceImpl;
 import academy.jobintech.jitechpilot.dto.ResponseTeamPage;
 import academy.jobintech.jitechpilot.dto.TeamDTO;
 import academy.jobintech.jitechpilot.entity.Team;
-import academy.jobintech.jitechpilot.mapper.TeamMapper;
+import academy.jobintech.jitechpilot.mapper.TeamEntityDTOMapper;
 import academy.jobintech.jitechpilot.repository.TeamRepository;
 import academy.jobintech.jitechpilot.service.TeamService;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -22,18 +21,18 @@ public class TeamServiceImpl implements TeamService {
     @Autowired
     private TeamRepository teamRepository;
     @Autowired
-    private TeamMapper teamMapper;
+    private TeamEntityDTOMapper teamMapper;
     @Override
     public TeamDTO createTeam(TeamDTO teamDTO) {
         Team team = teamMapper.toEntity(teamDTO);
         Team createdTeam = teamRepository.save(team);
-        return teamMapper.toResponse(createdTeam);
+        return teamMapper.toDto(createdTeam);
     }
 
     @Override
     public TeamDTO getTeamById(Long teamId) {
         Team team = getTeamByIdHelper(teamId);
-        return teamMapper.toResponse(team);
+        return teamMapper.toDto(team);
     }
 
     //I Create this Method to not deplucate findById -orElse null
@@ -52,7 +51,7 @@ public class TeamServiceImpl implements TeamService {
         Page<Team> teamPage = teamRepository.findAll(pageable);
         List<Team> teamList = teamPage.getContent();
         List<TeamDTO> teamResponseList = teamList.stream()
-                .map((team) -> teamMapper.toResponse(team))
+                .map((team) -> teamMapper.toDto(team))
                 .collect(Collectors.toList());
 
         ResponseTeamPage responseTeamPage = new ResponseTeamPage(
@@ -75,7 +74,7 @@ public class TeamServiceImpl implements TeamService {
             teamToUpdate.setTeamName(teamDTO.getTeamName());
             teamToUpdate.setDescription(teamDTO.getDescription());
             Team updatedTeam = teamRepository.save(teamToUpdate);
-            return teamMapper.toResponse(updatedTeam);
+            return teamMapper.toDto(updatedTeam);
         }
         return null;
     }

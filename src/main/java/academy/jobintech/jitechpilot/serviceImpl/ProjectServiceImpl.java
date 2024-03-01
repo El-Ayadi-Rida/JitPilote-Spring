@@ -3,10 +3,9 @@ package academy.jobintech.jitechpilot.serviceImpl;
 import academy.jobintech.jitechpilot.dto.ResponseProjectPage;
 import academy.jobintech.jitechpilot.dto.ProjectDTO;
 import academy.jobintech.jitechpilot.entity.Project;
-import academy.jobintech.jitechpilot.mapper.ProjectMapper;
+import academy.jobintech.jitechpilot.mapper.ProjectEntityDTOMapper;
 import academy.jobintech.jitechpilot.repository.ProjectRepository;
 import academy.jobintech.jitechpilot.service.ProjectService;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -22,18 +21,18 @@ public class ProjectServiceImpl implements ProjectService {
     @Autowired
     private ProjectRepository projectRepository;
     @Autowired
-    private ProjectMapper projectMapper;
+    private ProjectEntityDTOMapper projectMapper;
     @Override
     public ProjectDTO createProject(ProjectDTO projectDTO) {
         Project project = projectMapper.toEntity(projectDTO);
         Project createdProject = projectRepository.save(project);
-        return projectMapper.toResponse(createdProject);
+        return projectMapper.toDto(createdProject);
     }
 
     @Override
     public ProjectDTO getProjectById(Long projectId) {
         Project project = getProjectByIdHelper(projectId);
-        return projectMapper.toResponse(project);
+        return projectMapper.toDto(project);
     }
 
     @Override
@@ -51,7 +50,7 @@ public class ProjectServiceImpl implements ProjectService {
         Page<Project> projectPage = projectRepository.findAll(pageable);
         List<Project> projectList = projectPage.getContent();
         List<ProjectDTO> projectResponseList = projectList.stream()
-                .map((project) -> projectMapper.toResponse(project))
+                .map((project) -> projectMapper.toDto(project))
                 .collect(Collectors.toList());
 
         ResponseProjectPage responseProjectPage = new ResponseProjectPage(
@@ -75,7 +74,7 @@ public class ProjectServiceImpl implements ProjectService {
             projectToUpdate.setProjectName(projectDTO.getProjectName());
             projectToUpdate.setDescription(projectDTO.getDescription());
             Project updatedProject = projectRepository.save(projectToUpdate);
-            return projectMapper.toResponse(updatedProject);
+            return projectMapper.toDto(updatedProject);
         }
         return null;
     }

@@ -9,7 +9,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("api/v1/team")
+@RequestMapping("api/v1/teams")
+@CrossOrigin(origins = "http://localhost:3000" ,
+        allowedHeaders = "*" ,
+        methods = {RequestMethod.GET,RequestMethod.DELETE,RequestMethod.POST,RequestMethod.PUT})
 public class TeamController {
     @Autowired
     private TeamServiceImpl teamService;

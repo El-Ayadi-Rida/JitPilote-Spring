@@ -12,7 +12,7 @@ import java.util.List;
  * @author Yassine CHALH
  */
 @RestController
-@RequestMapping("/api/v1/tickets")
+@RequestMapping("api/v1/tickets")
 public class TicketController {
 
     private final TicketService ticketService;

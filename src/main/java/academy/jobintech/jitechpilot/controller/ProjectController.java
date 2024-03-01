@@ -10,7 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("api/v1/project")
+@RequestMapping("api/v1/projects")
 public class ProjectController {
     @Autowired
     private ProjectServiceImpl projectService;

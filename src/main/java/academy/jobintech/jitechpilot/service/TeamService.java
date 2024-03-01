@@ -1,13 +1,14 @@
 package academy.jobintech.jitechpilot.service;
 
-import academy.jobintech.jitechpilot.dto.pagination.PaginationResponseTeam;
-import academy.jobintech.jitechpilot.dto.request.TeamRequest;
-import academy.jobintech.jitechpilot.dto.response.TeamResponse;
+import academy.jobintech.jitechpilot.dto.ResponseTeamPage;
+import academy.jobintech.jitechpilot.dto.TeamDTO;
+import academy.jobintech.jitechpilot.entity.Team;
 
 public interface TeamService {
-    TeamResponse createTeam(TeamRequest teamRequest);
-    TeamResponse getTeamById(Long teamId);
-    PaginationResponseTeam getAllTeams(int pageNo , int pageSize , String sortBy , String sortDir);
-    TeamResponse updateTeam(Long teamId, TeamRequest teamRequest);
+    TeamDTO createTeam(TeamDTO teamDTO);
+    TeamDTO getTeamById(Long teamId);
+    Team getTeamByIdHelper(Long teamId);
+    ResponseTeamPage getAllTeams(int pageNo , int pageSize , String sortBy , String sortDir);
+    TeamDTO updateTeam(Long teamId, TeamDTO teamDTO);
     void deleteTeam(Long teamId);
 }

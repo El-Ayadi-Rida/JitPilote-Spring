@@ -1,13 +1,14 @@
 package academy.jobintech.jitechpilot.service;
 
-import academy.jobintech.jitechpilot.dto.pagination.PaginationResponseProject;
-import academy.jobintech.jitechpilot.dto.request.ProjectRequest;
-import academy.jobintech.jitechpilot.dto.response.ProjectResponse;
+import academy.jobintech.jitechpilot.dto.ResponseProjectPage;
+import academy.jobintech.jitechpilot.dto.ProjectDTO;
+import academy.jobintech.jitechpilot.entity.Project;
 
 public interface ProjectService {
-    ProjectResponse createProject(ProjectRequest projectRequest);
-    ProjectResponse getProjectById(Long projectId);
-    PaginationResponseProject getAllProjects(int pageNo , int pageSize , String sortBy , String sortDir);
-    ProjectResponse updateProject(Long projectId, ProjectRequest projectRequest);
+    ProjectDTO createProject(ProjectDTO projectDTO);
+    ProjectDTO getProjectById(Long projectId);
+    Project getProjectByIdHelper(Long projectId);
+    ResponseProjectPage getAllProjects(int pageNo , int pageSize , String sortBy , String sortDir);
+    ProjectDTO updateProject(Long projectId, ProjectDTO projectDTO);
     void deleteProject(Long projectId);
 }

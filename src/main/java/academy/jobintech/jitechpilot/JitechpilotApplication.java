@@ -8,9 +8,14 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-//@ComponentScan()
-//@EntityScan()
-//@EnableJpaRepositories()
+@ComponentScan({
+		"academy.jobintech.jitechpilot.mapper",
+		"academy.jobintech.jitechpilot.serviceImpl",
+		"academy.jobintech.jitechpilot.controller",
+		"academy.jobintech.jitechpilot.exception"
+})
+@EntityScan("academy.jobintech.jitechpilot.entity")
+@EnableJpaRepositories("academy.jobintech.jitechpilot.repository")
 public class JitechpilotApplication {
 
 	public static void main(String[] args) {

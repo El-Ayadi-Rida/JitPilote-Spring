@@ -8,6 +8,8 @@ import lombok.Setter;
 
 import java.security.PublicKey;
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -18,7 +20,7 @@ import java.time.LocalDateTime;
 public class Project {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long project_id;
+    private Long projectId;
     private String projectName;
     private String description;
     private LocalDateTime start_date;
@@ -27,12 +29,19 @@ public class Project {
     @ManyToOne
     @JoinColumn(
             name = "team_id_project",
-            referencedColumnName = "team_id",
+            referencedColumnName = "teamId",
             foreignKey = @ForeignKey(
                 name = "team_id_project_FK"
             )
     )
     private Team team;
+    @OneToMany(
+            mappedBy = "project",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true,
+            fetch = FetchType.LAZY
+    )
+    private Set<Ticket> tickets = new HashSet<>();
     @PrePersist
     public void initStartDate(){
         start_date = LocalDateTime.now();

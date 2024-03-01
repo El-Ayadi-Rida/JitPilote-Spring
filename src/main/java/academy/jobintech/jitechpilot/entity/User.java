@@ -1,22 +1,26 @@
 package academy.jobintech.jitechpilot.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
+@EqualsAndHashCode
 @Setter
 @Getter
-@Entity
+@Entity(name = "User")
+@Table(name = "users")
 public class User {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(updatable = false)
+    private Long userId;
 
     @Column(name="firstName")
     private String firstName;
@@ -36,6 +40,21 @@ public class User {
     @Column(name="role")
     private String role;
 
+    @ManyToOne
+    @JoinColumn(
+            name = "team_id_user",
+            referencedColumnName = "teamId",
+            foreignKey = @ForeignKey(
+                    name = "team_id_user_FK"
+            )
+    )
+    private Team team;
+    @OneToMany(
+            mappedBy = "user",
+            cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY
+    )
+    private Set<Ticket> tickets = new HashSet<>();
     @Column(name = "createdAt", nullable = false, updatable = false)
     private LocalDateTime createdAt;
 

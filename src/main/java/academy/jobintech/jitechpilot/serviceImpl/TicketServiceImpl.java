@@ -2,9 +2,11 @@ package academy.jobintech.jitechpilot.serviceImpl;
 
 import academy.jobintech.jitechpilot.dto.TicketDTO;
 import academy.jobintech.jitechpilot.entity.Ticket;
+import academy.jobintech.jitechpilot.exception.NotFoundException;
 import academy.jobintech.jitechpilot.mapper.TicketDTOMapper;
 import academy.jobintech.jitechpilot.repository.TicketRepository;
 import academy.jobintech.jitechpilot.service.TicketService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,6 +14,7 @@ import java.util.List;
 /**
  * @author Yassine CHALH
  */
+@Slf4j
 @Service
 public class TicketServiceImpl implements TicketService {// TODO: Logs and Exceptions
 
@@ -27,13 +30,14 @@ public class TicketServiceImpl implements TicketService {// TODO: Logs and Excep
     public TicketDTO createTicket(TicketDTO ticketDTO) {
         Ticket ticket = ticketDTOMapper.toEntity(ticketDTO);
         Ticket savedTicket = ticketRepository.save(ticket);
+        log.info("Ticket created successfully title : {} ", savedTicket.getTitle());
         return ticketDTOMapper.toDto(savedTicket);
     }
 
     @Override
     public TicketDTO updateTicket(Long id, TicketDTO ticketDto) {
         Ticket ticket = ticketRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Ticket not found on :: " + id));
+                .orElseThrow(() -> new NotFoundException("Ticket not found on :: " + id));
 
         ticket.setTitle(ticketDto.getTitle());
         ticket.setDescription(ticketDto.getDescription());
@@ -41,6 +45,7 @@ public class TicketServiceImpl implements TicketService {// TODO: Logs and Excep
         ticket.setStatus(ticketDto.getStatus());
 
         Ticket updatedTicket = ticketRepository.save(ticket);
+        log.info("Ticket updated successfully title : {} ", updatedTicket.getTitle());
 
         return ticketDTOMapper.toDto(updatedTicket);
     }
@@ -53,12 +58,14 @@ public class TicketServiceImpl implements TicketService {// TODO: Logs and Excep
     @Override
     public TicketDTO getTicketById(Long id) {
         Ticket ticket = ticketRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Ticket not found on :: " + id));
+                .orElseThrow(() -> new NotFoundException("Ticket not found on :: " + id));
+        log.info("Ticket found successfully id : {} ", id);
         return ticketDTOMapper.toDto(ticket);
     }
 
     @Override
     public List<TicketDTO> getAllTickets() {
+        log.info("fetching all tickets");
         return ticketDTOMapper.toDtos(ticketRepository.findAll());
     }
 }

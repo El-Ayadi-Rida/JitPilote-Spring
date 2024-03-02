@@ -5,9 +5,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -34,5 +32,5 @@ public class Team {
             cascade = CascadeType.ALL,
             fetch = FetchType.LAZY
     )
-    private List<Project> projects = new ArrayList<>();
+    private List<Board> boards = new ArrayList<>();
 }

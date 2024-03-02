@@ -4,11 +4,15 @@ import academy.jobintech.jitechpilot.dto.UserRequestDto;
 import academy.jobintech.jitechpilot.dto.UserResponseDto;
 import academy.jobintech.jitechpilot.entity.Team;
 import academy.jobintech.jitechpilot.entity.User;
+import academy.jobintech.jitechpilot.exception.NotFoundException;
 import academy.jobintech.jitechpilot.mapper.UserRequestEntityDTOMapper;
 import academy.jobintech.jitechpilot.mapper.UserResponseEntityDTOMapper;
 import academy.jobintech.jitechpilot.repository.TeamRepository;
 import academy.jobintech.jitechpilot.repository.UserRepository;
 import academy.jobintech.jitechpilot.service.UserService;
+import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -17,6 +21,8 @@ import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService {
+
+     static final Logger log = LoggerFactory.getLogger(UserServiceImpl.class);
 
     @Autowired
     private UserRequestEntityDTOMapper userRequestMapper;
@@ -39,52 +45,54 @@ public class UserServiceImpl implements UserService {
     public UserResponseDto createUser(UserRequestDto userRequestDto) {
         User user =userRequestMapper.toEntity(userRequestDto);
         User newUser = userRepository.save(user);
+        log.info("user created successfully name : {} ",newUser.getFirstName());
         return userResponseMapper.toDto(newUser);
     }
 
     @Override
     public UserResponseDto getUserById(Long userId) {
         User user = userRepository.findById(userId).orElseThrow(()->new RuntimeException("user not found "));
-
+        log.info("user found successfully id : {} ",userId);
         return userResponseMapper.toDto(user);
     }
 
     @Override
     public List<UserResponseDto> getAllUsers() {
+        log.info("fetching all users");
         List<User> userList=userRepository.findAll();
+        log.info("users found successfully");
         return userResponseMapper.toDtos(userList);
     }
 
     @Override
     public UserResponseDto  updateUser(Long userId, UserRequestDto userRequestDto) {
-        User user = userRepository.findById(userId).orElseThrow(()->new RuntimeException("user not found"));
+        User user = userRepository.findById(userId).orElseThrow(()->new NotFoundException("user not found with id : "+userId));
+
         user.setFirstName(userRequestDto.getFirstName());
         user.setLastName(userRequestDto.getLastName());
         user.setUserName(userRequestDto.getUserName());
         user.setEmail(userRequestDto.getEmail());
         user.setPassword(bCryptPasswordEncoder.encode(userRequestDto.getPassword()));
 
-
         User updateUser=userRepository.save(user);
+        log.info("user updated successfully");
         return userResponseMapper.toDto(updateUser);
     }
 
     @Override
     public void deleteUser(Long userId) {
-
         getUserById(userId);
         userRepository.deleteById(userId);
-
-
+        log.info("user with id : {} deleted successfully",userId);
     }
 
     @Override
     public void affecterUserToTeam(long userId, long teamId) {
-        User user = userRepository.findById(userId).orElseThrow(()->new RuntimeException("user not found"));
-        Team team =teamRepository.findById(teamId).orElseThrow(()->new RuntimeException("team not found"));
-
+        User user = userRepository.findById(userId).orElseThrow(()->new NotFoundException("user not found with id : "+userId));
+        Team team =teamRepository.findById(teamId).orElseThrow(()->new NotFoundException("team not found with id : "+teamId));
+        log.info("affecting user to team");
         user.setTeam(team);
-
         userRepository.save(user);
+        log.info("user affected to team successfully");
     }
 }

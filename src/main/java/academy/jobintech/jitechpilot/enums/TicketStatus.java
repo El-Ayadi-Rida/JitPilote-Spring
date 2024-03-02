@@ -1,8 +1,6 @@
 package academy.jobintech.jitechpilot.enums;
 
-/**
- * @author Yassine CHALH
- */
+
 public enum TicketStatus {
     TODO("To Do"),
     IN_PROGRESS("In Progress"),

@@ -39,13 +39,13 @@ public class Ticket {
 
     @ManyToOne
     @JoinColumn(
-            name = "board_id_ticket",
-            referencedColumnName = "boardId",
+            name = "section_id_ticket",
+            referencedColumnName = "sectionId",
             foreignKey = @ForeignKey(
-                    name = "board_id_ticket_FK"
+                    name = "section_id_ticket_FK"
             )
     )
-    private Board board;
+    private Section section;
 
     @ManyToOne
     @JoinColumn(

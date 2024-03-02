@@ -2,10 +2,7 @@ package academy.jobintech.jitechpilot.entity;
 
 import academy.jobintech.jitechpilot.enums.BoardStatus;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -17,6 +14,8 @@ import java.util.Set;
 @NoArgsConstructor
 @Setter
 @Getter
+@ToString
+@EqualsAndHashCode
 @Entity(name = "Board")
 @Table(name = "board")
 public class Board {
@@ -39,13 +38,16 @@ public class Board {
             )
     )
     private Team team;
+
+
     @OneToMany(
             mappedBy = "board",
             cascade = CascadeType.ALL,
             orphanRemoval = true,
             fetch = FetchType.LAZY
     )
-    private List<Ticket> tickets = new ArrayList<>();
+    private List<Section> sections = new ArrayList<>();
+
     @PrePersist
     public void initStartDate(){
         start_date = LocalDateTime.now();

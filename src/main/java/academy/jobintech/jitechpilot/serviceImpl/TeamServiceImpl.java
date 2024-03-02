@@ -6,6 +6,7 @@ import academy.jobintech.jitechpilot.entity.Team;
 import academy.jobintech.jitechpilot.mapper.TeamDTOMapper;
 import academy.jobintech.jitechpilot.repository.TeamRepository;
 import academy.jobintech.jitechpilot.service.TeamService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -16,6 +17,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Slf4j
 @Service
 public class TeamServiceImpl implements TeamService {
     @Autowired
@@ -69,14 +71,13 @@ public class TeamServiceImpl implements TeamService {
     @Override
     public TeamDTO updateTeam(Long teamId, TeamDTO teamDTO) {
         Team teamToUpdate = getTeamByIdHelper(teamId);
-        if (teamToUpdate != null){
+
             //BeanUtils.copyProperties(teamDTO,teamToUpdate);
+
             teamToUpdate.setTeamName(teamDTO.getTeamName());
             teamToUpdate.setDescription(teamDTO.getDescription());
             Team updatedTeam = teamRepository.save(teamToUpdate);
             return teamMapper.toDto(updatedTeam);
-        }
-        return null;
     }
 
     @Override

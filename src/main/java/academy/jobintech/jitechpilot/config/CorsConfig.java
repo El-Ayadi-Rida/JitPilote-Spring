@@ -14,9 +14,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import java.io.IOException;
 
-/**
- * @author Yassine CHALH
- */
 
 @Component
 @Order(Ordered.HIGHEST_PRECEDENCE)

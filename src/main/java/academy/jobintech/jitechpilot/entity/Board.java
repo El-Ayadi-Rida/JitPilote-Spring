@@ -1,47 +1,51 @@
 package academy.jobintech.jitechpilot.entity;
 
+import academy.jobintech.jitechpilot.enums.BoardStatus;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.security.PublicKey;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Setter
 @Getter
-@Entity(name = "Project")
-@Table(name = "project")
-public class Project {
+@Entity(name = "Board")
+@Table(name = "board")
+public class Board {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long projectId;
-    private String projectName;
+    private Long boardId;
+    private String boardName;
     private String description;
     private LocalDateTime start_date;
-    private LocalDateTime end_date;
-    private String status;
+
+    @Enumerated(EnumType.STRING)
+    private BoardStatus status;
+
     @ManyToOne
     @JoinColumn(
-            name = "team_id_project",
+            name = "team_id_board",
             referencedColumnName = "teamId",
             foreignKey = @ForeignKey(
-                name = "team_id_project_FK"
+                name = "team_id_board_FK"
             )
     )
     private Team team;
     @OneToMany(
-            mappedBy = "project",
+            mappedBy = "board",
             cascade = CascadeType.ALL,
             orphanRemoval = true,
             fetch = FetchType.LAZY
     )
-    private Set<Ticket> tickets = new HashSet<>();
+    private List<Ticket> tickets = new ArrayList<>();
     @PrePersist
     public void initStartDate(){
         start_date = LocalDateTime.now();

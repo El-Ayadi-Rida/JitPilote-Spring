@@ -8,9 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-/**
- * @author Yassine CHALH
- */
+
 @RestController
 @RequestMapping("api/v1/tickets")
 public class TicketController {

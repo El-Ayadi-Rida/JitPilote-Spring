@@ -6,9 +6,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -41,13 +39,13 @@ public class Ticket {
 
     @ManyToOne
     @JoinColumn(
-            name = "project_id_ticket",
-            referencedColumnName = "projectId",
+            name = "board_id_ticket",
+            referencedColumnName = "boardId",
             foreignKey = @ForeignKey(
-                    name = "project_id_ticket_FK"
+                    name = "board_id_ticket_FK"
             )
     )
-    private Project project;
+    private Board board;
 
     @ManyToOne
     @JoinColumn(

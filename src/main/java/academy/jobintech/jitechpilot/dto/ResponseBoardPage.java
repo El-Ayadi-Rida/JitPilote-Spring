@@ -9,8 +9,8 @@ import java.util.List;
 @Getter
 @Setter
 @ToString
-public class ResponseProjectPage {
-    private List<ProjectDTO> content;
+public class ResponseBoardPage {
+    private List<BoardDTO> content;
     private int pageNo;
     private int pageSize;
     private long totalElements;

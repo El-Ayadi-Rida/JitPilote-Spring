@@ -1,5 +1,6 @@
 package academy.jobintech.jitechpilot.dto;
 
+import academy.jobintech.jitechpilot.enums.BoardStatus;
 import lombok.*;
 
 import java.time.LocalDateTime;
@@ -9,12 +10,12 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @ToString
-public class ProjectDTO {
-    private Long projectId;
-    private String projectName;
+public class BoardDTO {
+
+    private Long boardId;
+    private String boardName;
     private String description;
     private LocalDateTime start_date;
-    private LocalDateTime end_date;
-    private String status;
+    private BoardStatus status;
 
 }

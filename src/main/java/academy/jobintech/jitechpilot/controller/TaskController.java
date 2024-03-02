@@ -8,9 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-/**
- * @author Yassine CHALH
- */
+
 @RestController
 @RequestMapping("api/v1/tasks")
 public class TaskController{
@@ -48,6 +46,6 @@ public class TaskController{
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteTask(@PathVariable Long id) {
         taskService.deleteTask(id);
-        return ResponseEntity.ok().body("User deleted successfully ID: "+id);
+        return ResponseEntity.noContent().build();
     }
 }

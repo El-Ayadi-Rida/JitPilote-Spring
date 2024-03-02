@@ -1,9 +1,8 @@
 package academy.jobintech.jitechpilot.dto;
 
 
-import academy.jobintech.jitechpilot.entity.Project;
+import academy.jobintech.jitechpilot.entity.Board;
 import lombok.*;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,5 +16,5 @@ public class TeamDTO {
     private Long teamId;
     private String teamName;
     private String description;
-    private List<Project> projects = new ArrayList<>();
+    private List<Board> boards = new ArrayList<>();
 }

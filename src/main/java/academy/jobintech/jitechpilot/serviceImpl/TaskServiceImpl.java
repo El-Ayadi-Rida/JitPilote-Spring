@@ -2,16 +2,16 @@ package academy.jobintech.jitechpilot.serviceImpl;
 
 import academy.jobintech.jitechpilot.dto.TaskDTO;
 import academy.jobintech.jitechpilot.entity.Task;
+import academy.jobintech.jitechpilot.exception.NotFoundException;
 import academy.jobintech.jitechpilot.mapper.TaskDTOMapper;
 import academy.jobintech.jitechpilot.repository.TaskRepository;
 import academy.jobintech.jitechpilot.service.TaskService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-/**
- * @author Yassine CHALH
- */
+@Slf4j
 @Service
 public class TaskServiceImpl implements TaskService {
 
@@ -23,9 +23,7 @@ public class TaskServiceImpl implements TaskService {
         this.taskDTOMapper = taskDTOMapper;
     }
 
-    /* TODO:
-        1 - change status type to an Enum (TaskStatus)
-     */
+
     @Override
     public TaskDTO createTask(TaskDTO taskDTO) {
         Task task = taskDTOMapper.toEntity(taskDTO);
@@ -33,14 +31,11 @@ public class TaskServiceImpl implements TaskService {
         return taskDTOMapper.toDto(savedTask);
     }
 
-    /* TODO:
-        1 - NotFoundException Handling
-        2 - In case of it doesnt exist we must create it
-     */
+
     @Override
     public TaskDTO updateTask(Long id, TaskDTO taskDTO) {
         Task task = taskRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Task not found on :: " + id));
+                .orElseThrow(() -> new NotFoundException("Task not found on id: " + id));
 
         task.setTitle(taskDTO.getTitle());
         task.setDescription(taskDTO.getDescription());
@@ -48,12 +43,13 @@ public class TaskServiceImpl implements TaskService {
         task.setDeadline(taskDTO.getDeadline());
 
         Task updatedTask = taskRepository.save(task);
-
+        log.info("Task with id: {} has been updated successfully", id);
         return taskDTOMapper.toDto(updatedTask);
     }
 
     @Override
     public void deleteTask(Long id) {
+        log.info("Task with id: {} has been deleted successfully", id);
         taskRepository.deleteById(id);
     }
 
@@ -63,13 +59,17 @@ public class TaskServiceImpl implements TaskService {
     @Override
     public TaskDTO getTaskById(Long id) {
         Task task = taskRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Task not found on :: " + id));
+                .orElseThrow(() -> new NotFoundException("Task not found on :: " + id));
+        log.info("Fetching task with id: {}...", id);
         return taskDTOMapper.toDto(task);
     }
 
     @Override
     public List<TaskDTO> getAllTasks() {
+        log.info("Fetching all tasks...");
         return taskDTOMapper.toDtos(taskRepository.findAll());
     }
+
+
 
 }

@@ -14,4 +14,6 @@ public interface UserService {
     void deleteUser(Long userId);
 
     void affecterUserToTeam(long userId, long teamId);
+
+    List<UserResponseDto> getUsersByTeam (Long teamId);
 }

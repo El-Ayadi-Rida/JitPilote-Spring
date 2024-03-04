@@ -13,7 +13,7 @@ import java.util.List;
 @RestController
 @RequestMapping("api/v1/users")
 @CrossOrigin(
-        origins = "http://localhost:3000" ,
+        origins ={"http://localhost:3000","https://jiteck-pilot.vercel.app/"} ,
         allowedHeaders = "*",
         methods = {RequestMethod.GET,RequestMethod.DELETE,RequestMethod.POST,RequestMethod.PUT}
 )
@@ -58,5 +58,9 @@ public class UserController {
         return new ResponseEntity<>("user affected successfully",HttpStatus.OK);
     }
 
+    @GetMapping("/teams/{teamId}/users")
+    public List<UserResponseDto> getUsersByTeam(@PathVariable long teamId) {
+        return userService.getUsersByTeam(teamId);
+    }
 
 }

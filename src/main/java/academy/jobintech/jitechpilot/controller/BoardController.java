@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("api/v1/boards")
 @CrossOrigin(
-        origins = "http://localhost:3000" ,
+        origins = {"http://localhost:3000","https://jiteck-pilot.vercel.app/"},
         allowedHeaders = "*",
         methods = {RequestMethod.GET,RequestMethod.DELETE,RequestMethod.POST,RequestMethod.PUT}
 )

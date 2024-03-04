@@ -11,6 +11,11 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/v1/tasks")
+@CrossOrigin(
+        origins = "http://localhost:3000" ,
+        allowedHeaders = "*",
+        methods = {RequestMethod.GET,RequestMethod.DELETE,RequestMethod.POST,RequestMethod.PUT}
+)
 public class TaskController{
 
     private final TaskService taskService;
@@ -19,21 +24,27 @@ public class TaskController{
         this.taskService = taskService;
     }
 
-    @PostMapping
-    public ResponseEntity<TaskDTO> createTask(@RequestBody TaskDTO taskDTO) {
-        TaskDTO createdTask = taskService.createTask(taskDTO);
+    @PostMapping("create/{ticketId}")
+    public ResponseEntity<TaskDTO> createTask(@PathVariable Long ticketId, @RequestBody TaskDTO taskDTO) {
+        TaskDTO createdTask = taskService.createTask(ticketId,taskDTO);
         return new ResponseEntity<>(createdTask, HttpStatus.CREATED);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("get/{id}")
     public ResponseEntity<TaskDTO> getTaskById(@PathVariable Long id) {
         TaskDTO taskDTO = taskService.getTaskById(id);
         return ResponseEntity.ok(taskDTO);
     }
 
-    @GetMapping
+    @GetMapping("all")
     public ResponseEntity<List<TaskDTO>> getAllTasks() {
         List<TaskDTO> tasks = taskService.getAllTasks();
+        return ResponseEntity.ok(tasks);
+    }
+
+    @GetMapping("ticket/{ticketId}")
+    public ResponseEntity<List<TaskDTO>> getTasksByTicket(@PathVariable Long ticketId) {
+        List<TaskDTO> tasks = taskService.getTasksByTicketId(ticketId);
         return ResponseEntity.ok(tasks);
     }
 

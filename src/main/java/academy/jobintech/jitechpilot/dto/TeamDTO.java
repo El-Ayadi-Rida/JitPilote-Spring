@@ -16,5 +16,6 @@ public class TeamDTO {
     private Long teamId;
     private String teamName;
     private String description;
-    private List<Board> boards = new ArrayList<>();
+    private List<BoardDTO> boards = new ArrayList<>();
+    private List<UserResponseDto> users = new ArrayList<>();
 }

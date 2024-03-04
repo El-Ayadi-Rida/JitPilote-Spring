@@ -1,6 +1,8 @@
 package academy.jobintech.jitechpilot.serviceImpl;
 
 import academy.jobintech.jitechpilot.dto.TicketDTO;
+import academy.jobintech.jitechpilot.entity.Section;
+import academy.jobintech.jitechpilot.entity.Team;
 import academy.jobintech.jitechpilot.entity.Ticket;
 import academy.jobintech.jitechpilot.exception.NotFoundException;
 import academy.jobintech.jitechpilot.mapper.TicketDTOMapper;
@@ -20,15 +22,19 @@ public class TicketServiceImpl implements TicketService {// TODO: Logs and Excep
 
     private final TicketRepository ticketRepository;
     private final TicketDTOMapper ticketDTOMapper;
+    private final SectionServiceImpl sectionService;
 
-    public TicketServiceImpl(TicketRepository ticketRepository, TicketDTOMapper ticketDTOMapper) {
+    public TicketServiceImpl(TicketRepository ticketRepository, TicketDTOMapper ticketDTOMapper , SectionServiceImpl sectionService) {
         this.ticketRepository = ticketRepository;
         this.ticketDTOMapper = ticketDTOMapper;
+        this.sectionService = sectionService;
     }
 
     @Override
-    public TicketDTO createTicket(TicketDTO ticketDTO) {
+    public TicketDTO createTicket(Long sectionId ,TicketDTO ticketDTO) {
         Ticket ticket = ticketDTOMapper.toEntity(ticketDTO);
+        Section section = sectionService.getSectionByIdHelper(sectionId);
+        ticket.setSection(section);
         Ticket savedTicket = ticketRepository.save(ticket);
         log.info("Ticket created successfully title : {} ", savedTicket.getTitle());
         return ticketDTOMapper.toDto(savedTicket);
@@ -67,5 +73,17 @@ public class TicketServiceImpl implements TicketService {// TODO: Logs and Excep
     public List<TicketDTO> getAllTickets() {
         log.info("fetching all tickets");
         return ticketDTOMapper.toDtos(ticketRepository.findAll());
+    }
+
+    public Ticket getTicketByIdHelper(Long ticketId) {
+        Ticket ticket = ticketRepository.findById(ticketId)
+                .orElseThrow(() -> new RuntimeException("Ticket not found on :: " + ticketId));
+        return ticket;
+    }
+
+    @Override
+    public List<TicketDTO> getTicketsBySection(Long sectionId) {
+        List<Ticket> ticketList = ticketRepository.findBysectionSectionId(sectionId);
+        return ticketDTOMapper.toDtos(ticketList);
     }
 }

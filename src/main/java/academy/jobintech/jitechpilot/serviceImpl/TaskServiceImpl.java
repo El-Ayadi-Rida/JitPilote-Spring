@@ -2,6 +2,7 @@ package academy.jobintech.jitechpilot.serviceImpl;
 
 import academy.jobintech.jitechpilot.dto.TaskDTO;
 import academy.jobintech.jitechpilot.entity.Task;
+import academy.jobintech.jitechpilot.entity.Ticket;
 import academy.jobintech.jitechpilot.exception.NotFoundException;
 import academy.jobintech.jitechpilot.mapper.TaskDTOMapper;
 import academy.jobintech.jitechpilot.repository.TaskRepository;
@@ -17,16 +18,20 @@ public class TaskServiceImpl implements TaskService {
 
     private final TaskRepository taskRepository;
     private final TaskDTOMapper taskDTOMapper;
+    private final TicketServiceImpl ticketService;
 
-    public TaskServiceImpl(TaskRepository taskRepository, TaskDTOMapper taskDTOMapper) {
+    public TaskServiceImpl(TaskRepository taskRepository, TaskDTOMapper taskDTOMapper , TicketServiceImpl ticketService) {
         this.taskRepository = taskRepository;
         this.taskDTOMapper = taskDTOMapper;
+        this.ticketService = ticketService;
     }
 
 
     @Override
-    public TaskDTO createTask(TaskDTO taskDTO) {
+    public TaskDTO createTask(Long ticketId,TaskDTO taskDTO) {
         Task task = taskDTOMapper.toEntity(taskDTO);
+        Ticket ticket = ticketService.getTicketByIdHelper(ticketId);
+        task.setTicket(ticket);
         Task savedTask = taskRepository.save(task);
         return taskDTOMapper.toDto(savedTask);
     }
@@ -70,6 +75,11 @@ public class TaskServiceImpl implements TaskService {
         return taskDTOMapper.toDtos(taskRepository.findAll());
     }
 
+    @Override
+    public List<TaskDTO> getTasksByTicketId(Long taskId) {
+        List<Task> taskList = taskRepository.findByticketTicketId(taskId);
+        return taskDTOMapper.toDtos(taskList);
+    }
 
 
 }

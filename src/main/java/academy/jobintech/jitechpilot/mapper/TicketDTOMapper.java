@@ -2,6 +2,7 @@ package academy.jobintech.jitechpilot.mapper;
 
 import academy.jobintech.jitechpilot.dto.TicketDTO;
 import academy.jobintech.jitechpilot.entity.Ticket;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -11,7 +12,8 @@ import org.springframework.stereotype.Component;
 @Component
 @Scope(value = "singleton")
 public class TicketDTOMapper implements EntityDTOMapper<Ticket, TicketDTO> {
-
+    @Autowired
+    private TaskDTOMapper taskDTOMapper;
     @Override
     public TicketDTO toDto(Ticket ticket) {
         TicketDTO dto = new TicketDTO();
@@ -21,6 +23,7 @@ public class TicketDTOMapper implements EntityDTOMapper<Ticket, TicketDTO> {
         dto.setDescription(ticket.getDescription());
         dto.setPriority(ticket.getPriority());
         dto.setStatus(ticket.getStatus());
+        dto.setTasks(taskDTOMapper.toDtos(ticket.getTasks()));
        //dto.setProjectId(ticket.getProject().getProjectId());
         // TODO: setUser Assigned to ...
 

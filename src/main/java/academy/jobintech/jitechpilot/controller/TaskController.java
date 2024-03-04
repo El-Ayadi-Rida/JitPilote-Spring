@@ -11,6 +11,11 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/v1/tasks")
+@CrossOrigin(
+        origins = "http://localhost:3000" ,
+        allowedHeaders = "*",
+        methods = {RequestMethod.GET,RequestMethod.DELETE,RequestMethod.POST,RequestMethod.PUT}
+)
 public class TaskController{
 
     private final TaskService taskService;

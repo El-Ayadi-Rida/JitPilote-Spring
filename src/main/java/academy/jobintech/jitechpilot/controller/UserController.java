@@ -12,6 +12,11 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/v1/users")
+@CrossOrigin(
+        origins = "http://localhost:3000" ,
+        allowedHeaders = "*",
+        methods = {RequestMethod.GET,RequestMethod.DELETE,RequestMethod.POST,RequestMethod.PUT}
+)
 public class UserController {
 
     @Autowired

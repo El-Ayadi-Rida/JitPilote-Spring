@@ -13,7 +13,7 @@ import java.util.List;
 @RestController
 @RequestMapping("api/v1/users")
 @CrossOrigin(
-        origins = "http://localhost:3000" ,
+        origins ={"http://localhost:3000","https://jiteck-pilot.vercel.app/"} ,
         allowedHeaders = "*",
         methods = {RequestMethod.GET,RequestMethod.DELETE,RequestMethod.POST,RequestMethod.PUT}
 )

@@ -4,6 +4,7 @@ import academy.jobintech.jitechpilot.dto.UserRequestDto;
 import academy.jobintech.jitechpilot.dto.UserResponseDto;
 import academy.jobintech.jitechpilot.entity.Team;
 import academy.jobintech.jitechpilot.entity.User;
+import academy.jobintech.jitechpilot.exception.AlreadyExistsException;
 import academy.jobintech.jitechpilot.exception.NotFoundException;
 import academy.jobintech.jitechpilot.mapper.UserRequestEntityDTOMapper;
 import academy.jobintech.jitechpilot.mapper.UserResponseEntityDTOMapper;
@@ -43,6 +44,10 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserResponseDto createUser(UserRequestDto userRequestDto) {
+        userRepository.findUserByEmail(userRequestDto.getEmail())
+                .ifPresent(existingUser -> {
+                    throw new AlreadyExistsException("User already exists with this email");
+                });
         User user =userRequestMapper.toEntity(userRequestDto);
         User newUser = userRepository.save(user);
         log.info("user created successfully name : {} ",newUser.getFirstName());
@@ -94,5 +99,13 @@ public class UserServiceImpl implements UserService {
         user.setTeam(team);
         userRepository.save(user);
         log.info("user affected to team successfully");
+    }
+
+    @Override
+    public List<UserResponseDto> getUsersByTeam(Long teamId) {
+         List<User> userList =userRepository.findByteamTeamId(teamId);
+         log.info("Fetching all user in teams id {} ", teamId);
+         return userResponseMapper.toDtos(userList);
+
     }
 }

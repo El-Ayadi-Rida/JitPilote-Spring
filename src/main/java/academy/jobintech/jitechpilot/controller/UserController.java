@@ -53,5 +53,9 @@ public class UserController {
         return new ResponseEntity<>("user affected successfully",HttpStatus.OK);
     }
 
+    @GetMapping("/teams/{teamId}/users")
+    public List<UserResponseDto> getUsersByTeam(@PathVariable long teamId) {
+        return userService.getUsersByTeam(teamId);
+    }
 
 }

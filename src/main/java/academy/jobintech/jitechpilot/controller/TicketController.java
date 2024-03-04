@@ -24,9 +24,9 @@ public class TicketController {
         this.ticketService = ticketService;
     }
 
-    @PostMapping
-    public ResponseEntity<TicketDTO> createTicket(@RequestBody TicketDTO ticketDTO) {
-        TicketDTO createdTicket = ticketService.createTicket(ticketDTO);
+    @PostMapping("create/{sectionId}")
+    public ResponseEntity<TicketDTO> createTicket(@PathVariable Long sectionId , @RequestBody TicketDTO ticketDTO) {
+        TicketDTO createdTicket = ticketService.createTicket(sectionId,ticketDTO);
         return new ResponseEntity<>(createdTicket, HttpStatus.CREATED);
     }
 
@@ -39,6 +39,12 @@ public class TicketController {
     @GetMapping
     public ResponseEntity<List<TicketDTO>> getAllTickets() {
         List<TicketDTO> tickets = ticketService.getAllTickets();
+        return ResponseEntity.ok(tickets);
+    }
+
+    @GetMapping("/section/{sectionId}")
+        public ResponseEntity<List<TicketDTO>> getTicketsBySection(@PathVariable Long sectionId) {
+        List<TicketDTO> tickets = ticketService.getTicketsBySection(sectionId);
         return ResponseEntity.ok(tickets);
     }
 

@@ -41,17 +41,6 @@ public class User {
     @Column(name="role")
     private String role;
 
-//    @ManyToOne
-//    @JoinColumn(
-//            name = "team_id_user",
-//            referencedColumnName = "teamId",
-//            foreignKey = @ForeignKey(
-//                    name = "team_id_user_FK"
-//            )
-//    )
-//    private Team team;
-
-
     @OneToMany(mappedBy = "user")
     List<Role> roles = new ArrayList<>();
 
@@ -71,4 +60,16 @@ public class User {
     protected void onCreate() {
         createdAt = LocalDateTime.now();
     }
+
+    //    @ManyToOne
+//    @JoinColumn(
+//            name = "team_id_user",
+//            referencedColumnName = "teamId",
+//            foreignKey = @ForeignKey(
+//                    name = "team_id_user_FK"
+//            )
+//    )
+//    private Team team;
+
+
 }

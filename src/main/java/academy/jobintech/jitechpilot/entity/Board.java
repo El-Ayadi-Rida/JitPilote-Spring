@@ -28,16 +28,6 @@ public class Board {
     @Enumerated(EnumType.STRING)
     private BoardStatus status;
 
-//    @ManyToOne
-//    @JoinColumn(
-//            name = "team_id_board",
-//            referencedColumnName = "teamId",
-//            foreignKey = @ForeignKey(
-//                name = "team_id_board_FK"
-//            )
-//    )
-//    private Team team;
-
     @OneToMany(mappedBy = "board")
     List<Role> roles = new ArrayList<>();
 
@@ -53,4 +43,16 @@ public class Board {
     public void initStartDate(){
         start_date = LocalDateTime.now();
     }
+
+    //    @ManyToOne
+//    @JoinColumn(
+//            name = "team_id_board",
+//            referencedColumnName = "teamId",
+//            foreignKey = @ForeignKey(
+//                name = "team_id_board_FK"
+//            )
+//    )
+//    private Team team;
+
+
 }

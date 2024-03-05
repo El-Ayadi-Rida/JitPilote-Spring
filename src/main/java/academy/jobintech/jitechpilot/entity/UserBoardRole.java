@@ -1,17 +1,19 @@
 package academy.jobintech.jitechpilot.entity;
 
 
+import academy.jobintech.jitechpilot.enums.UserRole;
 import jakarta.persistence.*;
 import lombok.*;
 
-@Entity
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Setter
 @Getter
-public class Role {
+@Entity
+public class UserBoardRole {
     @EmbeddedId
-    private RoleKey roleId;
+    private RoleBoardId roleId;
 
     @ManyToOne
     @MapsId("userId")
@@ -33,6 +35,7 @@ public class Role {
     )
     private Board board;
 
-    private String user_role;
+    @Enumerated(EnumType.STRING)
+    private UserRole user_role;
 
 }

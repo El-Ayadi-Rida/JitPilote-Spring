@@ -7,7 +7,6 @@ import lombok.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -29,7 +28,7 @@ public class Board {
     private BoardStatus status;
 
     @OneToMany(mappedBy = "board")
-    List<Role> roles = new ArrayList<>();
+    List<UserBoardRole> userBoardRoles = new ArrayList<>();
 
     @OneToMany(
             mappedBy = "board",
@@ -38,6 +37,17 @@ public class Board {
             fetch = FetchType.LAZY
     )
     private List<Section> sections = new ArrayList<>();
+
+    @ManyToOne
+    @JoinColumn(
+            name="workspace_id_board",
+            referencedColumnName = "workspaceId",
+            foreignKey = @ForeignKey(
+                    name = "workspace_id_board_FK"
+            )
+    )
+    private Workspace workspace;
+
 
     @PrePersist
     public void initStartDate(){

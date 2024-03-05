@@ -1,13 +1,12 @@
 package academy.jobintech.jitechpilot.entity;
 
+import academy.jobintech.jitechpilot.enums.UserRole;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -23,31 +22,26 @@ public class User {
     @Column(updatable = false)
     private Long userId;
 
-    @Column(name="firstName")
     private String firstName;
 
-    @Column(name="lastName")
     private String lastName;
 
-    @Column(name="userName")
     private String userName;
 
-    @Column(name="email")
     private String email;
 
-    @Column(name="password")
     private String password;
 
-    @Column(name="role")
-    private String role;
+    @Enumerated(EnumType.STRING)
+    private UserRole role;
 
     @OneToMany(mappedBy = "user")
-    List<Role> roles = new ArrayList<>();
+    List<UserBoardRole> userBoardRoles = new ArrayList<>();
 
 
     @ManyToMany
     @JoinTable(
-            name = "members",
+            name = "user_ticket_association",
             joinColumns = @JoinColumn(name = "userId"),
             inverseJoinColumns = @JoinColumn(name = "ticketId"))
     private List<Ticket> tickets = new ArrayList<>();

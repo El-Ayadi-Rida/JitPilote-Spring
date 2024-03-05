@@ -3,9 +3,10 @@ package academy.jobintech.jitechpilot.serviceImpl;
 import academy.jobintech.jitechpilot.dto.ResponseBoardPage;
 import academy.jobintech.jitechpilot.dto.BoardDTO;
 import academy.jobintech.jitechpilot.entity.Board;
-import academy.jobintech.jitechpilot.entity.Role;
-import academy.jobintech.jitechpilot.entity.RoleKey;
+import academy.jobintech.jitechpilot.entity.UserBoardRole;
+import academy.jobintech.jitechpilot.entity.RoleBoardId;
 import academy.jobintech.jitechpilot.entity.User;
+import academy.jobintech.jitechpilot.enums.UserRole;
 import academy.jobintech.jitechpilot.exception.NotFoundException;
 import academy.jobintech.jitechpilot.mapper.BoardDTOMapper;
 import academy.jobintech.jitechpilot.repository.BoardRepository;
@@ -19,7 +20,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import java.sql.SQLOutput;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -111,19 +111,16 @@ public class BoardServiceImpl implements BoardService {
         Board board = boardMapper.toEntity(boardDTO);
         Board createdBoard = boardRepository.save(board);
 
-        RoleKey roleKey = new RoleKey(user.getUserId() , createdBoard.getBoardId());
+        RoleBoardId roleBoardId = new RoleBoardId(user.getUserId() , createdBoard.getBoardId());
 
-        System.out.println(roleKey);
-        Role role = new Role(
-                roleKey,
+        UserBoardRole userBoardRole = new UserBoardRole(
+                roleBoardId,
                 user,
                 createdBoard,
-                "ADMIN");
+                UserRole.ADMIN);
 
-        System.out.println(role);
-        Role createdRole = roleRepository.save(role);
+        UserBoardRole createdUserBoardRole = roleRepository.save(userBoardRole);
 
-        System.out.println(createdRole);
         return boardMapper.toDto(createdBoard);
     }
 }

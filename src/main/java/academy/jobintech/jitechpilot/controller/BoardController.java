@@ -19,7 +19,7 @@ public class BoardController {
     @Autowired
     private BoardServiceImpl boardService;
 
-    @PostMapping("/create")
+    @PostMapping
     public ResponseEntity<BoardDTO> createBoard(
             @RequestBody BoardDTO boardDTO
     ){
@@ -33,7 +33,7 @@ public class BoardController {
         return new ResponseEntity<>(boardDTOResponse, HttpStatus.OK);
     }
 
-    @GetMapping("/all")
+    @GetMapping
     public ResponseEntity<ResponseBoardPage>  getAllBoards(
             @RequestParam(name = "pageNo" ,defaultValue = "0" ,required = false) int pageNo,
             @RequestParam(name = "pageSize" ,defaultValue = "5" ,required = false) int pageSize,
@@ -43,7 +43,7 @@ public class BoardController {
         return ResponseEntity.ok(boardService.getAllBoards(pageNo, pageSize , sortBy , sortDir));
     }
 
-    @PutMapping("/update/{boardId}")
+    @PutMapping("/{boardId}")
     public ResponseEntity<BoardDTO> updateBoard(
             @RequestBody BoardDTO boardDTO,
             @PathVariable("boardId") Long boardId){
@@ -51,13 +51,13 @@ public class BoardController {
         return new ResponseEntity<>(updatedBoard , HttpStatus.OK);
     }
 
-    @DeleteMapping("/delete/{boardId}")
+    @DeleteMapping("/{boardId}")
     public ResponseEntity<String> deleteBoard(@PathVariable("boardId") Long boardId){
         boardService.deleteBoard(boardId);
         return ResponseEntity.ok("Board with Id: "+boardId+" deleted successfully");
     }
 
-    @PostMapping("/create/{userId}")
+    @PostMapping("/{userId}/board")
     public ResponseEntity<BoardDTO> createBoardByUser(@PathVariable Long userId,
             @RequestBody BoardDTO boardDTO
     ){

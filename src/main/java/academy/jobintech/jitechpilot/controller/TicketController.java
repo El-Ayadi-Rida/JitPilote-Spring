@@ -24,7 +24,7 @@ public class TicketController {
         this.ticketService = ticketService;
     }
 
-    @PostMapping("create/{sectionId}")
+    @PostMapping("/{sectionId}")
     public ResponseEntity<TicketDTO> createTicket(@PathVariable Long sectionId , @RequestBody TicketDTO ticketDTO) {
         TicketDTO createdTicket = ticketService.createTicket(sectionId,ticketDTO);
         return new ResponseEntity<>(createdTicket, HttpStatus.CREATED);
@@ -60,7 +60,7 @@ public class TicketController {
         return ResponseEntity.noContent().build();
     }
 
-    @PostMapping("{ticketId}/user/{userId}")
+    @PutMapping("/{ticketId}/user/{userId}")
     public ResponseEntity<TicketDTO> assignTicketToUser(@PathVariable Long ticketId , @PathVariable Long userId) {
         return ResponseEntity.ok(ticketService.assignTicketToUser(ticketId,userId));
     }

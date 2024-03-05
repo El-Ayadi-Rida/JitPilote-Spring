@@ -2,7 +2,7 @@ package academy.jobintech.jitechpilot.enums;
 
 
 public enum TicketStatus {
-    TODO("To Do"),
+    OPEN("Open"),
     IN_PROGRESS("In Progress"),
     DONE("Done");
 

@@ -11,14 +11,14 @@ public class RoleDTOMapper {
 //    @Autowired
 //    private ModelMapper modelMapper;
 //    @Override
-//    public RoleDto toDto(Role entity) {
+//    public RoleDto toDto(UserBoardRole entity) {
 //        RoleDto roleDto= modelMapper.map(entity, RoleDto.class);
 //        return roleDto;
 //    }
 //
 //    @Override
-//    public Role toEntity(RoleDto dto) {
-//        Role role = modelMapper.map(dto, Role.class);
+//    public UserBoardRole toEntity(RoleDto dto) {
+//        UserBoardRole role = modelMapper.map(dto, UserBoardRole.class);
 //        return null;
 //    }
 }

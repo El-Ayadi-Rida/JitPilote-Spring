@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/v1")
+@RequestMapping("api/v1/section")
 @CrossOrigin(
         origins = {"http://localhost:3000","https://jiteck-pilot.vercel.app/"},
         allowedHeaders = "*",
@@ -24,45 +24,45 @@ public class SectionController {
     @Autowired
     private SectionServiceImpl sectionService;
 
-    @PostMapping("/boards/{boardId}/sections")
+    @PostMapping("/board/{boardId}")
     private ResponseEntity<SectionDTO> createSectionInBoard(@PathVariable long boardId, @RequestBody SectionDTO sectionDTO) {
         SectionDTO sectioncreated = sectionService.createSection(boardId,sectionDTO);
         return new ResponseEntity<>(sectioncreated, HttpStatus.CREATED);
     }
 
-    @GetMapping("/boards/{boardId}/sections")
-    public List<SectionDTO> getSectionsByBoards(@PathVariable long boardId) {
+    @GetMapping("/board/{boardId}")
+    public List<SectionDTO> getSectionsByBoard(@PathVariable long boardId) {
         return sectionService.getSectionByBoards(boardId);
     }
 
 
-    @GetMapping("/sections")
+    @GetMapping
     private ResponseEntity<List<SectionDTO>> getAllSection() {
         return ResponseEntity.ok(sectionService.getAllSection());
     }
 
 
-    @GetMapping("/sections/{sectionId}")
+    @GetMapping("{sectionId}")
     private ResponseEntity<SectionDTO> getSectionbyId(@PathVariable long sectionId) {
         return ResponseEntity.ok(sectionService.getSectionById(sectionId));
     }
 
 
 
-    @PutMapping("/sections/{sectionId}")
-    private ResponseEntity<SectionDTO> getSectionbyId(@PathVariable long sectionId, @RequestBody SectionDTO sectionDTO) {
+    @PutMapping("{sectionId}")
+    private ResponseEntity<SectionDTO> getSectionById(@PathVariable long sectionId, @RequestBody SectionDTO sectionDTO) {
         SectionDTO sectionDTO1=sectionService.updateSection(sectionId,sectionDTO);
 
         return new  ResponseEntity<>(sectionDTO1,HttpStatus.OK);
     }
 
-    @DeleteMapping("/sections/{sectionId}")
-    private ResponseEntity<String> deleteSectionbyId(@PathVariable long sectionId) {
+    @DeleteMapping("{sectionId}")
+    private ResponseEntity<String> deleteSectionById(@PathVariable long sectionId) {
         sectionService.deleteSection(sectionId);
         return new ResponseEntity<>("section deleted successfully",HttpStatus.OK);
     }
 
-    @PostMapping("/boards/{boardId}/sections/{sectionId}")
+    @PostMapping("{sectionId}/board/{boardId}")
     private ResponseEntity<String> assignSectionToBoard(@PathVariable long sectionId,@PathVariable long boardId) {
         sectionService.assignSectionToBoard(sectionId,boardId);
         return new ResponseEntity<>("section assign to board successfully",HttpStatus.OK);

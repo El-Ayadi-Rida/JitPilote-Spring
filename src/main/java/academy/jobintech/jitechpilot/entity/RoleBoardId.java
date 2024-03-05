@@ -5,7 +5,6 @@ import jakarta.persistence.Embeddable;
 import lombok.*;
 
 import java.io.Serializable;
-import java.util.Objects;
 
 @ToString
 @Embeddable
@@ -13,10 +12,9 @@ import java.util.Objects;
 @NoArgsConstructor
 @Getter
 @Setter
-public class RoleKey implements Serializable {
+public class RoleBoardId implements Serializable {
     @Column(name="user_id")
     Long userId;
     @Column(name="board_id")
     Long boardId;
-
 }

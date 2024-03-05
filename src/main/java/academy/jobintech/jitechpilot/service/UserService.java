@@ -2,6 +2,8 @@ package academy.jobintech.jitechpilot.service;
 
 import academy.jobintech.jitechpilot.dto.UserRequestDto;
 import academy.jobintech.jitechpilot.dto.UserResponseDto;
+import academy.jobintech.jitechpilot.entity.Ticket;
+import academy.jobintech.jitechpilot.entity.User;
 
 import java.util.List;
 
@@ -13,7 +15,10 @@ public interface UserService {
     UserResponseDto updateUser(Long userId, UserRequestDto userRequestDto);
     void deleteUser(Long userId);
 
-    void affecterUserToTeam(long userId, long teamId);
+//    void affecterUserToTeam(long userId, long teamId);
+//
+//    List<UserResponseDto> getUsersByTeam (Long teamId);
 
-    List<UserResponseDto> getUsersByTeam (Long teamId);
+    User getUsertByIdHelper(Long userId);
+
 }

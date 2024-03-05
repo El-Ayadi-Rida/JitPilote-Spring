@@ -9,7 +9,7 @@ import java.util.List;
 @Setter
 @ToString
 public class ResponseTeamPage {
-    private List<TeamDTO> content;
+//    private List<TeamDTO> content;
     private int pageNo;
     private int pageSize;
     private long totalElements;

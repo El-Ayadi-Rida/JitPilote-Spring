@@ -40,21 +40,29 @@ public class User {
     @Column(name="role")
     private String role;
 
-    @ManyToOne
-    @JoinColumn(
-            name = "team_id_user",
-            referencedColumnName = "teamId",
-            foreignKey = @ForeignKey(
-                    name = "team_id_user_FK"
-            )
-    )
-    private Team team;
-    @OneToMany(
-            mappedBy = "user",
-            cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY
-    )
+//    @ManyToOne
+//    @JoinColumn(
+//            name = "team_id_user",
+//            referencedColumnName = "teamId",
+//            foreignKey = @ForeignKey(
+//                    name = "team_id_user_FK"
+//            )
+//    )
+//    private Team team;
+
+
+    @OneToMany(mappedBy = "user")
+    Set<Role> roleUser;
+
+
+    @ManyToMany
+    @JoinTable(
+            name = "members",
+            joinColumns = @JoinColumn(name = "userId"),
+            inverseJoinColumns = @JoinColumn(name = "ticketId"))
     private Set<Ticket> tickets = new HashSet<>();
+
+
     @Column(name = "createdAt", nullable = false, updatable = false)
     private LocalDateTime createdAt;
 

@@ -56,4 +56,12 @@ public class BoardController {
         boardService.deleteBoard(boardId);
         return ResponseEntity.ok("Board with Id: "+boardId+" deleted successfully");
     }
+
+    @PostMapping("/create/{userId}")
+    public ResponseEntity<BoardDTO> createBoardByUser(@PathVariable Long userId,
+            @RequestBody BoardDTO boardDTO
+    ){
+        BoardDTO newBoard = boardService.createBoardByUser(userId,boardDTO);
+        return new ResponseEntity<>(newBoard , HttpStatus.CREATED);
+    }
 }

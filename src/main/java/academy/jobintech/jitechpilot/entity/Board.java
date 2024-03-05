@@ -6,7 +6,6 @@ import lombok.*;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -29,15 +28,18 @@ public class Board {
     @Enumerated(EnumType.STRING)
     private BoardStatus status;
 
-    @ManyToOne
-    @JoinColumn(
-            name = "team_id_board",
-            referencedColumnName = "teamId",
-            foreignKey = @ForeignKey(
-                name = "team_id_board_FK"
-            )
-    )
-    private Team team;
+//    @ManyToOne
+//    @JoinColumn(
+//            name = "team_id_board",
+//            referencedColumnName = "teamId",
+//            foreignKey = @ForeignKey(
+//                name = "team_id_board_FK"
+//            )
+//    )
+//    private Team team;
+
+    @OneToMany(mappedBy = "board")
+    Set<Role> roleUser;
 
 
     @OneToMany(

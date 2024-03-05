@@ -2,16 +2,13 @@ package academy.jobintech.jitechpilot.serviceImpl;
 
 import academy.jobintech.jitechpilot.dto.UserRequestDto;
 import academy.jobintech.jitechpilot.dto.UserResponseDto;
-import academy.jobintech.jitechpilot.entity.Team;
 import academy.jobintech.jitechpilot.entity.User;
 import academy.jobintech.jitechpilot.exception.AlreadyExistsException;
 import academy.jobintech.jitechpilot.exception.NotFoundException;
 import academy.jobintech.jitechpilot.mapper.UserRequestEntityDTOMapper;
 import academy.jobintech.jitechpilot.mapper.UserResponseEntityDTOMapper;
-import academy.jobintech.jitechpilot.repository.TeamRepository;
 import academy.jobintech.jitechpilot.repository.UserRepository;
 import academy.jobintech.jitechpilot.service.UserService;
-import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,8 +30,6 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserRepository userRepository;
 
-    @Autowired
-    private TeamRepository teamRepository;
 
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
@@ -91,21 +86,28 @@ public class UserServiceImpl implements UserService {
         log.info("user with id : {} deleted successfully",userId);
     }
 
-    @Override
-    public void affecterUserToTeam(long userId, long teamId) {
-        User user = userRepository.findById(userId).orElseThrow(()->new NotFoundException("user not found with id : "+userId));
-        Team team =teamRepository.findById(teamId).orElseThrow(()->new NotFoundException("team not found with id : "+teamId));
-        log.info("affecting user to team");
-        user.setTeam(team);
-        userRepository.save(user);
-        log.info("user affected to team successfully");
-    }
+//    @Override
+//    public void affecterUserToTeam(long userId, long teamId) {
+//        User user = userRepository.findById(userId).orElseThrow(()->new NotFoundException("user not found with id : "+userId));
+//        Team team =teamRepository.findById(teamId).orElseThrow(()->new NotFoundException("team not found with id : "+teamId));
+//        log.info("affecting user to team");
+//        user.setTeam(team);
+//        userRepository.save(user);
+//        log.info("user affected to team successfully");
+//    }
+//
+//    @Override
+//    public List<UserResponseDto> getUsersByTeam(Long teamId) {
+//         List<User> userList =userRepository.findByteamTeamId(teamId);
+//         log.info("Fetching all user in teams id {} ", teamId);
+//         return userResponseMapper.toDtos(userList);
+//
+//    }
 
     @Override
-    public List<UserResponseDto> getUsersByTeam(Long teamId) {
-         List<User> userList =userRepository.findByteamTeamId(teamId);
-         log.info("Fetching all user in teams id {} ", teamId);
-         return userResponseMapper.toDtos(userList);
-
+    public User getUsertByIdHelper(Long userId) {
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new RuntimeException("User not found on :: " + userId));
+        return user;
     }
 }

@@ -18,4 +18,6 @@ public interface TicketService {
     Ticket getTicketByIdHelper(Long ticketId);
 
     List<TicketDTO> getTicketsBySection(Long sectionId);
+
+    TicketDTO assignTicketToUser(Long ticketId,Long userId);
 }

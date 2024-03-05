@@ -1,10 +1,13 @@
 package academy.jobintech.jitechpilot.dto;
 
+import academy.jobintech.jitechpilot.entity.User;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -18,6 +21,8 @@ public class UserResponseDto {
     private String email;
     private String role;
     private LocalDateTime createdAt;
+    private Set<TicketDTO> tickets = new HashSet<>();
+
 
 
 }

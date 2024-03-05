@@ -59,4 +59,9 @@ public class TicketController {
         ticketService.deleteTicket(id);
         return ResponseEntity.noContent().build();
     }
+
+    @PostMapping("{ticketId}/user/{userId}")
+    public ResponseEntity<TicketDTO> assignTicketToUser(@PathVariable Long ticketId , @PathVariable Long userId) {
+        return ResponseEntity.ok(ticketService.assignTicketToUser(ticketId,userId));
+    }
 }

@@ -6,7 +6,9 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -47,14 +49,7 @@ public class Ticket {
     )
     private Section section;
 
-    @ManyToOne
-    @JoinColumn(
-            name = "user_id_ticket",
-            referencedColumnName = "userId",
-            foreignKey = @ForeignKey(
-                    name = "user_id_ticket_FK"
-            )
-    )
-    private User user;
+    @ManyToMany(mappedBy = "tickets")
+    private Set<User> users = new HashSet<>();
 
 }

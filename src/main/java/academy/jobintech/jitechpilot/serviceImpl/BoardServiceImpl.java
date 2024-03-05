@@ -3,9 +3,13 @@ package academy.jobintech.jitechpilot.serviceImpl;
 import academy.jobintech.jitechpilot.dto.ResponseBoardPage;
 import academy.jobintech.jitechpilot.dto.BoardDTO;
 import academy.jobintech.jitechpilot.entity.Board;
+import academy.jobintech.jitechpilot.entity.Role;
+import academy.jobintech.jitechpilot.entity.RoleKey;
+import academy.jobintech.jitechpilot.entity.User;
 import academy.jobintech.jitechpilot.exception.NotFoundException;
 import academy.jobintech.jitechpilot.mapper.BoardDTOMapper;
 import academy.jobintech.jitechpilot.repository.BoardRepository;
+import academy.jobintech.jitechpilot.repository.RoleRepository;
 import academy.jobintech.jitechpilot.service.BoardService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +19,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.sql.SQLOutput;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -25,6 +30,14 @@ public class BoardServiceImpl implements BoardService {
     private BoardRepository boardRepository;
     @Autowired
     private BoardDTOMapper boardMapper;
+
+    @Autowired
+    private UserServiceImpl userService;
+
+    @Autowired
+    private RoleRepository roleRepository;
+
+
     @Override
     public BoardDTO createBoard(BoardDTO boardDTO) {
         Board board = boardMapper.toEntity(boardDTO);
@@ -90,5 +103,23 @@ public class BoardServiceImpl implements BoardService {
         Board boardToDelete = getBoardByIdHelper(boardId);
         if (boardToDelete !=null) boardRepository.delete(boardToDelete);
         log.info("Board deleted successfully with id: {} ", boardId);
+    }
+
+    @Override
+    public BoardDTO createBoardByUser(Long userId, BoardDTO boardDTO) {
+        User user = userService.getUsertByIdHelper(userId);
+        Board board = boardMapper.toEntity(boardDTO);
+        Board createdBoard = boardRepository.save(board);
+
+        RoleKey roleKey = new RoleKey(user.getUserId(), createdBoard.getBoardId());
+
+        System.out.println(roleKey);
+        Role role = new Role(roleKey, user, createdBoard,"ADMIN");
+        //role.setUser_role("ADMIN");
+
+        System.out.println(role);
+        Role createdRole = roleRepository.save(role);
+
+        return boardMapper.toDto(createdBoard);
     }
 }

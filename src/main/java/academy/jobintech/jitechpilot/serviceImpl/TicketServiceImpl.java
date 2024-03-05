@@ -2,13 +2,15 @@ package academy.jobintech.jitechpilot.serviceImpl;
 
 import academy.jobintech.jitechpilot.dto.TicketDTO;
 import academy.jobintech.jitechpilot.entity.Section;
-import academy.jobintech.jitechpilot.entity.Team;
 import academy.jobintech.jitechpilot.entity.Ticket;
+import academy.jobintech.jitechpilot.entity.User;
 import academy.jobintech.jitechpilot.exception.NotFoundException;
 import academy.jobintech.jitechpilot.mapper.TicketDTOMapper;
 import academy.jobintech.jitechpilot.repository.TicketRepository;
+import academy.jobintech.jitechpilot.repository.UserRepository;
 import academy.jobintech.jitechpilot.service.TicketService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -23,6 +25,11 @@ public class TicketServiceImpl implements TicketService {// TODO: Logs and Excep
     private final TicketRepository ticketRepository;
     private final TicketDTOMapper ticketDTOMapper;
     private final SectionServiceImpl sectionService;
+    @Autowired
+    private UserServiceImpl userService;
+
+    @Autowired
+    private UserRepository userRepository;
 
     public TicketServiceImpl(TicketRepository ticketRepository, TicketDTOMapper ticketDTOMapper , SectionServiceImpl sectionService) {
         this.ticketRepository = ticketRepository;
@@ -85,5 +92,19 @@ public class TicketServiceImpl implements TicketService {// TODO: Logs and Excep
     public List<TicketDTO> getTicketsBySection(Long sectionId) {
         List<Ticket> ticketList = ticketRepository.findBysectionSectionId(sectionId);
         return ticketDTOMapper.toDtos(ticketList);
+    }
+
+    @Override
+    public TicketDTO assignTicketToUser(Long ticketId,Long userId) {
+        User user = userService.getUsertByIdHelper(userId);
+        Ticket ticket = getTicketByIdHelper(ticketId);
+
+        ticket.getUsers().add(user);
+        user.getTickets().add(ticket);
+
+        Ticket ticket1= ticketRepository.save(ticket);
+
+
+        return ticketDTOMapper.toDto(ticket1);
     }
 }

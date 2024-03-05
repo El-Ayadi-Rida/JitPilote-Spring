@@ -52,15 +52,15 @@ public class UserController {
     }
 
 
-    @PostMapping("/{userId}/teams/{teamId}")
-    private ResponseEntity<String> affecterUserToTeam(@PathVariable long userId,@PathVariable long teamId) {
-         userService.affecterUserToTeam(userId,teamId);
-        return new ResponseEntity<>("user affected successfully",HttpStatus.OK);
-    }
-
-    @GetMapping("/teams/{teamId}/users")
-    public List<UserResponseDto> getUsersByTeam(@PathVariable long teamId) {
-        return userService.getUsersByTeam(teamId);
-    }
+//    @PostMapping("/{userId}/teams/{teamId}")
+//    private ResponseEntity<String> affecterUserToTeam(@PathVariable long userId,@PathVariable long teamId) {
+//         userService.affecterUserToTeam(userId,teamId);
+//        return new ResponseEntity<>("user affected successfully",HttpStatus.OK);
+//    }
+//
+//    @GetMapping("/teams/{teamId}/users")
+//    public List<UserResponseDto> getUsersByTeam(@PathVariable long teamId) {
+//        return userService.getUsersByTeam(teamId);
+//    }
 
 }

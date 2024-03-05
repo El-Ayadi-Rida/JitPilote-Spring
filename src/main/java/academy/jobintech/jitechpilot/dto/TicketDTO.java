@@ -22,6 +22,7 @@ import java.util.Set;
 @Getter
 @Setter
 public class TicketDTO {
+
     private Long ticketId;
     private String title;
     private String description;
@@ -30,5 +31,6 @@ public class TicketDTO {
     private Long projectId;
     private Long assignedToUserId;
     private List<TaskDTO> tasks = new ArrayList<>();
+    private List<UserResponseDto> users = new ArrayList<>();
 
 }

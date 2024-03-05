@@ -4,12 +4,13 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
 @EqualsAndHashCode
 @Setter
 @Getter
@@ -52,7 +53,7 @@ public class User {
 
 
     @OneToMany(mappedBy = "user")
-    Set<Role> roleUser;
+    List<Role> roles = new ArrayList<>();
 
 
     @ManyToMany
@@ -60,7 +61,7 @@ public class User {
             name = "members",
             joinColumns = @JoinColumn(name = "userId"),
             inverseJoinColumns = @JoinColumn(name = "ticketId"))
-    private Set<Ticket> tickets = new HashSet<>();
+    private List<Ticket> tickets = new ArrayList<>();
 
 
     @Column(name = "createdAt", nullable = false, updatable = false)

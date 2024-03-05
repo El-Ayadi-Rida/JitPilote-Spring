@@ -50,6 +50,6 @@ public class Ticket {
     private Section section;
 
     @ManyToMany(mappedBy = "tickets")
-    private Set<User> users = new HashSet<>();
+    private List<User> users = new ArrayList<>();
 
 }

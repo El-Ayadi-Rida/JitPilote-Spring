@@ -111,15 +111,19 @@ public class BoardServiceImpl implements BoardService {
         Board board = boardMapper.toEntity(boardDTO);
         Board createdBoard = boardRepository.save(board);
 
-        RoleKey roleKey = new RoleKey(user.getUserId(), createdBoard.getBoardId());
+        RoleKey roleKey = new RoleKey(user.getUserId() , createdBoard.getBoardId());
 
         System.out.println(roleKey);
-        Role role = new Role(roleKey, user, createdBoard,"ADMIN");
-        //role.setUser_role("ADMIN");
+        Role role = new Role(
+                roleKey,
+                user,
+                createdBoard,
+                "ADMIN");
 
         System.out.println(role);
         Role createdRole = roleRepository.save(role);
 
+        System.out.println(createdRole);
         return boardMapper.toDto(createdBoard);
     }
 }

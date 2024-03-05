@@ -39,8 +39,7 @@ public class Board {
 //    private Team team;
 
     @OneToMany(mappedBy = "board")
-    Set<Role> roleUser;
-
+    List<Role> roles = new ArrayList<>();
 
     @OneToMany(
             mappedBy = "board",

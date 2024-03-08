@@ -39,6 +39,9 @@ public class User {
     List<UserBoardRole> userBoardRoles = new ArrayList<>();
 
 
+    @OneToMany(mappedBy = "user")
+    List<UserWorkspaceRole> userWorkspaceRoles = new ArrayList<>();
+
     @ManyToMany
     @JoinTable(
             name = "user_ticket_association",

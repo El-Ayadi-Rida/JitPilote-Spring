@@ -39,5 +39,7 @@ public class UserWorkspaceRole {
     )
     private Workspace workspace;
 
-    private UserRole roleInWorkspace;
+
+    @Enumerated(EnumType.STRING)
+    private UserRole user_role;
 }

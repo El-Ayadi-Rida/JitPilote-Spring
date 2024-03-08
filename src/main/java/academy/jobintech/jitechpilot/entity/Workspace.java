@@ -29,4 +29,11 @@ public class Workspace {
     )
     private List<Board> boards = new ArrayList<>();
 
+    @OneToMany(
+            mappedBy = "workspace",
+            orphanRemoval = true,
+            cascade = CascadeType.ALL
+    )
+    List<UserWorkspaceRole> userWorkspaceRole = new ArrayList<>();
+
 }

@@ -14,6 +14,7 @@ import java.io.Serializable;
 @Getter
 @Setter
 public class RoleBoardId implements Serializable {
+
     @Column(name="user_id")
     Long userId;
     @Column(name="board_id")

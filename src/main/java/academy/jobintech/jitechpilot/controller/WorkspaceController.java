@@ -1,11 +1,14 @@
 package academy.jobintech.jitechpilot.controller;
 
 
-import academy.jobintech.jitechpilot.dto.UserResponseDto;
-import academy.jobintech.jitechpilot.dto.WorkspaceDTO;
+import academy.jobintech.jitechpilot.dto.*;
+import academy.jobintech.jitechpilot.enums.UserRole;
 import academy.jobintech.jitechpilot.mapper.UserResponseEntityDTOMapper;
+import academy.jobintech.jitechpilot.serviceImpl.UserBoardRoleServiceImpl;
+import academy.jobintech.jitechpilot.serviceImpl.UserWorkspaceRoleServiceImpl;
 import academy.jobintech.jitechpilot.serviceImpl.WorkspaceServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,11 +23,13 @@ import java.util.List;
 )
 public class WorkspaceController {
 
+    private final UserWorkspaceRoleServiceImpl workspaceRoleService;
     private final WorkspaceServiceImpl workspaceServiceImpl;
     private final UserResponseEntityDTOMapper userResponseEntityDTOMapper ;
 
     @Autowired
-    public WorkspaceController(WorkspaceServiceImpl workspaceServiceImpl, UserResponseEntityDTOMapper userResponseEntityDTOMapper) {
+    public WorkspaceController(UserWorkspaceRoleServiceImpl workspaceRoleService, WorkspaceServiceImpl workspaceServiceImpl, UserResponseEntityDTOMapper userResponseEntityDTOMapper) {
+        this.workspaceRoleService = workspaceRoleService;
         this.workspaceServiceImpl = workspaceServiceImpl;
         this.userResponseEntityDTOMapper = userResponseEntityDTOMapper;
     }
@@ -54,6 +59,7 @@ public class WorkspaceController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteWorkspace(@PathVariable(value = "id") Long workspaceId) {
+        workspaceRoleService.deleteUserWorkspaceRoleByWorkspaceId(workspaceId);
         workspaceServiceImpl.deleteWorkspace(workspaceId);
         return ResponseEntity.noContent().build();
     }
@@ -98,6 +104,23 @@ public class WorkspaceController {
         }
     }
      */
+
+    @PostMapping("/user/{userId}")
+    public ResponseEntity<WorkspaceDTO> createWorkspaceByUser(
+            @PathVariable Long userId,
+            @RequestBody WorkspaceDTO workspaceDTO
+
+    ){
+        WorkspaceDTO newWorkspace = workspaceServiceImpl.createWorkspace(workspaceDTO);
+        UserWorkspaceRoleDto userWorkspaceRoleDto = new UserWorkspaceRoleDto(
+                userId,
+                newWorkspace.getWorkspaceId(),
+                UserRole.ADMIN
+        );
+        workspaceRoleService.assignWorkspaceRoleToUser(userWorkspaceRoleDto);
+        return new ResponseEntity<>(newWorkspace , HttpStatus.CREATED);
+    }
+
 
 }
 

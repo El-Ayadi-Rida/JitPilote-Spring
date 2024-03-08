@@ -1,5 +1,6 @@
 package academy.jobintech.jitechpilot.entity;
 
+import academy.jobintech.jitechpilot.enums.AccessLevel;
 import academy.jobintech.jitechpilot.enums.BoardStatus;
 import jakarta.persistence.*;
 import lombok.*;
@@ -26,8 +27,15 @@ public class Board {
 
     @Enumerated(EnumType.STRING)
     private BoardStatus status;
+    @Enumerated(EnumType.STRING)
+    private AccessLevel accessLevel;
+    private boolean fav;
 
-    @OneToMany(mappedBy = "board")
+    @OneToMany(
+            mappedBy = "board",
+            orphanRemoval = true,
+            cascade = CascadeType.ALL
+    )
     List<UserBoardRole> userBoardRoles = new ArrayList<>();
 
     @OneToMany(
@@ -50,7 +58,7 @@ public class Board {
 
 
     @PrePersist
-    public void initStartDate(){
+    public void initStartDate_Fav(){
         start_date = LocalDateTime.now();
     }
 

@@ -2,22 +2,30 @@ package academy.jobintech.jitechpilot.controller;
 
 import academy.jobintech.jitechpilot.dto.BoardDTO;
 import academy.jobintech.jitechpilot.dto.ResponseBoardPage;
+import academy.jobintech.jitechpilot.dto.UserBoardRoleDTO;
+import academy.jobintech.jitechpilot.entity.User;
+import academy.jobintech.jitechpilot.enums.UserRole;
 import academy.jobintech.jitechpilot.serviceImpl.BoardServiceImpl;
+import academy.jobintech.jitechpilot.serviceImpl.UserBoardRoleServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("api/v1/boards")
 @CrossOrigin(
-        origins = {"http://localhost:3000","https://jiteck-pilot.vercel.app/"},
+        origins = {"http://localhost:4200","https://jiteck-pilot.vercel.app/"},
         allowedHeaders = "*",
         methods = {RequestMethod.GET,RequestMethod.DELETE,RequestMethod.POST,RequestMethod.PUT}
 )
 public class BoardController {
     @Autowired
     private BoardServiceImpl boardService;
+    @Autowired
+    private UserBoardRoleServiceImpl userBoardRoleService;
 
     @PostMapping
     public ResponseEntity<BoardDTO> createBoard(
@@ -36,7 +44,7 @@ public class BoardController {
     @GetMapping
     public ResponseEntity<ResponseBoardPage>  getAllBoards(
             @RequestParam(name = "pageNo" ,defaultValue = "0" ,required = false) int pageNo,
-            @RequestParam(name = "pageSize" ,defaultValue = "5" ,required = false) int pageSize,
+            @RequestParam(name = "pageSize" ,defaultValue = "20" ,required = false) int pageSize,
             @RequestParam(name = "sortBy" ,defaultValue = "boardId" ,required = false) String sortBy,
             @RequestParam(name = "sortDir" ,defaultValue = "asc" ,required = false) String sortDir
     ){
@@ -52,16 +60,34 @@ public class BoardController {
     }
 
     @DeleteMapping("/{boardId}")
-    public ResponseEntity<String> deleteBoard(@PathVariable("boardId") Long boardId){
+    public ResponseEntity<Void> deleteBoard(@PathVariable("boardId") Long boardId){
+        userBoardRoleService.deleteUserBoardRoleByBoardId(boardId);
         boardService.deleteBoard(boardId);
-        return ResponseEntity.ok("Board with Id: "+boardId+" deleted successfully");
+        return ResponseEntity.noContent().build();
     }
 
-    @PostMapping("/{userId}/board")
-    public ResponseEntity<BoardDTO> createBoardByUser(@PathVariable Long userId,
+    @PostMapping("/{userId}/{workspaceId}/board")
+    public ResponseEntity<BoardDTO> createBoardByUser(
+            @PathVariable Long userId,
+            @PathVariable Long workspaceId,
             @RequestBody BoardDTO boardDTO
+
     ){
-        BoardDTO newBoard = boardService.createBoardByUser(userId,boardDTO);
+        BoardDTO newBoard = boardService.createBoardByUser(workspaceId,boardDTO);
+        UserBoardRoleDTO userBoardRoleDTO = new UserBoardRoleDTO(
+                userId,
+                newBoard.getBoardId(),
+                UserRole.ADMIN
+        );
+        userBoardRoleService.assignBoardRoleToUser(userBoardRoleDTO);
         return new ResponseEntity<>(newBoard , HttpStatus.CREATED);
     }
+
+    @GetMapping("/w/{workspaceId}")
+    public ResponseEntity<List<BoardDTO>>  getBoardsByWorkspace(
+            @PathVariable Long workspaceId
+    ){
+        return ResponseEntity.ok(boardService.getBoardsByWorkspace(workspaceId));
+    }
+
 }

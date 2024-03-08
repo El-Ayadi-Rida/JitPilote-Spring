@@ -2,15 +2,14 @@ package academy.jobintech.jitechpilot.serviceImpl;
 
 import academy.jobintech.jitechpilot.dto.ResponseBoardPage;
 import academy.jobintech.jitechpilot.dto.BoardDTO;
-import academy.jobintech.jitechpilot.entity.Board;
-import academy.jobintech.jitechpilot.entity.UserBoardRole;
-import academy.jobintech.jitechpilot.entity.RoleBoardId;
-import academy.jobintech.jitechpilot.entity.User;
+import academy.jobintech.jitechpilot.dto.UserBoardRoleDTO;
+import academy.jobintech.jitechpilot.entity.*;
 import academy.jobintech.jitechpilot.enums.UserRole;
 import academy.jobintech.jitechpilot.exception.NotFoundException;
 import academy.jobintech.jitechpilot.mapper.BoardDTOMapper;
 import academy.jobintech.jitechpilot.repository.BoardRepository;
 import academy.jobintech.jitechpilot.repository.RoleRepository;
+import academy.jobintech.jitechpilot.repository.UserBoardRoleRepository;
 import academy.jobintech.jitechpilot.service.BoardService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,14 +29,10 @@ public class BoardServiceImpl implements BoardService {
     private BoardRepository boardRepository;
     @Autowired
     private BoardDTOMapper boardMapper;
-
     @Autowired
-    private UserServiceImpl userService;
-
+    private WorkspaceService workspaceService;
     @Autowired
-    private RoleRepository roleRepository;
-
-
+    private UserBoardRoleRepository userBoardRoleRepository;
     @Override
     public BoardDTO createBoard(BoardDTO boardDTO) {
         Board board = boardMapper.toEntity(boardDTO);
@@ -91,8 +86,9 @@ public class BoardServiceImpl implements BoardService {
             //BeanUtils.copyProperties(projectDTO,projectToUpdate);
             boardToUpdate.setBoardName(boardDTO.getBoardName());
             boardToUpdate.setDescription(boardDTO.getDescription());
+            boardToUpdate.setFav(boardDTO.isFav());
+            boardToUpdate.setAccessLevel(boardDTO.getAccessLevel());
             Board updatedBoard = boardRepository.save(boardToUpdate);
-
             log.info("Board updated successfully with id: {} ", boardId);
             return boardMapper.toDto(updatedBoard);
 
@@ -101,26 +97,27 @@ public class BoardServiceImpl implements BoardService {
     @Override
     public void deleteBoard(Long boardId) {
         Board boardToDelete = getBoardByIdHelper(boardId);
-        if (boardToDelete !=null) boardRepository.delete(boardToDelete);
+        Workspace workspace = boardToDelete.getWorkspace();
+        if (workspace != null) {
+            workspace.getBoards().remove(boardToDelete);
+        }
+        boardRepository.deleteById(boardId);
         log.info("Board deleted successfully with id: {} ", boardId);
     }
 
     @Override
-    public BoardDTO createBoardByUser(Long userId, BoardDTO boardDTO) {
-        User user = userService.getUsertByIdHelper(userId);
+    public BoardDTO createBoardByUser(Long workspaceId,BoardDTO boardDTO) {
+        Workspace workspace = workspaceService.getWorkspaceByIdHelper(workspaceId);
         Board board = boardMapper.toEntity(boardDTO);
+        board.setWorkspace(workspace);
         Board createdBoard = boardRepository.save(board);
-
-        RoleBoardId roleBoardId = new RoleBoardId(user.getUserId() , createdBoard.getBoardId());
-
-        UserBoardRole userBoardRole = new UserBoardRole(
-                roleBoardId,
-                user,
-                createdBoard,
-                UserRole.ADMIN);
-
-        UserBoardRole createdUserBoardRole = roleRepository.save(userBoardRole);
-
+        log.info("board created with  workspace Id: {} ", workspaceId);
         return boardMapper.toDto(createdBoard);
+    }
+
+    @Override
+    public List<BoardDTO> getBoardsByWorkspace(Long workspaceId) {
+        List<Board> boardListByWorkspace = boardRepository.findByworkspaceWorkspaceId(workspaceId);
+        return boardMapper.toDtos(boardListByWorkspace);
     }
 }

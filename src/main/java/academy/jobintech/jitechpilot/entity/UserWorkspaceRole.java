@@ -23,7 +23,7 @@ public class UserWorkspaceRole {
     @JoinColumn(
             name="user_id",
             foreignKey = @ForeignKey(
-                    name = "role_user_id_fk"
+                    name = "role_user_workspace_id_fk"
             )
     )
     private User user;

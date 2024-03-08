@@ -27,6 +27,7 @@ public class WorkspaceService {
     }
 
     public List<WorkspaceDTO> getAllWorkspaces() {
+        System.out.println(workspaceRepository.findAll());
         return workspaceDTOMapper.toDtos(workspaceRepository.findAll());
     }
 
@@ -34,6 +35,12 @@ public class WorkspaceService {
         Workspace workspace = workspaceRepository.findById(id)
                 .orElseThrow(() -> new NotFoundException("Workspace not found with id : " + id));
         return workspaceDTOMapper.toDto(workspace);
+
+    }
+    public Workspace getWorkspaceByIdHelper(Long id) {
+        Workspace workspace = workspaceRepository.findById(id)
+                .orElseThrow(() -> new NotFoundException("Workspace not found with id : " + id));
+        return workspace;
 
     }
 
@@ -48,7 +55,6 @@ public class WorkspaceService {
                 .orElseThrow(() -> new NotFoundException("Workspace not found for this id :: " + id));
         workspace.setName(workspaceDto.getName());
         workspace.setDescription(workspaceDto.getDescription());
-        workspace.setBoards(workspaceDto.getBoards());
         workspace = workspaceRepository.save(workspace);
         return workspaceDTOMapper.toDto(workspace);
     }

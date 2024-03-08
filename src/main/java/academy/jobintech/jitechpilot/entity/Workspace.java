@@ -23,8 +23,8 @@ public class Workspace {
 
     @OneToMany(
             mappedBy = "workspace",
-            cascade = CascadeType.ALL,
             orphanRemoval = true,
+            cascade = CascadeType.ALL,
             fetch = FetchType.LAZY
     )
     private List<Board> boards = new ArrayList<>();

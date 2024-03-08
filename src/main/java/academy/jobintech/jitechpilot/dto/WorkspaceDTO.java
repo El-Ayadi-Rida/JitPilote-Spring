@@ -18,7 +18,7 @@ public class WorkspaceDTO {
     private Long workspaceId;
     private String name;
     private String description;
-    private List<Board> boards = new ArrayList<>();
+    private List<BoardDTO> boards = new ArrayList<>();
 
 
 }

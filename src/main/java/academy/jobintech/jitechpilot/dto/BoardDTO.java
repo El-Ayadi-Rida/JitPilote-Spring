@@ -1,6 +1,6 @@
 package academy.jobintech.jitechpilot.dto;
 
-import academy.jobintech.jitechpilot.enums.BoardStatus;
+import academy.jobintech.jitechpilot.enums.AccessLevel;
 import lombok.*;
 
 import java.time.LocalDateTime;
@@ -11,11 +11,11 @@ import java.time.LocalDateTime;
 @Setter
 @ToString
 public class BoardDTO {
-
     private Long boardId;
     private String boardName;
     private String description;
     private LocalDateTime start_date;
-    private BoardStatus status;
+    private boolean fav;
+    private AccessLevel accessLevel;
 
 }

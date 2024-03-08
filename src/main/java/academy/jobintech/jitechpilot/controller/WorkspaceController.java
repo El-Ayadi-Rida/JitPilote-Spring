@@ -11,6 +11,11 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/workspaces")
+@CrossOrigin(
+        origins = {"http://localhost:4200","https://jiteck-pilot.vercel.app/"},
+        allowedHeaders = "*",
+        methods = {RequestMethod.GET,RequestMethod.DELETE,RequestMethod.POST,RequestMethod.PUT}
+)
 public class WorkspaceController {
 
     private final WorkspaceService workspaceService;

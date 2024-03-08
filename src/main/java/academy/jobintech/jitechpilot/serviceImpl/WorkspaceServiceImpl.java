@@ -125,5 +125,12 @@ public class WorkspaceServiceImpl implements academy.jobintech.jitechpilot.servi
     }
 
 
+    public Workspace getWorkspaceByIdHelper(Long id) {
+        Workspace workspace = workspaceRepository.findById(id)
+                .orElseThrow(() -> new NotFoundException("Workspace not found with id : " + id));
+        return workspace;
+
+    }
+
 
 }

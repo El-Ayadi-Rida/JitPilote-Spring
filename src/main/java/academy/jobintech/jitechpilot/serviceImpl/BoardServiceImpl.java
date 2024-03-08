@@ -30,9 +30,8 @@ public class BoardServiceImpl implements BoardService {
     @Autowired
     private BoardDTOMapper boardMapper;
     @Autowired
-    private WorkspaceService workspaceService;
-    @Autowired
-    private UserBoardRoleRepository userBoardRoleRepository;
+    private WorkspaceServiceImpl workspaceService;
+
     @Override
     public BoardDTO createBoard(BoardDTO boardDTO) {
         Board board = boardMapper.toEntity(boardDTO);

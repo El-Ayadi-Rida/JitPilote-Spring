@@ -22,9 +22,10 @@ public class UserWorkspaceRole {
     @ManyToOne
     @MapsId("userId")
     @JoinColumn(
-            name="user_id",
+            name="user_id_workspace_role",
+            referencedColumnName = "userId",
             foreignKey = @ForeignKey(
-                    name = "role-workspace_user_id_fk"
+                    name = "user_id_workspace_role_fk"
             )
     )
     private User user;
@@ -32,9 +33,10 @@ public class UserWorkspaceRole {
     @ManyToOne
     @MapsId("workspaceId")
     @JoinColumn(
-            name="workspace_id",
+            name="workspace_id_workspace_role",
+            referencedColumnName = "workspaceId",
             foreignKey = @ForeignKey(
-                    name = "role_workspace_id_fk"
+                    name = "workspace_id_workspace_role_fk"
             )
     )
     private Workspace workspace;

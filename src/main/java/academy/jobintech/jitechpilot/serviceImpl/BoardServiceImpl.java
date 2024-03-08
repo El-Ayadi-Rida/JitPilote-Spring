@@ -110,7 +110,6 @@ public class BoardServiceImpl implements BoardService {
         Board board = boardMapper.toEntity(boardDTO);
         board.setWorkspace(workspace);
         Board createdBoard = boardRepository.save(board);
-        log.info("board created with  workspace Id: {} ", workspaceId);
         return boardMapper.toDto(createdBoard);
     }
 

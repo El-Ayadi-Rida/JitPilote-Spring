@@ -23,7 +23,4 @@ public class UserResponseDto {
     private String email;
     private String role;
     private LocalDateTime createdAt;
-
-
-
 }

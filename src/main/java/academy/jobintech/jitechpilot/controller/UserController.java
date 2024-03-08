@@ -13,7 +13,7 @@ import java.util.List;
 @RestController
 @RequestMapping("api/v1/users")
 @CrossOrigin(
-        origins ={"http://localhost:3000","https://jiteck-pilot.vercel.app/"} ,
+        origins ={"http://localhost:4200","https://jiteck-pilot.vercel.app/"} ,
         allowedHeaders = "*",
         methods = {RequestMethod.GET,RequestMethod.DELETE,RequestMethod.POST,RequestMethod.PUT}
 )
@@ -46,9 +46,9 @@ public class UserController {
     }
 
     @DeleteMapping("/{userId}")
-    private ResponseEntity<String> deleteUserbyId(@PathVariable long userId) {
+    private ResponseEntity<Void> deleteUserById(@PathVariable long userId) {
         userService.deleteUser(userId);
-        return new ResponseEntity<>("user deleted successfully",HttpStatus.OK);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
 

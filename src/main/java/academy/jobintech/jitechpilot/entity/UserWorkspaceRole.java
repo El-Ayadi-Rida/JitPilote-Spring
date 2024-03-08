@@ -1,6 +1,7 @@
 package academy.jobintech.jitechpilot.entity;
 
 
+import academy.jobintech.jitechpilot.enums.UserRole;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -23,7 +24,7 @@ public class UserWorkspaceRole {
     @JoinColumn(
             name="user_id",
             foreignKey = @ForeignKey(
-                    name = "role_user_id_fk"
+                    name = "role-workspace_user_id_fk"
             )
     )
     private User user;
@@ -37,4 +38,6 @@ public class UserWorkspaceRole {
             )
     )
     private Workspace workspace;
+
+    private UserRole roleInWorkspace;
 }

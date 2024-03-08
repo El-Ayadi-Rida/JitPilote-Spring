@@ -8,6 +8,7 @@ import lombok.*;
 import java.io.Serializable;
 
 @ToString
+@EqualsAndHashCode
 @Embeddable
 @AllArgsConstructor
 @NoArgsConstructor
@@ -15,10 +16,8 @@ import java.io.Serializable;
 @Setter
 public class RoleWorkspaceId implements Serializable {
 
-    @Column(name="user_id")
     private Long userId;
 
-    @Column(name="workspace_id")
     private Long workspaceId;
 
 }

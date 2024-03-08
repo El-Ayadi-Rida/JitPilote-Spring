@@ -26,9 +26,9 @@ INSERT INTO task (title, description, status, deadline, ticket_id_task) VALUES
                                                                             ('Test OAuth2 Implementation', 'Test the OAuth2 implementation thoroughly.', 'TODO', '2024-04-20 00:00:00', 1);
 
 INSERT INTO users (first_name, last_name, user_name, email, password, role, created_at) VALUES
-                                                                                           ('John', 'Doe', 'johndoe', 'john.doe@example.com', 'hashed_password', 'ADMIN', NOW()),
-                                                                                           ('Jane', 'Smith', 'janesmith', 'jane.smith@example.com', 'hashed_password', 'MEMBER', NOW()),
-                                                                                           ('Mike', 'Brown', 'mikebrown', 'mike.brown@example.com', 'hashed_password', 'ADMIN', NOW());
+                                                                                           ('Rachid', 'Nouri', 'rachidnouri', 'rachidnouri@gmail.com', 'hashed_password', 'MEMBER', NOW()),
+                                                                                           ('Rida', 'ELAYADI', 'reelayadi', 'reelayadi@gmail.com', 'hashed_password', 'ADMIN', NOW()),
+                                                                                           ('Imane', 'BANDANA', 'bdbd45', 'bdbd45@gmail.com', 'hashed_password', 'MEMBER', NOW());
 
 INSERT INTO user_board_role (user_id, board_id, user_role) VALUES
                                                                (1, 1, 'ADMIN'),

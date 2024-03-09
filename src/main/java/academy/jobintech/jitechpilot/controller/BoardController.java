@@ -7,6 +7,7 @@ import academy.jobintech.jitechpilot.entity.User;
 import academy.jobintech.jitechpilot.enums.UserRole;
 import academy.jobintech.jitechpilot.serviceImpl.BoardServiceImpl;
 import academy.jobintech.jitechpilot.serviceImpl.UserBoardRoleServiceImpl;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -29,7 +30,7 @@ public class BoardController {
 
     @PostMapping
     public ResponseEntity<BoardDTO> createBoard(
-            @RequestBody BoardDTO boardDTO
+            @Valid @RequestBody BoardDTO boardDTO
     ){
         BoardDTO newBoard = boardService.createBoard(boardDTO);
         return new ResponseEntity<>(newBoard , HttpStatus.CREATED);
@@ -53,7 +54,7 @@ public class BoardController {
 
     @PutMapping("/{boardId}")
     public ResponseEntity<BoardDTO> updateBoard(
-            @RequestBody BoardDTO boardDTO,
+            @Valid @RequestBody BoardDTO boardDTO,
             @PathVariable("boardId") Long boardId){
         BoardDTO updatedBoard = boardService.updateBoard(boardId , boardDTO);
         return new ResponseEntity<>(updatedBoard , HttpStatus.OK);
@@ -70,7 +71,7 @@ public class BoardController {
     public ResponseEntity<BoardDTO> createBoardByUser(
             @PathVariable Long userId,
             @PathVariable Long workspaceId,
-            @RequestBody BoardDTO boardDTO
+           @Valid @RequestBody BoardDTO boardDTO
 
     ){
         BoardDTO newBoard = boardService.createBoardByUser(workspaceId,boardDTO);

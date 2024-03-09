@@ -2,6 +2,7 @@ package academy.jobintech.jitechpilot.controller;
 
 import academy.jobintech.jitechpilot.dto.TicketDTO;
 import academy.jobintech.jitechpilot.service.TicketService;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,7 +13,7 @@ import java.util.List;
 @RestController
 @RequestMapping("api/v1/tickets")
 @CrossOrigin(
-        origins = {"http://localhost:3000","https://jiteck-pilot.vercel.app/"},
+        origins = {"http://localhost:4200","https://jiteck-pilot.vercel.app/"},
         allowedHeaders = "*",
         methods = {RequestMethod.GET,RequestMethod.DELETE,RequestMethod.POST,RequestMethod.PUT}
 )
@@ -25,7 +26,7 @@ public class TicketController {
     }
 
     @PostMapping("/{sectionId}")
-    public ResponseEntity<TicketDTO> createTicket(@PathVariable Long sectionId , @RequestBody TicketDTO ticketDTO) {
+    public ResponseEntity<TicketDTO> createTicket(@PathVariable Long sectionId ,@Valid @RequestBody TicketDTO ticketDTO) {
         TicketDTO createdTicket = ticketService.createTicket(sectionId,ticketDTO);
         return new ResponseEntity<>(createdTicket, HttpStatus.CREATED);
     }
@@ -49,7 +50,7 @@ public class TicketController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<TicketDTO> updateTicket(@PathVariable Long id, @RequestBody TicketDTO ticketDTO) {
+    public ResponseEntity<TicketDTO> updateTicket(@PathVariable Long id,@Valid @RequestBody TicketDTO ticketDTO) {
         TicketDTO updatedTicket = ticketService.updateTicket(id, ticketDTO);
         return ResponseEntity.ok(updatedTicket);
     }

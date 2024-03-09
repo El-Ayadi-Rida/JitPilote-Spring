@@ -7,6 +7,7 @@ import academy.jobintech.jitechpilot.mapper.UserResponseEntityDTOMapper;
 import academy.jobintech.jitechpilot.serviceImpl.UserBoardRoleServiceImpl;
 import academy.jobintech.jitechpilot.serviceImpl.UserWorkspaceRoleServiceImpl;
 import academy.jobintech.jitechpilot.serviceImpl.WorkspaceServiceImpl;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -46,13 +47,13 @@ public class WorkspaceController {
     }
 
     @PostMapping
-    public WorkspaceDTO createWorkspace(@RequestBody WorkspaceDTO workspaceDto) {
+    public WorkspaceDTO createWorkspace(@Valid @RequestBody WorkspaceDTO workspaceDto) {
         return workspaceServiceImpl.createWorkspace(workspaceDto);
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<WorkspaceDTO> updateWorkspace(@PathVariable(value = "id") Long workspaceId,
-                                                        @RequestBody WorkspaceDTO workspaceDetails) {
+                                                        @Valid @RequestBody WorkspaceDTO workspaceDetails) {
         WorkspaceDTO updatedWorkspaceDto = workspaceServiceImpl.updateWorkspace(workspaceId, workspaceDetails);
         return ResponseEntity.ok(updatedWorkspaceDto);
     }
@@ -108,7 +109,7 @@ public class WorkspaceController {
     @PostMapping("/user/{userId}")
     public ResponseEntity<WorkspaceDTO> createWorkspaceByUser(
             @PathVariable Long userId,
-            @RequestBody WorkspaceDTO workspaceDTO
+            @Valid @RequestBody WorkspaceDTO workspaceDTO
 
     ){
         WorkspaceDTO newWorkspace = workspaceServiceImpl.createWorkspace(workspaceDTO);

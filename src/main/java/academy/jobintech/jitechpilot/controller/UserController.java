@@ -3,6 +3,7 @@ package academy.jobintech.jitechpilot.controller;
 import academy.jobintech.jitechpilot.dto.UserRequestDto;
 import academy.jobintech.jitechpilot.dto.UserResponseDto;
 import academy.jobintech.jitechpilot.serviceImpl.UserServiceImpl;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,7 +23,7 @@ public class UserController {
     @Autowired
     private UserServiceImpl userService;
     @PostMapping
-    private ResponseEntity<UserResponseDto> createUser(@RequestBody UserRequestDto userRequestDto) {
+    private ResponseEntity<UserResponseDto> createUser(@Valid @RequestBody UserRequestDto userRequestDto) {
         UserResponseDto studentResponse = userService.createUser(userRequestDto);
         return new ResponseEntity<>(studentResponse, HttpStatus.CREATED);
     }
@@ -39,7 +40,7 @@ public class UserController {
     }
 
     @PutMapping("/{userId}")
-    private ResponseEntity<UserResponseDto> updateUser(@PathVariable long userId, @RequestBody UserRequestDto userRequestDto) {
+    private ResponseEntity<UserResponseDto> updateUser(@PathVariable long userId,@Valid @RequestBody UserRequestDto userRequestDto) {
         UserResponseDto userResponseDto=userService.updateUser(userId,userRequestDto);
 
         return new  ResponseEntity<>(userResponseDto,HttpStatus.OK);

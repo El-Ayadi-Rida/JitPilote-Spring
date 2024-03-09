@@ -1,8 +1,5 @@
 package academy.jobintech.jitechpilot.mapper;
 
-import academy.jobintech.jitechpilot.dto.RoleDto;
-import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component

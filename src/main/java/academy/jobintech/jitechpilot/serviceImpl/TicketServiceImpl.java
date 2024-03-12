@@ -55,8 +55,6 @@ public class TicketServiceImpl implements TicketService {// TODO: Logs and Excep
         ticket.setTitle(ticketDto.getTitle());
         ticket.setDescription(ticketDto.getDescription());
         ticket.setPriority(ticketDto.getPriority());
-        ticket.setStatus(ticketDto.getStatus());
-
         Ticket updatedTicket = ticketRepository.save(ticket);
         log.info("Ticket updated successfully title : {} ", updatedTicket.getTitle());
 

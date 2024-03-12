@@ -18,13 +18,13 @@ public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long taskId;
+
     private String title;
+
     private String description;
 
     @Enumerated(EnumType.STRING)
     private TaskStatus status;
-
-    private LocalDateTime deadline;
 
     @ManyToOne
     @JoinColumn(

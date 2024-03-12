@@ -21,7 +21,6 @@ public class Section {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long sectionId;
     private String sectionTitle;
-    private String description;
 
     @ManyToOne
     @JoinColumn(

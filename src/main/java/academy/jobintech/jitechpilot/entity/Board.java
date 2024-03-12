@@ -1,7 +1,6 @@
 package academy.jobintech.jitechpilot.entity;
 
 import academy.jobintech.jitechpilot.enums.AccessLevel;
-import academy.jobintech.jitechpilot.enums.BoardStatus;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -29,8 +28,6 @@ public class Board {
 
     private LocalDateTime start_date;
 
-    @Enumerated(EnumType.STRING)
-    private BoardStatus status; //useless
 
     @Enumerated(EnumType.STRING)
     private AccessLevel accessLevel;

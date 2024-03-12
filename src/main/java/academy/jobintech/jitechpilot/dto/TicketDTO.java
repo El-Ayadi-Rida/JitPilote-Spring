@@ -37,8 +37,6 @@ public class TicketDTO {
 
     private TicketPriority priority;
     private TicketStatus status;
-    private Long projectId;
-    private Long assignedToUserId;
     private List<TaskDTO> tasks = new ArrayList<>();
     private List<UserResponseDto> users = new ArrayList<>();
 

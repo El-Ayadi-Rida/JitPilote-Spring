@@ -1,10 +1,12 @@
 package academy.jobintech.jitechpilot.serviceImpl;
 
 
+import academy.jobintech.jitechpilot.dto.UserWorkspaceRoleDto;
 import academy.jobintech.jitechpilot.dto.WorkspaceDTO;
 import academy.jobintech.jitechpilot.entity.User;
 import academy.jobintech.jitechpilot.entity.UserWorkspaceRole;
 import academy.jobintech.jitechpilot.entity.Workspace;
+import academy.jobintech.jitechpilot.enums.UserRole;
 import academy.jobintech.jitechpilot.exception.NotFoundException;
 import academy.jobintech.jitechpilot.mapper.WorkspaceDTOMapper;
 import academy.jobintech.jitechpilot.repository.UserRepository;
@@ -28,13 +30,15 @@ public class WorkspaceServiceImpl implements academy.jobintech.jitechpilot.servi
     private final WorkspaceDTOMapper workspaceDTOMapper;
     private final UserRepository userRepository;
     private final UserWorkspaceRoleRepository userWorkspaceRoleRepository;
+    private final UserWorkspaceRoleServiceImpl userWorkspaceRoleService;
 
     @Autowired
-    public WorkspaceServiceImpl(WorkspaceRepository workspaceRepository, WorkspaceDTOMapper workspaceDTOMapper, UserRepository userRepository, UserWorkspaceRoleRepository userWorkspaceRoleRepository) {
+    public WorkspaceServiceImpl(WorkspaceRepository workspaceRepository, WorkspaceDTOMapper workspaceDTOMapper, UserRepository userRepository, UserWorkspaceRoleRepository userWorkspaceRoleRepository, UserWorkspaceRoleServiceImpl userWorkspaceRoleService) {
         this.workspaceRepository = workspaceRepository;
         this.workspaceDTOMapper = workspaceDTOMapper;
         this.userRepository = userRepository;
         this.userWorkspaceRoleRepository = userWorkspaceRoleRepository;
+        this.userWorkspaceRoleService = userWorkspaceRoleService;
     }
 
     @Override
@@ -90,16 +94,17 @@ public class WorkspaceServiceImpl implements academy.jobintech.jitechpilot.servi
     }
 
     @Override
-    @Transactional
     public boolean addUserToWorkspace(Long userId, Long workspaceId) {
         try {
-            User user = userRepository.findById(userId).orElseThrow(() -> new Exception("User not found"));
-            Workspace workspace = workspaceRepository.findById(workspaceId).orElseThrow(() -> new Exception("Workspace not found"));
+            User user = userRepository.findById(userId).orElseThrow(() -> new NotFoundException("User not found"));
+            Workspace workspace = workspaceRepository.findById(workspaceId).orElseThrow(() -> new NotFoundException("Workspace not found"));
 
-            UserWorkspaceRole userWorkspaceRole = new UserWorkspaceRole();
-            userWorkspaceRole.setUser(user);
-            userWorkspaceRole.setWorkspace(workspace);
-            userWorkspaceRoleRepository.save(userWorkspaceRole);
+            UserWorkspaceRoleDto userWorkspaceRoleDto = new UserWorkspaceRoleDto(
+                    userId,
+                    workspaceId,
+                    UserRole.MEMBER
+            );
+            userWorkspaceRoleService.assignWorkspaceRoleToUser(userWorkspaceRoleDto);
 
             log.info("Added user {} to workspace {}", userId, workspaceId);
             return true;
@@ -110,7 +115,6 @@ public class WorkspaceServiceImpl implements academy.jobintech.jitechpilot.servi
     }
 
     @Override
-    @Transactional
     public boolean removeUserFromWorkspace(Long userId, Long workspaceId) {
         try {
             userRepository.findById(userId).orElseThrow(() -> new Exception("User not found"));

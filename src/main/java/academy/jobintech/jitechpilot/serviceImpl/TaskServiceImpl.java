@@ -45,7 +45,6 @@ public class TaskServiceImpl implements TaskService {
         task.setTitle(taskDTO.getTitle());
         task.setDescription(taskDTO.getDescription());
         task.setStatus(taskDTO.getStatus());
-        task.setDeadline(taskDTO.getDeadline());
 
         Task updatedTask = taskRepository.save(task);
         log.info("Task with id: {} has been updated successfully", id);

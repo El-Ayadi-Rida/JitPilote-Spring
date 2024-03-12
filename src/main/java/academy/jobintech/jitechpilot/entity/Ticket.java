@@ -5,6 +5,7 @@ import academy.jobintech.jitechpilot.enums.TicketStatus;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -22,14 +23,23 @@ public class Ticket {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long ticketId;
+
     private String title;
+
     private String description;
+
+    @Column(name = "startDate", nullable = false, updatable = false)
+    private LocalDateTime startDate;
+    @PrePersist
+    protected void onCreate() {
+        startDate = LocalDateTime.now();
+    }
+
+    private LocalDateTime endDate;
 
     @Enumerated(EnumType.STRING)
     private TicketPriority priority;
 
-    @Enumerated(EnumType.STRING)
-    private TicketStatus status;
 
     @OneToMany(
             mappedBy = "ticket",

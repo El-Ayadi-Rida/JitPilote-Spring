@@ -103,8 +103,8 @@ public class TicketServiceImpl implements TicketService {// TODO: Logs and Excep
         user.getTickets().add(ticket);
 
         Ticket ticket1= ticketRepository.save(ticket);
-
-
         return ticketDTOMapper.toDto(ticket1);
     }
+
+
 }

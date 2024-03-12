@@ -2,6 +2,7 @@ package academy.jobintech.jitechpilot.dto;
 
 import academy.jobintech.jitechpilot.entity.Section;
 import academy.jobintech.jitechpilot.enums.AccessLevel;
+import jakarta.validation.constraints.Future;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
 import lombok.*;

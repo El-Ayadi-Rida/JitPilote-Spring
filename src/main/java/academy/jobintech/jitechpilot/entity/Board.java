@@ -18,17 +18,23 @@ import java.util.List;
 @Entity(name = "Board")
 @Table(name = "board")
 public class Board {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long boardId;
+
     private String boardName;
+
     private String description;
+
     private LocalDateTime start_date;
 
     @Enumerated(EnumType.STRING)
-    private BoardStatus status;
+    private BoardStatus status; //useless
+
     @Enumerated(EnumType.STRING)
     private AccessLevel accessLevel;
+
     private boolean fav;
 
     @OneToMany(
@@ -61,16 +67,6 @@ public class Board {
     public void initStartDate_Fav(){
         start_date = LocalDateTime.now();
     }
-
-    //    @ManyToOne
-//    @JoinColumn(
-//            name = "team_id_board",
-//            referencedColumnName = "teamId",
-//            foreignKey = @ForeignKey(
-//                name = "team_id_board_FK"
-//            )
-//    )
-//    private Team team;
 
 
 }

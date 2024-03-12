@@ -28,5 +28,6 @@ public class SectionDTO {
    @NotEmpty(message = "description should not be empty")
    @Size(min = 2, max = 50, message = "description should have be min 2 and max 50")
    private String description;
+
    private List<TicketDTO> tickets = new ArrayList<>();
  }

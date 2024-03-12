@@ -30,6 +30,8 @@ public class TaskDTO {
     private String description;
 
     private TaskStatus status;
+
     private LocalDateTime deadline;
+
     private Long ticketId;
 }

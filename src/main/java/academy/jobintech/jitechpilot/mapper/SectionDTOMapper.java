@@ -13,13 +13,11 @@ public class SectionDTOMapper implements EntityDTOMapper<Section, SectionDTO> {
     public SectionDTOMapper(ModelMapper modelMapper) {
         this.modelMapper = modelMapper;
     }
-
     @Override
     public SectionDTO toDto(Section entity) {
         SectionDTO sectionDTO=modelMapper.map(entity, SectionDTO.class);
         return sectionDTO;
     }
-
     @Override
     public Section toEntity(SectionDTO dto) {
         Section section=modelMapper.map(dto, Section.class);

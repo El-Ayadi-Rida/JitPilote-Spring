@@ -19,12 +19,9 @@ public class SectionDTO {
 
    private Long sectionId;
 
-
    @NotEmpty(message = "section title should not be empty")
    @Size(min = 2, max = 20, message = "title should have be min 2 and max 20")
    private String sectionTitle;
-
-
 
 
    private List<TicketDTO> tickets = new ArrayList<>();

@@ -22,7 +22,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 public class JitechpilotApplication {
 
 	public static void main(String[] args) {
-		//Dotenv dotenv = Dotenv.load();
+		Dotenv dotenv = Dotenv.load();
 		SpringApplication.run(JitechpilotApplication.class, args);
 	}
 

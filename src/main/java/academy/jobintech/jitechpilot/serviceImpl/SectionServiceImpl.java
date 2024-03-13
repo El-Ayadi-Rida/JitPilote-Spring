@@ -71,7 +71,6 @@ public class SectionServiceImpl implements SectionService {
         Section section = sectionRepository.findById(sectionId).orElseThrow(()->new NotFoundException("section not found with id : "+sectionId));
 
         section.setSectionTitle(sectionDTO.getSectionTitle());
-        section.setDescription(sectionDTO.getDescription());
 
         Section updateSection=sectionRepository.save(section);
         log.info("section updated successfully");

@@ -30,15 +30,13 @@ public class WorkspaceServiceImpl implements academy.jobintech.jitechpilot.servi
     private final WorkspaceDTOMapper workspaceDTOMapper;
     private final UserRepository userRepository;
     private final UserWorkspaceRoleRepository userWorkspaceRoleRepository;
-    private final UserWorkspaceRoleServiceImpl userWorkspaceRoleService;
 
     @Autowired
-    public WorkspaceServiceImpl(WorkspaceRepository workspaceRepository, WorkspaceDTOMapper workspaceDTOMapper, UserRepository userRepository, UserWorkspaceRoleRepository userWorkspaceRoleRepository, UserWorkspaceRoleServiceImpl userWorkspaceRoleService) {
+    public WorkspaceServiceImpl(WorkspaceRepository workspaceRepository, WorkspaceDTOMapper workspaceDTOMapper, UserRepository userRepository, UserWorkspaceRoleRepository userWorkspaceRoleRepository ) {
         this.workspaceRepository = workspaceRepository;
         this.workspaceDTOMapper = workspaceDTOMapper;
         this.userRepository = userRepository;
         this.userWorkspaceRoleRepository = userWorkspaceRoleRepository;
-        this.userWorkspaceRoleService = userWorkspaceRoleService;
     }
 
     @Override
@@ -104,7 +102,7 @@ public class WorkspaceServiceImpl implements academy.jobintech.jitechpilot.servi
                     workspaceId,
                     UserRole.MEMBER
             );
-            userWorkspaceRoleService.assignWorkspaceRoleToUser(userWorkspaceRoleDto);
+            //userWorkspaceRoleService.assignWorkspaceRoleToUser(userWorkspaceRoleDto);
 
             log.info("Added user {} to workspace {}", userId, workspaceId);
             return true;

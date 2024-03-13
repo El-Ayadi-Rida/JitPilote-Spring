@@ -58,15 +58,5 @@ public class User {
         createdAt = LocalDateTime.now();
     }
 
-    //    @ManyToOne
-//    @JoinColumn(
-//            name = "team_id_user",
-//            referencedColumnName = "teamId",
-//            foreignKey = @ForeignKey(
-//                    name = "team_id_user_FK"
-//            )
-//    )
-//    private Team team;
-
 
 }

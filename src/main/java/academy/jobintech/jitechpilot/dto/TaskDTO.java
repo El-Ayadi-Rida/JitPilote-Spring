@@ -1,6 +1,5 @@
 package academy.jobintech.jitechpilot.dto;
 
-import academy.jobintech.jitechpilot.enums.TaskStatus;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -18,20 +17,14 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 public class TaskDTO {
-    private Long taskId;
 
+    private Long taskId;
 
     @NotEmpty(message = "task title should not be empty")
     @Size(min = 2, max = 20, message = "title should have be min 2 and max 20")
     private String title;
 
-    @NotEmpty(message = "description should not be empty")
-    @Size(min = 2, max = 50, message = "description should have be min 2 and max 50")
-    private String description;
-
-    private TaskStatus status;
-
-    private LocalDateTime deadline;
+    private boolean isDone;
 
     private Long ticketId;
 }

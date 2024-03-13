@@ -18,11 +18,7 @@ public interface WorkspaceService {
 
     void deleteWorkspace(Long id);
 
-    List<User> getUsersByWorkspace(Long workspaceId);
 
-    @Transactional
-    boolean addUserToWorkspace(Long userId, Long workspaceId);
-
-    @Transactional
-    boolean removeUserFromWorkspace(Long userId, Long workspaceId);
+//    @Transactional
+//    boolean removeUserFromWorkspace(Long userId, Long workspaceId);
 }

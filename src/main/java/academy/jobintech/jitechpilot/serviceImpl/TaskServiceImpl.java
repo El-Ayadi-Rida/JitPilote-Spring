@@ -43,9 +43,7 @@ public class TaskServiceImpl implements TaskService {
                 .orElseThrow(() -> new NotFoundException("Task not found on id: " + id));
 
         task.setTitle(taskDTO.getTitle());
-        task.setDescription(taskDTO.getDescription());
-        task.setStatus(taskDTO.getStatus());
-
+        task.setDone(taskDTO.isDone());
         Task updatedTask = taskRepository.save(task);
         log.info("Task with id: {} has been updated successfully", id);
         return taskDTOMapper.toDto(updatedTask);
@@ -57,9 +55,7 @@ public class TaskServiceImpl implements TaskService {
         taskRepository.deleteById(id);
     }
 
-    /* TODO:
-        1 - NotFoundException Handling
-     */
+
     @Override
     public TaskDTO getTaskById(Long id) {
         Task task = taskRepository.findById(id)

@@ -14,7 +14,7 @@ import java.util.List;
 @RestController
 @RequestMapping("api/v1/users")
 @CrossOrigin(
-        origins ={"http://localhost:4200","https://jitechpilot-front.vercel.app/"} ,
+        origins ={"*"} ,
         allowedHeaders = "*",
         methods = {RequestMethod.GET,RequestMethod.DELETE,RequestMethod.POST,RequestMethod.PUT}
 )

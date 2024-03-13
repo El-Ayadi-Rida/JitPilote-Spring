@@ -13,7 +13,7 @@ import java.util.List;
 @RestController
 @RequestMapping("api/v1/tickets")
 @CrossOrigin(
-        origins = {"http://localhost:4200","https://jitechpilot-front.vercel.app/"},
+        origins = {"*"},
         allowedHeaders = "*",
         methods = {RequestMethod.GET,RequestMethod.DELETE,RequestMethod.POST,RequestMethod.PUT}
 )
@@ -61,8 +61,19 @@ public class TicketController {
         return ResponseEntity.noContent().build();
     }
 
-    @PutMapping("/{ticketId}/user/{userId}")
+    @PutMapping("/{ticketId}/assignuser/{userId}")
     public ResponseEntity<TicketDTO> assignTicketToUser(@PathVariable Long ticketId , @PathVariable Long userId) {
         return ResponseEntity.ok(ticketService.assignTicketToUser(ticketId,userId));
+    }
+
+    @PutMapping("/{ticketId}/unassignuser/{userId}")
+    public ResponseEntity<TicketDTO> removeUserFromTicket(@PathVariable Long ticketId , @PathVariable Long userId) {
+        return ResponseEntity.ok(ticketService.removeUserFromTicket(ticketId,userId));
+    }
+
+    @PutMapping("/{ticketId}/section/{sectionId}")
+    public ResponseEntity<String> updateTicketSection(@PathVariable Long ticketId , @PathVariable Long sectionId) {
+        ticketService.updateSectionInTicket(ticketId,sectionId);
+        return new  ResponseEntity<>("section ticket updated successfully",HttpStatus.OK);
     }
 }

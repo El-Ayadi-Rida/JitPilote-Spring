@@ -6,6 +6,7 @@ import academy.jobintech.jitechpilot.entity.Ticket;
 import academy.jobintech.jitechpilot.entity.User;
 import academy.jobintech.jitechpilot.exception.NotFoundException;
 import academy.jobintech.jitechpilot.mapper.TicketDTOMapper;
+import academy.jobintech.jitechpilot.repository.SectionRepository;
 import academy.jobintech.jitechpilot.repository.TicketRepository;
 import academy.jobintech.jitechpilot.repository.UserRepository;
 import academy.jobintech.jitechpilot.service.TicketService;
@@ -27,9 +28,9 @@ public class TicketServiceImpl implements TicketService {// TODO: Logs and Excep
     private final SectionServiceImpl sectionService;
     @Autowired
     private UserServiceImpl userService;
-
     @Autowired
-    private UserRepository userRepository;
+    private SectionRepository sectionRepository;
+
 
     public TicketServiceImpl(TicketRepository ticketRepository, TicketDTOMapper ticketDTOMapper , SectionServiceImpl sectionService) {
         this.ticketRepository = ticketRepository;
@@ -96,12 +97,31 @@ public class TicketServiceImpl implements TicketService {// TODO: Logs and Excep
     public TicketDTO assignTicketToUser(Long ticketId,Long userId) {
         User user = userService.getUsertByIdHelper(userId);
         Ticket ticket = getTicketByIdHelper(ticketId);
-
         ticket.getUsers().add(user);
         user.getTickets().add(ticket);
-
         Ticket ticket1= ticketRepository.save(ticket);
         return ticketDTOMapper.toDto(ticket1);
+    }
+
+    @Override
+    public TicketDTO removeUserFromTicket(Long ticketId,Long userId) {
+        User user = userService.getUsertByIdHelper(userId);
+        Ticket ticket = getTicketByIdHelper(ticketId);
+        ticket.getUsers().remove(user);
+        user.getTickets().remove(ticket);
+        Ticket ticket1= ticketRepository.save(ticket);
+        return ticketDTOMapper.toDto(ticket1);
+    }
+
+    @Override
+    public void updateSectionInTicket(Long ticketId, Long sectionId) {
+        Ticket ticket = getTicketByIdHelper(ticketId);
+        Section section=sectionService.getSectionByIdHelper(sectionId);
+        ticket.setSection(section);
+        section.getTickets().add(ticket);
+        ticketRepository.save(ticket);
+        sectionRepository.save(section);
+
     }
 
 

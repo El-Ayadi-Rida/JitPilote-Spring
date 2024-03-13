@@ -19,4 +19,5 @@ public interface TaskService {
 
     List<TaskDTO> getAllTasks();
     List<TaskDTO> getTasksByTicketId(Long taskId);
+
 }

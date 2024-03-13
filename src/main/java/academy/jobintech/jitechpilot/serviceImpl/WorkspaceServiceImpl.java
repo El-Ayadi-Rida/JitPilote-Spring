@@ -30,15 +30,13 @@ public class WorkspaceServiceImpl implements academy.jobintech.jitechpilot.servi
     private final WorkspaceDTOMapper workspaceDTOMapper;
     private final UserRepository userRepository;
     private final UserWorkspaceRoleRepository userWorkspaceRoleRepository;
-    private final UserWorkspaceRoleServiceImpl userWorkspaceRoleService;
 
     @Autowired
-    public WorkspaceServiceImpl(WorkspaceRepository workspaceRepository, WorkspaceDTOMapper workspaceDTOMapper, UserRepository userRepository, UserWorkspaceRoleRepository userWorkspaceRoleRepository, UserWorkspaceRoleServiceImpl userWorkspaceRoleService) {
+    public WorkspaceServiceImpl(WorkspaceRepository workspaceRepository, WorkspaceDTOMapper workspaceDTOMapper, UserRepository userRepository, UserWorkspaceRoleRepository userWorkspaceRoleRepository) {
         this.workspaceRepository = workspaceRepository;
         this.workspaceDTOMapper = workspaceDTOMapper;
         this.userRepository = userRepository;
         this.userWorkspaceRoleRepository = userWorkspaceRoleRepository;
-        this.userWorkspaceRoleService = userWorkspaceRoleService;
     }
 
     @Override
@@ -85,48 +83,22 @@ public class WorkspaceServiceImpl implements academy.jobintech.jitechpilot.servi
         workspaceRepository.deleteById(id);
         log.info("Deleted workspace with id: {}", id);
     }
-    @Override
-    public List<User> getUsersByWorkspace(Long workspaceId) {
-        log.info("Fetching users for workspace id: {}", workspaceId);
-        List<User> users = userRepository.findUsersByWorkspaceId(workspaceId);
-        log.info("Found {} users for workspace id: {}", users.size(), workspaceId);
-        return users;
-    }
 
-    @Override
-    public boolean addUserToWorkspace(Long userId, Long workspaceId) {
-        try {
-            User user = userRepository.findById(userId).orElseThrow(() -> new NotFoundException("User not found"));
-            Workspace workspace = workspaceRepository.findById(workspaceId).orElseThrow(() -> new NotFoundException("Workspace not found"));
-
-            UserWorkspaceRoleDto userWorkspaceRoleDto = new UserWorkspaceRoleDto(
-                    userId,
-                    workspaceId,
-                    UserRole.MEMBER
-            );
-            userWorkspaceRoleService.assignWorkspaceRoleToUser(userWorkspaceRoleDto);
-
-            log.info("Added user {} to workspace {}", userId, workspaceId);
-            return true;
-        } catch (Exception e) {
-            log.error("Error adding user to workspace: {}", e.getMessage());
-            return false;
-        }
-    }
-
-    @Override
-    public boolean removeUserFromWorkspace(Long userId, Long workspaceId) {
-        try {
-            userRepository.findById(userId).orElseThrow(() -> new Exception("User not found"));
-            userWorkspaceRoleRepository.deleteByUserIdAndWorkspaceId(userId, workspaceId);
-
-            log.info("Removed user {} from workspace {}", userId, workspaceId);
-            return true;
-        } catch (Exception e) {
-            log.error("Error removing user from workspace: {}", e.getMessage());
-            return false;
-        }
-    }
+//
+//
+//    @Override
+//    public boolean removeUserFromWorkspace(Long userId, Long workspaceId) {
+//        try {
+//            userRepository.findById(userId).orElseThrow(() -> new Exception("User not found"));
+//            userWorkspaceRoleRepository.deleteByUserIdAndWorkspaceId(userId, workspaceId);
+//
+//            log.info("Removed user {} from workspace {}", userId, workspaceId);
+//            return true;
+//        } catch (Exception e) {
+//            log.error("Error removing user from workspace: {}", e.getMessage());
+//            return false;
+//        }
+//    }
 
 
     public Workspace getWorkspaceByIdHelper(Long id) {

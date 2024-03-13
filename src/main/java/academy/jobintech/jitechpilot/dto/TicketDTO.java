@@ -4,13 +4,13 @@ import academy.jobintech.jitechpilot.entity.Task;
 import academy.jobintech.jitechpilot.entity.User;
 import academy.jobintech.jitechpilot.enums.TicketPriority;
 import academy.jobintech.jitechpilot.enums.TicketStatus;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -34,6 +34,14 @@ public class TicketDTO {
     @NotEmpty(message = "description should not be empty")
     @Size(min = 2, max = 50, message = "title should have be min 2 and max 50")
     private String description;
+
+    @PastOrPresent
+    private LocalDateTime startDate;
+
+    @Future
+    private LocalDateTime endDate;
+
+
 
     private TicketPriority priority;
     private TicketStatus status;

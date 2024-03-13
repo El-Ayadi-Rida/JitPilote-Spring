@@ -21,4 +21,11 @@ public interface UserWorkspaceRoleRepository extends JpaRepository<UserWorkspace
 
     List<UserWorkspaceRole> findByworkspaceWorkspaceId(Long workspaceId);
 
+    List<UserWorkspaceRole> findByuserUserId(Long userId);
+
+    //List<UserWorkspaceRole> findByWorkspaceId(Long workspaceId);
+
+
+
+
 }

@@ -20,4 +20,8 @@ public interface TicketService {
     List<TicketDTO> getTicketsBySection(Long sectionId);
 
     TicketDTO assignTicketToUser(Long ticketId,Long userId);
+
+    TicketDTO removeUserFromTicket(Long ticketId,Long userId);
+
+    void updateSectionInTicket(Long ticketId,Long sectionId);
 }

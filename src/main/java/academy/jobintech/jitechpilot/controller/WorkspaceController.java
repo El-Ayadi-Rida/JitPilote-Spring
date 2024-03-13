@@ -2,6 +2,7 @@ package academy.jobintech.jitechpilot.controller;
 
 
 import academy.jobintech.jitechpilot.dto.*;
+import academy.jobintech.jitechpilot.entity.User;
 import academy.jobintech.jitechpilot.enums.UserRole;
 import academy.jobintech.jitechpilot.mapper.UserResponseEntityDTOMapper;
 import academy.jobintech.jitechpilot.serviceImpl.UserBoardRoleServiceImpl;
@@ -65,33 +66,23 @@ public class WorkspaceController {
         return ResponseEntity.noContent().build();
     }
 
-    @GetMapping("/{workspaceId}/users")
-    public ResponseEntity<List<UserResponseDto>> getUsersByWorkspace(@PathVariable Long workspaceId) {
-        List<UserResponseDto> users = userResponseEntityDTOMapper.toDtos(workspaceServiceImpl.getUsersByWorkspace(workspaceId));
-        if(users.isEmpty()) {
-            return ResponseEntity.notFound().build();
-        }
-        return ResponseEntity.ok(users);
-    }
 
     @PostMapping("/{workspaceId}/addUser/{userId}")
-    public ResponseEntity<?> addUserToWorkspace(@PathVariable Long workspaceId, @PathVariable Long userId) {
-        boolean result = workspaceServiceImpl.addUserToWorkspace(userId, workspaceId);
-        if (result) {
-            return ResponseEntity.ok().build();
-        } else {
-            return ResponseEntity.badRequest().body("Failed to add user to workspace.");
-        }
+    public ResponseEntity<String> addUserToWorkspace(@PathVariable Long workspaceId, @PathVariable Long userId) {
+        UserWorkspaceRoleDto userWorkspaceRoleDto = new UserWorkspaceRoleDto(
+                userId,
+                workspaceId,
+                UserRole.MEMBER
+        );
+        workspaceRoleService.assignWorkspaceRoleToUser(userWorkspaceRoleDto);
+        return new ResponseEntity<>("user added successfully" , HttpStatus.OK);
     }
 
     @DeleteMapping("/{workspaceId}/removeUser/{userId}")
-    public ResponseEntity<?> removeUserFromWorkspace(@PathVariable Long workspaceId, @PathVariable Long userId) {
-        boolean result = workspaceServiceImpl.removeUserFromWorkspace(userId, workspaceId);
-        if (result) {
-            return ResponseEntity.ok().build();
-        } else {
-            return ResponseEntity.notFound().build();
-        }
+    public ResponseEntity<String> removeUserFromWorkspace(@PathVariable Long userId) {
+         workspaceRoleService.deleteUserWorkspaceRoleByUserId(userId);
+        return new ResponseEntity<>("user removed successfully in workspace" , HttpStatus.OK);
+
     }
 
     /*
@@ -122,6 +113,13 @@ public class WorkspaceController {
         return new ResponseEntity<>(newWorkspace , HttpStatus.CREATED);
     }
 
+
+
+    @GetMapping("/{workspaceId}/users")
+    public ResponseEntity<List<UserResponseDto>> getUsersByWorkspaceId(@PathVariable Long workspaceId) {
+        List<UserResponseDto> users = workspaceRoleService.getUsersByWorkspaceId(workspaceId);
+        return ResponseEntity.ok(users);
+    }
 
 }
 

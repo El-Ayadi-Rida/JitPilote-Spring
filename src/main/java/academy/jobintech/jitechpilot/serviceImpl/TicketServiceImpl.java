@@ -124,5 +124,10 @@ public class TicketServiceImpl implements TicketService {// TODO: Logs and Excep
 
     }
 
+    @Override
+    public void deleteAllTicketBySection(Long sectionId) {
+        ticketRepository.deleteAll(ticketDTOMapper.toEntities(getTicketsBySection(sectionId)));
+    }
+
 
 }

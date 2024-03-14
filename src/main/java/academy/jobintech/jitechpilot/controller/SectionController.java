@@ -57,14 +57,14 @@ public class SectionController{
      }
 
      @DeleteMapping("{sectionId}")
-     private ResponseEntity<String> deleteSectionById(@PathVariable long sectionId) {
+     private ResponseEntity<Void> deleteSectionById(@PathVariable long sectionId) {
          sectionService.deleteSection(sectionId);
-         return new ResponseEntity<>("section deleted successfully",HttpStatus.OK);
+         return  ResponseEntity.noContent().build();
      }
 
      @PostMapping("{sectionId}/board/{boardId}")
      private ResponseEntity<String> assignSectionToBoard(@PathVariable long sectionId,@Valid @PathVariable long boardId) {
          sectionService.assignSectionToBoard(sectionId,boardId);
-         return new ResponseEntity<>("section assign to board successfully",HttpStatus.OK);
+         return new ResponseEntity<>("Section assign to board successfully",HttpStatus.OK);
      }
  }

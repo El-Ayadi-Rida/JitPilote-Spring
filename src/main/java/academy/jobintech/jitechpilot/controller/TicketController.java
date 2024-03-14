@@ -76,4 +76,9 @@ public class TicketController {
         ticketService.updateSectionInTicket(ticketId,sectionId);
         return new  ResponseEntity<>("section ticket updated successfully",HttpStatus.OK);
     }
+    @DeleteMapping("deleteAll/{id}")
+    public ResponseEntity<Void> deleteAllTicket(@PathVariable Long id) {
+        ticketService.deleteAllTicketBySection(id);
+        return ResponseEntity.noContent().build();
+    }
 }

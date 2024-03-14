@@ -13,7 +13,6 @@ import java.util.List;
 @NoArgsConstructor
 @Setter
 @Getter
-@ToString
 @EqualsAndHashCode
 @Entity(name = "Board")
 @Table(name = "board")

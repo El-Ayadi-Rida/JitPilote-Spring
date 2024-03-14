@@ -79,9 +79,9 @@ public class WorkspaceController {
     }
 
     @DeleteMapping("/{workspaceId}/removeUser/{userId}")
-    public ResponseEntity<String> removeUserFromWorkspace(@PathVariable Long userId) {
+    public ResponseEntity<Void> removeUserFromWorkspace(@PathVariable Long userId) {
          workspaceRoleService.deleteUserWorkspaceRoleByUserId(userId);
-        return new ResponseEntity<>("user removed successfully in workspace" , HttpStatus.OK);
+        return ResponseEntity.noContent().build();
 
     }
 

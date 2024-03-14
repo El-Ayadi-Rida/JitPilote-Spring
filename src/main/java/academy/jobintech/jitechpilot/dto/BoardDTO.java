@@ -2,6 +2,7 @@ package academy.jobintech.jitechpilot.dto;
 
 import academy.jobintech.jitechpilot.entity.Section;
 import academy.jobintech.jitechpilot.enums.AccessLevel;
+import academy.jobintech.jitechpilot.enums.TemplateType;
 import jakarta.validation.constraints.Future;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
@@ -31,6 +32,8 @@ public class BoardDTO {
     private boolean fav;
     private AccessLevel accessLevel;
     private List<SectionDTO> sections = new ArrayList<>();
+    private TemplateType templateType;
+
 
 
 }

@@ -3,6 +3,7 @@ package academy.jobintech.jitechpilot.service;
 import academy.jobintech.jitechpilot.dto.BoardDTO;
 import academy.jobintech.jitechpilot.dto.ResponseBoardPage;
 import academy.jobintech.jitechpilot.dto.UserBoardRoleDTO;
+import academy.jobintech.jitechpilot.entity.Section;
 import academy.jobintech.jitechpilot.enums.UserRole;
 
 import java.util.List;
@@ -23,7 +24,10 @@ public interface BoardService {
     void deleteBoard(Long boardId);
 
     BoardDTO createBoardByUser(Long workspaceId,BoardDTO boardDTO);
+    BoardDTO createBoardFromTemplate(Long workspaceId,BoardDTO boardDTO);
 
     List<BoardDTO> getBoardsByWorkspace(Long workspaceId);
+
+    void createNsection(List<Section> sections);
 
 }

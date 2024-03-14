@@ -90,5 +90,20 @@ public class BoardController {
     ){
         return ResponseEntity.ok(boardService.getBoardsByWorkspace(workspaceId));
     }
+    @PostMapping("/create/{userId}/{workspaceId}/template")
+    public ResponseEntity<BoardDTO> createBoardByUserTemplate(
+            @PathVariable Long userId,
+            @PathVariable Long workspaceId,
+            @Valid @RequestBody BoardDTO boardDTO
 
+    ){
+        BoardDTO newBoard = boardService.createBoardFromTemplate(workspaceId,boardDTO);
+        UserBoardRoleDTO userBoardRoleDTO = new UserBoardRoleDTO(
+                userId,
+                newBoard.getBoardId(),
+                UserRole.ADMIN
+        );
+        userBoardRoleService.assignBoardRoleToUser(userBoardRoleDTO);
+        return new ResponseEntity<>(newBoard , HttpStatus.CREATED);
+    }
 }

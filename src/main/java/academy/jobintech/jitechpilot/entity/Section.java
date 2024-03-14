@@ -40,5 +40,8 @@ public class Section {
     )
     private List<Ticket> tickets = new ArrayList<>();
 
-
+    public Section(String sectionTitle, Board board) {
+        this.sectionTitle = sectionTitle;
+        this.board = board;
+    }
 }

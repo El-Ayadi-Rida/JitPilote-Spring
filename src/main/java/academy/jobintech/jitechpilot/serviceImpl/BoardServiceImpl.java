@@ -9,6 +9,7 @@ import academy.jobintech.jitechpilot.exception.NotFoundException;
 import academy.jobintech.jitechpilot.mapper.BoardDTOMapper;
 import academy.jobintech.jitechpilot.repository.BoardRepository;
 import academy.jobintech.jitechpilot.repository.RoleRepository;
+import academy.jobintech.jitechpilot.repository.SectionRepository;
 import academy.jobintech.jitechpilot.repository.UserBoardRoleRepository;
 import academy.jobintech.jitechpilot.service.BoardService;
 import lombok.extern.slf4j.Slf4j;
@@ -19,6 +20,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -27,6 +29,8 @@ import java.util.stream.Collectors;
 public class BoardServiceImpl implements BoardService {
     @Autowired
     private BoardRepository boardRepository;
+    @Autowired
+    private SectionRepository sectionRepository;
     @Autowired
     private BoardDTOMapper boardMapper;
     @Autowired
@@ -114,8 +118,48 @@ public class BoardServiceImpl implements BoardService {
     }
 
     @Override
+    public BoardDTO createBoardFromTemplate(Long workspaceId, BoardDTO boardDTO) {
+        Workspace workspace = workspaceService.getWorkspaceByIdHelper(workspaceId);
+        Board board = boardMapper.toEntity(boardDTO);
+        board.setWorkspace(workspace);
+        Board createdBoard = boardRepository.save(board);
+        switch (boardDTO.getTemplateType()) {
+            case SCRUM:
+                createScrumBoard(createdBoard);
+                break;
+            case KANBAN:
+                createKanbanBoard(createdBoard);
+                break;
+            default:
+                throw new IllegalArgumentException("Unsupported template type: " + boardDTO.getTemplateType());
+        }
+        return boardMapper.toDto(createdBoard);
+    }
+
+    @Override
     public List<BoardDTO> getBoardsByWorkspace(Long workspaceId) {
         List<Board> boardListByWorkspace = boardRepository.findByworkspaceWorkspaceId(workspaceId);
         return boardMapper.toDtos(boardListByWorkspace);
+    }
+
+    @Override
+    public void createNsection(List<Section> sections) {
+        sectionRepository.saveAll(sections);
+    }
+
+    public void createScrumBoard(Board board){
+        List<Section> sections = new ArrayList<>();
+        sections.add(new Section("To Do" , board));
+        sections.add(new Section("In Progress" , board));
+        sections.add(new Section("Done" , board));
+        createNsection(sections);
+    }
+    public void createKanbanBoard(Board board){
+        List<Section> sections = new ArrayList<>();
+        sections.add(new Section("To Do" , board));
+        sections.add(new Section("In Progress" , board));
+        sections.add(new Section("Review" , board));
+        sections.add(new Section("Done" , board));
+        createNsection(sections);
     }
 }

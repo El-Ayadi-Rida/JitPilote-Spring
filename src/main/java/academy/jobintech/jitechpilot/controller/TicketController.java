@@ -72,9 +72,9 @@ public class TicketController {
     }
 
     @PutMapping("/{ticketId}/section/{sectionId}")
-    public ResponseEntity<String> updateTicketSection(@PathVariable Long ticketId , @PathVariable Long sectionId) {
-        ticketService.updateSectionInTicket(ticketId,sectionId);
-        return new  ResponseEntity<>("section ticket updated successfully",HttpStatus.OK);
+    public ResponseEntity<TicketDTO> updateTicketSection(@PathVariable Long ticketId , @PathVariable Long sectionId) {
+        TicketDTO ticketDTO =ticketService.updateSectionInTicket(ticketId,sectionId);
+        return new  ResponseEntity<>(ticketDTO,HttpStatus.OK);
     }
     @DeleteMapping("deleteAll/{id}")
     public ResponseEntity<Void> deleteAllTicket(@PathVariable Long id) {

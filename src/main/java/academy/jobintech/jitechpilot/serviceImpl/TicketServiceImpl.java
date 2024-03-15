@@ -114,13 +114,14 @@ public class TicketServiceImpl implements TicketService {// TODO: Logs and Excep
     }
 
     @Override
-    public void updateSectionInTicket(Long ticketId, Long sectionId) {
+    public TicketDTO updateSectionInTicket(Long ticketId, Long sectionId) {
         Ticket ticket = getTicketByIdHelper(ticketId);
         Section section=sectionService.getSectionByIdHelper(sectionId);
         ticket.setSection(section);
         section.getTickets().add(ticket);
         ticketRepository.save(ticket);
         sectionRepository.save(section);
+        return ticketDTOMapper.toDto(ticket);
 
     }
 

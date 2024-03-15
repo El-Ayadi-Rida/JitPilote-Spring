@@ -23,6 +23,6 @@ public interface TicketService {
 
     TicketDTO removeUserFromTicket(Long ticketId,Long userId);
 
-    void updateSectionInTicket(Long ticketId,Long sectionId);
+    TicketDTO updateSectionInTicket(Long ticketId,Long sectionId);
     void deleteAllTicketBySection(Long sectionId);
 }

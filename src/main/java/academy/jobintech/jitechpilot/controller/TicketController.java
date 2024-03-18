@@ -50,9 +50,9 @@ public class TicketController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<TicketDTO> updateTicket(@PathVariable Long id,@Valid @RequestBody TicketDTO ticketDTO) {
+    public ResponseEntity<String> updateTicket(@PathVariable Long id,@Valid @RequestBody TicketDTO ticketDTO) {
         TicketDTO updatedTicket = ticketService.updateTicket(id, ticketDTO);
-        return ResponseEntity.ok(updatedTicket);
+        return ResponseEntity.ok("Ticket updated successfully");
     }
 
     @DeleteMapping("/{id}")
@@ -82,3 +82,4 @@ public class TicketController {
         return ResponseEntity.noContent().build();
     }
 }
+    

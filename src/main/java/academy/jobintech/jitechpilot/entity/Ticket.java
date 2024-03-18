@@ -23,6 +23,7 @@ public class Ticket {
     private String title;
 
     private String description;
+    private String descriptionContent;
 
     @Column(name = "startDate", nullable = false, updatable = false)
     private LocalDateTime startDate;

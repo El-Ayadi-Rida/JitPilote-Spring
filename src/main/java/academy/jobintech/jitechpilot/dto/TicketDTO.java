@@ -22,11 +22,10 @@ public class TicketDTO {
 
     private Long ticketId;
     @NotEmpty(message = "ticket title should not be empty")
-    @Size(min = 2, max = 20, message = "title should have be min 2 and max 20")
     private String title;
     @NotEmpty(message = "description should not be empty")
-    @Size(min = 2, max = 50, message = "title should have be min 2 and max 50")
     private String description;
+    private String descriptionContent;
     private LocalDateTime startDate;
     private LocalDateTime endDate;
     private TicketPriority priority;

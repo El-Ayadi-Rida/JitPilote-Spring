@@ -43,7 +43,7 @@ public class TaskController{
         return ResponseEntity.ok(tasks);
     }
 
-    @GetMapping("/{ticketId}")
+    @GetMapping("/ticket/{ticketId}")
     public ResponseEntity<List<TaskDTO>> getTasksByTicket(@PathVariable Long ticketId) {
         List<TaskDTO> tasks = taskService.getTasksByTicketId(ticketId);
         return ResponseEntity.ok(tasks);
@@ -56,7 +56,7 @@ public class TaskController{
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> deleteTask(@PathVariable Long id) {
+    public ResponseEntity<Void> deleteTask(@PathVariable Long id) {
         taskService.deleteTask(id);
         return ResponseEntity.noContent().build();
     }

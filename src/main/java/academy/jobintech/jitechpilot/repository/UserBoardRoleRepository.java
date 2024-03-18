@@ -9,4 +9,6 @@ import java.util.List;
 
 public interface UserBoardRoleRepository extends JpaRepository<UserBoardRole , RoleBoardId> {
     List<UserBoardRole> findByboardBoardId(Long boardId);
+
+    List<UserBoardRole> findByUserUserId(Long userId);
 }

@@ -12,7 +12,6 @@ import java.util.List;
 @NoArgsConstructor
 @Setter
 @Getter
-@ToString
 @EqualsAndHashCode
 @Entity(name = "Ticket")
 @Table(name = "ticket")
@@ -59,4 +58,19 @@ public class Ticket {
     @ManyToMany(mappedBy = "tickets")
     private List<User> users = new ArrayList<>();
 
+    @Transient
+    private double progress;
+
+    @PostLoad
+    @PostUpdate
+    public void calculateProgress() {
+        if (tasks.isEmpty()) {
+            progress = 0;
+            return;
+        }
+        long completedTasksCount = tasks.stream().filter(Task::isDone).count();
+
+        // Calculate the progress percentage
+        progress = (double) completedTasksCount / tasks.size() * 100.0;
+    }
 }

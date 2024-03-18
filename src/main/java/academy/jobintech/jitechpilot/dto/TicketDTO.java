@@ -32,5 +32,6 @@ public class TicketDTO {
     private TicketPriority priority;
     private List<TaskDTO> tasks = new ArrayList<>();
     private List<UserResponseDto> users = new ArrayList<>();
+    private double progress;
 
 }

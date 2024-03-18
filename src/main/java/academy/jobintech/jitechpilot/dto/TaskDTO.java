@@ -21,10 +21,9 @@ public class TaskDTO {
     private Long taskId;
 
     @NotEmpty(message = "task title should not be empty")
-    @Size(min = 2, max = 20, message = "title should have be min 2 and max 20")
+    @Size(min = 2, max = 40, message = "title should have be min 2 and max 20")
     private String title;
 
     private boolean isDone;
 
-    private Long ticketId;
 }

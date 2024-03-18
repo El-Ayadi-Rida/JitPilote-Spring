@@ -1,5 +1,6 @@
 package academy.jobintech.jitechpilot.serviceImpl;
 
+import academy.jobintech.jitechpilot.dto.BoardDTO;
 import academy.jobintech.jitechpilot.dto.UserBoardRoleDTO;
 import academy.jobintech.jitechpilot.entity.Board;
 import academy.jobintech.jitechpilot.entity.RoleBoardId;
@@ -14,7 +15,10 @@ import org.hibernate.query.sql.internal.ParameterRecognizerImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
 public class UserBoardRoleServiceImpl implements UserBoardRoleService {
@@ -64,5 +68,30 @@ public class UserBoardRoleServiceImpl implements UserBoardRoleService {
         userBoardRoleRepository.deleteAll(userBoardRoles);
     }
 
+    @Override
+    public List<BoardDTO> getBoardsByUserForWorkspace(Long userId, Long workspaceId) {
+        List<UserBoardRole> userBoardRoles = userBoardRoleRepository.findByUserUserId(userId);
+        Set<Long> boardIds1 = userBoardRoles.stream().map(ubr -> ubr.getBoard().getBoardId()).collect(Collectors.toSet());
+        List<BoardDTO> boardListByWorkspace = boardService.getBoardsByWorkspace(workspaceId);
+        Set<Long> boardIds2 = boardListByWorkspace.stream().map(b->b.getBoardId()).collect(Collectors.toSet());
+        List<BoardDTO> boardList = boardService.getBoardsByIds(getMutualIds(boardIds1 , boardIds2));
+
+        return boardList;
+    }
+    public static Set<Long> getMutualIds(Set<Long> set1, Set<Long> set2) {
+        Set<Long> mutualIds = new HashSet<>();
+
+        // Iterate through the smaller set for efficiency
+        Set<Long> smallerSet = set1.size() < set2.size() ? set1 : set2;
+        Set<Long> largerSet = smallerSet == set1 ? set2 : set1;
+
+        for (Long element : smallerSet) {
+            if (largerSet.contains(element)) {
+                mutualIds.add(element);
+            }
+        }
+
+        return mutualIds;
+    }
 
 }

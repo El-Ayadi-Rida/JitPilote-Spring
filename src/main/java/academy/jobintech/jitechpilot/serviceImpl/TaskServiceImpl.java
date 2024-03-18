@@ -51,8 +51,13 @@ public class TaskServiceImpl implements TaskService {
 
     @Override
     public void deleteTask(Long id) {
+        Task taskToDelete = getTaskByIdHelper(id);
+        Ticket ticket = taskToDelete.getTicket();
+        if (ticket != null){
+            ticket.getTasks().remove(taskToDelete);
+        }
+        taskRepository.delete(taskToDelete);
         log.info("Task with id: {} has been deleted successfully", id);
-        taskRepository.deleteById(id);
     }
 
 
@@ -62,6 +67,12 @@ public class TaskServiceImpl implements TaskService {
                 .orElseThrow(() -> new NotFoundException("Task not found on :: " + id));
         log.info("Fetching task with id: {}...", id);
         return taskDTOMapper.toDto(task);
+    }
+    public Task getTaskByIdHelper(Long id) {
+        Task task = taskRepository.findById(id)
+                .orElseThrow(() -> new NotFoundException("Task not found on :: " + id));
+        log.info("Fetching task with id: {}...", id);
+        return task;
     }
 
     @Override

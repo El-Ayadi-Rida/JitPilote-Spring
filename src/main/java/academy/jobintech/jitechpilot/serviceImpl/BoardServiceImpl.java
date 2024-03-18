@@ -22,6 +22,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 @Slf4j
@@ -35,6 +36,8 @@ public class BoardServiceImpl implements BoardService {
     private BoardDTOMapper boardMapper;
     @Autowired
     private WorkspaceServiceImpl workspaceService;
+    @Autowired
+    private UserServiceImpl userService;
 
     @Override
     public BoardDTO createBoard(BoardDTO boardDTO) {
@@ -146,6 +149,12 @@ public class BoardServiceImpl implements BoardService {
     public void createNsection(List<Section> sections) {
         sectionRepository.saveAll(sections);
     }
+
+    @Override
+    public List<BoardDTO> getBoardsByIds(Set<Long> boardIds) {
+        return boardMapper.toDtos(boardRepository.findAllById(boardIds));
+    }
+
 
     public void createScrumBoard(Board board){
         List<Section> sections = new ArrayList<>();

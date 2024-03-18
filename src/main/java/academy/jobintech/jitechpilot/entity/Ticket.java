@@ -6,13 +6,14 @@ import lombok.*;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Setter
 @Getter
-@ToString
 @EqualsAndHashCode
 @Entity(name = "Ticket")
 @Table(name = "ticket")
@@ -24,6 +25,7 @@ public class Ticket {
     private String title;
 
     private String description;
+    private String descriptionContent;
 
     @Column(name = "startDate", nullable = false, updatable = false)
     private LocalDateTime startDate;
@@ -57,6 +59,21 @@ public class Ticket {
     private Section section;
 
     @ManyToMany(mappedBy = "tickets")
-    private List<User> users = new ArrayList<>();
+    private Set<User> users = new HashSet<>();
 
+    @Transient
+    private double progress;
+
+    @PostLoad
+    @PostUpdate
+    public void calculateProgress() {
+        if (tasks.isEmpty()) {
+            progress = 0;
+            return;
+        }
+        long completedTasksCount = tasks.stream().filter(Task::isDone).count();
+
+        // Calculate the progress percentage
+        progress = (double) completedTasksCount / tasks.size() * 100.0;
+    }
 }

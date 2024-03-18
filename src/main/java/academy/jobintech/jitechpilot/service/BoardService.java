@@ -7,6 +7,7 @@ import academy.jobintech.jitechpilot.entity.Section;
 import academy.jobintech.jitechpilot.enums.UserRole;
 
 import java.util.List;
+import java.util.Set;
 
 /**
  * @author Yassine CHALH
@@ -29,5 +30,7 @@ public interface BoardService {
     List<BoardDTO> getBoardsByWorkspace(Long workspaceId);
 
     void createNsection(List<Section> sections);
+
+    List<BoardDTO> getBoardsByIds(Set<Long> boardIds);
 
 }

@@ -106,4 +106,12 @@ public class BoardController {
         userBoardRoleService.assignBoardRoleToUser(userBoardRoleDTO);
         return new ResponseEntity<>(newBoard , HttpStatus.CREATED);
     }
+
+    @GetMapping("/w/{workspaceId}/u/{userId}")
+    public ResponseEntity<List<BoardDTO>>  getBoardsByWorkspaceAndUser(
+            @PathVariable Long workspaceId,
+            @PathVariable Long userId
+    ){
+        return ResponseEntity.ok(userBoardRoleService.getBoardsByUserForWorkspace(userId,workspaceId));
+    }
 }

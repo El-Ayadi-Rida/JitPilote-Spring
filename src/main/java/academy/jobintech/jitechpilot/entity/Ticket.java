@@ -6,7 +6,9 @@ import lombok.*;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -57,7 +59,7 @@ public class Ticket {
     private Section section;
 
     @ManyToMany(mappedBy = "tickets")
-    private List<User> users = new ArrayList<>();
+    private Set<User> users = new HashSet<>();
 
     @Transient
     private double progress;

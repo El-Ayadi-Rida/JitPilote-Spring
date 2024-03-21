@@ -32,6 +32,7 @@ public class BoardDTO {
     private boolean fav;
     private AccessLevel accessLevel;
     private List<SectionDTO> sections = new ArrayList<>();
+    private List<SprintDTO> sprints = new ArrayList<>();
     private TemplateType templateType;
 
 

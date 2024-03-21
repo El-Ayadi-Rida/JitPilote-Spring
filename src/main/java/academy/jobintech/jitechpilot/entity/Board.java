@@ -60,6 +60,14 @@ public class Board {
     )
     private Workspace workspace;
 
+    @OneToMany(
+            mappedBy = "board",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true,
+            fetch = FetchType.LAZY
+    )
+    private List<Sprint> sprints = new ArrayList<>();
+
 
     @PrePersist
     public void initStartDate_Fav(){

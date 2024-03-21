@@ -26,6 +26,7 @@ public class Ticket {
 
     private String description;
     private String descriptionContent;
+    private int complexityPoints;
 
     @Column(name = "startDate", nullable = false, updatable = false)
     private LocalDateTime startDate;
@@ -60,6 +61,16 @@ public class Ticket {
 
     @ManyToMany(mappedBy = "tickets")
     private Set<User> users = new HashSet<>();
+
+    @ManyToOne
+    @JoinColumn(
+            name = "sprint_id_ticket",
+            referencedColumnName = "sprintId",
+            foreignKey = @ForeignKey(
+                    name = "ticket_sprint_FK"
+            )
+    )
+    private Sprint sprint;
 
     @Transient
     private double progress;

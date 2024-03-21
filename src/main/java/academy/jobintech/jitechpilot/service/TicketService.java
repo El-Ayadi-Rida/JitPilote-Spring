@@ -10,7 +10,7 @@ import java.util.List;
  */
 public interface TicketService {
 
-    TicketDTO createTicket(Long sectionId , TicketDTO ticketDTO);
+    TicketDTO createTicket(Long sprintId,Long sectionId , TicketDTO ticketDTO);
     TicketDTO updateTicket(Long id, TicketDTO ticketDTO);
     void deleteTicket(Long id);
     TicketDTO getTicketById(Long id);

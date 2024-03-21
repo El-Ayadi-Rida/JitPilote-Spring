@@ -1,5 +1,6 @@
 package academy.jobintech.jitechpilot.dto;
 
+import academy.jobintech.jitechpilot.entity.Sprint;
 import academy.jobintech.jitechpilot.entity.User;
 import academy.jobintech.jitechpilot.enums.TicketPriority;
 import jakarta.validation.constraints.*;
@@ -34,5 +35,6 @@ public class TicketDTO {
     private List<TaskDTO> tasks = new ArrayList<>();
     private Set<UserResponseDto> users = new HashSet<>();
     private double progress;
+    private Sprint sprint;
 
 }

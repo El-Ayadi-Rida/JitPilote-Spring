@@ -26,12 +26,16 @@ INSERT INTO section (section_id, section_title, board_id_section) VALUES (4, 'Do
 INSERT INTO section (section_id, section_title, board_id_section) VALUES (5, 'Backlog ',5);
 INSERT INTO section (section_id, section_title, board_id_section) VALUES (6, 'In Progress',6);
 
-INSERT INTO ticket (ticket_id, title, description, start_date, end_date, priority, section_id_ticket) VALUES (1, 'Fix login bug', 'Description of Fix login bug ', NOW(), DATE('2024-12-31 01:02:03'), 'HIGH', 1);
-INSERT INTO ticket (ticket_id, title, description, start_date, end_date, priority, section_id_ticket) VALUES (2, 'Update landing page', 'Description of Update landing page', NOW(), DATE('2024-12-31 01:02:03'), 'HIGH', 2);
-INSERT INTO ticket (ticket_id, title, description, start_date, end_date, priority, section_id_ticket) VALUES (3, 'Create new user flow', 'Description of Create new user flow ',NOW(), DATE('2024-12-31 01:02:03'),  'HIGH', 3);
-INSERT INTO ticket (ticket_id, title, description, start_date, end_date, priority, section_id_ticket) VALUES (4, 'Improve SEO ', 'Description of Improve SEO ', NOW(), DATE('2024-12-31 01:02:03'),'HIGH',  4);
-INSERT INTO ticket (ticket_id, title, description, start_date, end_date, priority, section_id_ticket) VALUES (5, 'Refactor backend code', 'Description of Refactor backend code ', NOW(), DATE('2024-12-31 01:02:03'), 'HIGH', 5);
-INSERT INTO ticket (ticket_id, title, description, start_date, end_date, priority, section_id_ticket) VALUES (6, 'Fix login bug ', 'Description of Fix login bug ', NOW(), DATE('2024-12-31 01:02:03'), 'HIGH', 6);
+INSERT INTO sprint (sprint_id , sprint_number, start_date, end_date, target_velocity, board_id_sprint) VALUES (1,1, NOW(), NOW(), 50, 1);
+INSERT INTO sprint (sprint_id , sprint_number, start_date, end_date, target_velocity, board_id_sprint) VALUES (2,2, NOW(), NOW(), 50, 1);
+INSERT INTO sprint (sprint_id , sprint_number, start_date, end_date, target_velocity, board_id_sprint) VALUES (3,3, NOW(), NOW(), 50, 3);
+
+INSERT INTO ticket (ticket_id, title, description, start_date, end_date, priority,complexity_points, section_id_ticket , sprint_id_ticket) VALUES (1, 'Fix login bug', 'Description of Fix login bug ', NOW(), DATE('2024-12-31 01:02:03'), 'HIGH',5, 1 ,1);
+INSERT INTO ticket (ticket_id, title, description, start_date, end_date, priority,complexity_points, section_id_ticket ,sprint_id_ticket) VALUES (2, 'Update landing page', 'Description of Update landing page', NOW(), DATE('2024-12-31 01:02:03'), 'HIGH',4, 2 ,1);
+INSERT INTO ticket (ticket_id, title, description, start_date, end_date, priority,complexity_points, section_id_ticket ,sprint_id_ticket) VALUES (3, 'Create new user flow', 'Description of Create new user flow ',NOW(), DATE('2024-12-31 01:02:03'),  'HIGH',2, 3,2);
+INSERT INTO ticket (ticket_id, title, description, start_date, end_date, priority,complexity_points, section_id_ticket , sprint_id_ticket) VALUES (4, 'Improve SEO ', 'Description of Improve SEO ', NOW(), DATE('2024-12-31 01:02:03'),'HIGH',3,  4,2);
+INSERT INTO ticket (ticket_id, title, description, start_date, end_date, priority,complexity_points, section_id_ticket , sprint_id_ticket) VALUES (5, 'Refactor backend code', 'Description of Refactor backend code ', NOW(), DATE('2024-12-31 01:02:03'), 'HIGH',7, 5,2);
+INSERT INTO ticket (ticket_id, title, description, start_date, end_date, priority,complexity_points, section_id_ticket , sprint_id_ticket) VALUES (6, 'Fix login bug ', 'Description of Fix login bug ', NOW(), DATE('2024-12-31 01:02:03'), 'HIGH',3, 6,2);
 
 INSERT INTO task (task_id, title, is_done, ticket_id_task) VALUES (1, 'Write unit tests', false, 1);
 INSERT INTO task (task_id, title, is_done, ticket_id_task) VALUES (2, 'Design new feature', false, 2);

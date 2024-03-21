@@ -2,6 +2,7 @@ package academy.jobintech.jitechpilot.serviceImpl;
 
 import academy.jobintech.jitechpilot.dto.TicketDTO;
 import academy.jobintech.jitechpilot.entity.Section;
+import academy.jobintech.jitechpilot.entity.Sprint;
 import academy.jobintech.jitechpilot.entity.Ticket;
 import academy.jobintech.jitechpilot.entity.User;
 import academy.jobintech.jitechpilot.exception.NotFoundException;
@@ -26,23 +27,27 @@ public class TicketServiceImpl implements TicketService {// TODO: Logs and Excep
     private final TicketRepository ticketRepository;
     private final TicketDTOMapper ticketDTOMapper;
     private final SectionServiceImpl sectionService;
+    private final SprintServiceImpl sprintService;
     @Autowired
     private UserServiceImpl userService;
     @Autowired
     private SectionRepository sectionRepository;
 
 
-    public TicketServiceImpl(TicketRepository ticketRepository, TicketDTOMapper ticketDTOMapper , SectionServiceImpl sectionService) {
+    public TicketServiceImpl(TicketRepository ticketRepository, TicketDTOMapper ticketDTOMapper , SectionServiceImpl sectionService , SprintServiceImpl sprintService) {
         this.ticketRepository = ticketRepository;
         this.ticketDTOMapper = ticketDTOMapper;
         this.sectionService = sectionService;
+        this.sprintService = sprintService;
     }
 
     @Override
-    public TicketDTO createTicket(Long sectionId ,TicketDTO ticketDTO) {
+    public TicketDTO createTicket(Long sprintId , Long sectionId ,TicketDTO ticketDTO) {
         Ticket ticket = ticketDTOMapper.toEntity(ticketDTO);
         Section section = sectionService.getSectionByIdHelper(sectionId);
+        Sprint sprint = sprintService.getSprintByIdHelper(sprintId);
         ticket.setSection(section);
+        ticket.setSprint(sprint);
         Ticket savedTicket = ticketRepository.save(ticket);
         log.info("Ticket created successfully title : {} ", savedTicket.getTitle());
         return ticketDTOMapper.toDto(savedTicket);

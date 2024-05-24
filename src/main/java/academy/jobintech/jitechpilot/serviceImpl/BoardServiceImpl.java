@@ -66,7 +66,12 @@ public class BoardServiceImpl implements BoardService {
         Sort sort = sortDir.equalsIgnoreCase(Sort.Direction.ASC.name()) ? Sort.by(sortBy).ascending()
                 : Sort.by(sortBy).descending();
         Pageable pageable = PageRequest.of(pageNo,pageSize, sort);
-        Page<Board> boardPage = boardRepository.findAll(pageable);
+        Page<Board> boardPage = null;
+        try {
+            boardPage = boardRepository.findAll(pageable);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
         List<Board> boardList = boardPage.getContent();
         List<BoardDTO> boardResponseList = boardList.stream()
                 .map((board) -> boardMapper.toDto(board))

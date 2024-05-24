@@ -35,6 +35,7 @@ public class TicketDTO {
     private List<TaskDTO> tasks = new ArrayList<>();
     private Set<UserResponseDto> users = new HashSet<>();
     private double progress;
-    private Sprint sprint;
+    private SprintDTO sprint;
+    private int complexityPoints;
 
 }

@@ -1,0 +1,160 @@
+2024-04-03 12:40:55 [restartedMain] - INFO a.j.j.JitechpilotApplication - Starting JitechpilotApplication using Java 21.0.1 with PID 3828 (C:\Users\HP\Desktop\JavaProject\jitechpilot\target\classes started by HP in C:\Users\HP\Desktop\JavaProject\jitechpilot)
+2024-04-03 12:40:55 [restartedMain] - INFO a.j.j.JitechpilotApplication - No active profile set, falling back to 1 default profile: "default"
+2024-04-03 12:41:00 [restartedMain] - INFO o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-04-03 12:41:00 [restartedMain] - INFO o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-04-03 12:41:00 [restartedMain] - INFO o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-03 12:41:00 [restartedMain] - INFO o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-04-03 12:41:02 [restartedMain] - INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-04-03 12:41:03 [restartedMain] - INFO com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@e21e88b
+2024-04-03 12:41:03 [restartedMain] - INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-04-03 12:41:30 [restartedMain] - INFO o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-04-03 12:41:30 [restartedMain] - INFO a.j.j.JitechpilotApplication - Started JitechpilotApplication in 36.51 seconds (process running for 38.5)
+2024-04-03 12:49:46 [http-nio-8080-exec-1] - INFO o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-03 12:49:46 [http-nio-8080-exec-1] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching all workspaces
+2024-04-03 12:49:48 [http-nio-8080-exec-1] - INFO a.j.j.s.WorkspaceServiceImpl - Fetched 6 workspaces
+2024-04-03 12:49:51 [http-nio-8080-exec-4] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching workspace by id: 1
+2024-04-03 12:49:52 [http-nio-8080-exec-4] - INFO a.j.j.s.WorkspaceServiceImpl - Found workspace: Development
+2024-04-03 13:18:30 [HikariPool-1 housekeeper] - WARN com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=28m26s606ms369µs300ns).
+2024-04-03 13:18:44 [http-nio-8080-exec-8] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching all workspaces
+2024-04-03 13:18:44 [http-nio-8080-exec-1] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching workspace by id: 1
+2024-04-03 13:18:44 [http-nio-8080-exec-1] - INFO a.j.j.s.WorkspaceServiceImpl - Found workspace: Development
+2024-04-03 13:18:45 [http-nio-8080-exec-10] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@7f5a0fc
+2024-04-03 13:18:45 [http-nio-8080-exec-10] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-04-03 13:18:47 [http-nio-8080-exec-8] - INFO a.j.j.s.WorkspaceServiceImpl - Fetched 6 workspaces
+2024-04-03 13:18:51 [http-nio-8080-exec-3] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching workspace by id: 1
+2024-04-03 13:18:52 [http-nio-8080-exec-3] - INFO a.j.j.s.WorkspaceServiceImpl - Found workspace: Development
+2024-04-03 13:18:54 [http-nio-8080-exec-1] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@5733c107
+2024-04-03 13:18:54 [http-nio-8080-exec-1] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-04-03 13:19:08 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@835995d3
+2024-04-03 13:19:08 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-04-03 13:19:17 [http-nio-8080-exec-9] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@66d7c461
+2024-04-03 13:19:17 [http-nio-8080-exec-9] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-04-03 13:19:21 [http-nio-8080-exec-7] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching workspace by id: 1
+2024-04-03 13:19:22 [http-nio-8080-exec-7] - INFO a.j.j.s.WorkspaceServiceImpl - Found workspace: Development
+2024-04-03 13:19:23 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@53b11411
+2024-04-03 13:19:23 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-04-03 13:21:33 [http-nio-8080-exec-1] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching all workspaces
+2024-04-03 13:21:33 [http-nio-8080-exec-1] - INFO a.j.j.s.WorkspaceServiceImpl - Fetched 6 workspaces
+2024-04-03 13:21:36 [http-nio-8080-exec-4] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching workspace by id: 1
+2024-04-03 13:21:36 [http-nio-8080-exec-4] - INFO a.j.j.s.WorkspaceServiceImpl - Found workspace: Development
+2024-04-03 13:30:02 [http-nio-8080-exec-9] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching workspace by id: 1
+2024-04-03 13:30:02 [http-nio-8080-exec-9] - INFO a.j.j.s.WorkspaceServiceImpl - Found workspace: Development
+2024-04-03 13:31:47 [http-nio-8080-exec-4] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching workspace by id: 1
+2024-04-03 13:31:49 [http-nio-8080-exec-5] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching all workspaces
+2024-04-03 13:31:49 [http-nio-8080-exec-4] - INFO a.j.j.s.WorkspaceServiceImpl - Found workspace: Development
+2024-04-03 13:31:50 [http-nio-8080-exec-5] - INFO a.j.j.s.WorkspaceServiceImpl - Fetched 6 workspaces
+2024-04-03 13:32:31 [http-nio-8080-exec-7] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching workspace by id: 1
+2024-04-03 13:32:31 [http-nio-8080-exec-7] - INFO a.j.j.s.WorkspaceServiceImpl - Found workspace: Development
+2024-04-03 13:33:25 [http-nio-8080-exec-10] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@2f4a81cc
+2024-04-03 13:33:30 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@fd12fecd
+2024-04-03 13:33:30 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 7 
+2024-04-03 13:34:31 [http-nio-8080-exec-1] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@39503d11
+2024-04-03 13:34:31 [http-nio-8080-exec-1] - INFO a.j.j.serviceImpl.SprintServiceImpl - Sprint created successfully
+2024-04-03 13:34:46 [http-nio-8080-exec-10] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@68f356b1
+2024-04-03 13:34:46 [http-nio-8080-exec-10] - INFO a.j.j.serviceImpl.SprintServiceImpl - Sprint created successfully
+2024-04-03 13:35:23 [http-nio-8080-exec-9] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@da49783a
+2024-04-03 13:35:23 [http-nio-8080-exec-9] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 7 
+2024-04-03 13:56:15 [http-nio-8080-exec-8] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@45e41b44
+2024-04-03 13:56:15 [http-nio-8080-exec-8] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 7 
+2024-04-03 13:56:20 [http-nio-8080-exec-1] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching workspace by id: 1
+2024-04-03 13:56:20 [http-nio-8080-exec-1] - INFO a.j.j.s.WorkspaceServiceImpl - Found workspace: Development
+2024-04-03 13:56:22 [http-nio-8080-exec-7] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching all workspaces
+2024-04-03 13:56:22 [http-nio-8080-exec-7] - INFO a.j.j.s.WorkspaceServiceImpl - Fetched 6 workspaces
+2024-04-03 13:56:28 [http-nio-8080-exec-10] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching all workspaces
+2024-04-03 13:56:30 [http-nio-8080-exec-10] - INFO a.j.j.s.WorkspaceServiceImpl - Fetched 6 workspaces
+2024-04-03 13:56:31 [http-nio-8080-exec-9] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching workspace by id: 1
+2024-04-03 13:56:31 [http-nio-8080-exec-9] - INFO a.j.j.s.WorkspaceServiceImpl - Found workspace: Development
+2024-04-03 13:56:33 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@2e33bef3
+2024-04-03 13:56:33 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 7 
+2024-04-03 13:57:25 [http-nio-8080-exec-6] - INFO a.j.j.serviceImpl.TicketServiceImpl - Ticket created successfully title : ticket 1 
+2024-04-03 13:57:56 [http-nio-8080-exec-10] - INFO a.j.j.serviceImpl.TaskServiceImpl - Task with id: 7 has been updated successfully
+2024-04-03 13:58:03 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.TicketServiceImpl - Ticket updated successfully title : ticket 1 
+2024-04-03 13:58:09 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@5286f395
+2024-04-03 13:58:09 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 7 
+2024-04-03 13:58:26 [http-nio-8080-exec-8] - INFO a.j.j.serviceImpl.TicketServiceImpl - Ticket updated successfully title : ticket 1 
+2024-04-03 13:58:37 [http-nio-8080-exec-6] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@fee7ab72
+2024-04-03 13:58:37 [http-nio-8080-exec-6] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 7 
+2024-04-03 13:58:54 [http-nio-8080-exec-9] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@91e5c071
+2024-04-03 13:58:54 [http-nio-8080-exec-9] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 7 
+2024-04-03 13:58:56 [http-nio-8080-exec-6] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@b0467283
+2024-04-03 13:58:56 [http-nio-8080-exec-6] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 7 
+2024-04-03 13:58:59 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@cbbfc045
+2024-04-03 13:58:59 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 7 
+2024-04-03 13:59:03 [http-nio-8080-exec-1] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@be68ae72
+2024-04-03 13:59:03 [http-nio-8080-exec-1] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 7 
+2024-04-03 13:59:07 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@d7819e29
+2024-04-03 13:59:07 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 7 
+2024-04-03 13:59:11 [http-nio-8080-exec-3] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@8937ee2f
+2024-04-03 13:59:11 [http-nio-8080-exec-3] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 7 
+2024-04-03 13:59:15 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@16982c74
+2024-04-03 13:59:15 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 7 
+2024-04-03 13:59:23 [http-nio-8080-exec-9] - INFO a.j.j.serviceImpl.TaskServiceImpl - Task with id: 8 has been updated successfully
+2024-04-03 13:59:24 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.TicketServiceImpl - Ticket updated successfully title : ticket 1 
+2024-04-03 13:59:31 [http-nio-8080-exec-3] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@1262364
+2024-04-03 13:59:31 [http-nio-8080-exec-3] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 7 
+2024-04-03 13:59:35 [http-nio-8080-exec-10] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@f2cda47e
+2024-04-03 13:59:35 [http-nio-8080-exec-10] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 7 
+2024-04-03 14:21:20 [SpringApplicationShutdownHook] - INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-04-03 14:21:20 [SpringApplicationShutdownHook] - INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-04-03 14:58:17 [restartedMain] - INFO a.j.j.JitechpilotApplication - Starting JitechpilotApplication using Java 21.0.1 with PID 13604 (C:\Users\HP\Desktop\JavaProject\jitechpilot\target\classes started by HP in C:\Users\HP\Desktop\JavaProject\jitechpilot)
+2024-04-03 14:58:17 [restartedMain] - INFO a.j.j.JitechpilotApplication - No active profile set, falling back to 1 default profile: "default"
+2024-04-03 14:58:24 [restartedMain] - INFO o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-04-03 14:58:24 [restartedMain] - INFO o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-04-03 14:58:24 [restartedMain] - INFO o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-04-03 14:58:24 [restartedMain] - INFO o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-04-03 14:58:26 [restartedMain] - INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-04-03 14:58:29 [restartedMain] - INFO com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3c14e159
+2024-04-03 14:58:29 [restartedMain] - INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-04-03 14:58:54 [restartedMain] - INFO o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-04-03 14:58:54 [restartedMain] - INFO a.j.j.JitechpilotApplication - Started JitechpilotApplication in 39.191 seconds (process running for 43.786)
+2024-04-03 15:02:45 [http-nio-8080-exec-1] - INFO o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-04-03 15:02:46 [http-nio-8080-exec-1] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching all workspaces
+2024-04-03 15:02:48 [http-nio-8080-exec-1] - INFO a.j.j.s.WorkspaceServiceImpl - Fetched 6 workspaces
+2024-04-03 15:03:39 [http-nio-8080-exec-4] - INFO a.j.j.s.WorkspaceServiceImpl - Updating workspace with id: 1
+2024-04-03 15:03:40 [http-nio-8080-exec-4] - INFO a.j.j.s.WorkspaceServiceImpl - Updated workspace with id: 1
+2024-04-03 15:04:17 [http-nio-8080-exec-7] - INFO a.j.j.s.WorkspaceServiceImpl - Creating new workspace with name: Workspace Jobintech1
+2024-04-03 15:04:17 [http-nio-8080-exec-7] - INFO a.j.j.s.WorkspaceServiceImpl - Created workspace with id: 7
+2024-04-03 15:04:26 [http-nio-8080-exec-9] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching workspace by id: 1
+2024-04-03 15:04:26 [http-nio-8080-exec-9] - INFO a.j.j.s.WorkspaceServiceImpl - Found workspace: Development updated
+2024-04-03 15:06:37 [http-nio-8080-exec-10] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@9542f4e5
+2024-04-03 15:06:37 [http-nio-8080-exec-10] - INFO a.j.j.serviceImpl.BoardServiceImpl - Board updated successfully with id: 1 
+2024-04-03 15:07:35 [http-nio-8080-exec-9] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@6280730
+2024-04-03 15:07:35 [http-nio-8080-exec-9] - INFO a.j.j.serviceImpl.BoardServiceImpl - Board updated successfully with id: 1 
+2024-04-03 15:07:57 [http-nio-8080-exec-1] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@d5943c61
+2024-04-03 15:07:57 [http-nio-8080-exec-1] - INFO a.j.j.serviceImpl.BoardServiceImpl - Board updated successfully with id: 1 
+2024-04-03 15:07:59 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@36d2ea64
+2024-04-03 15:07:59 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-04-03 15:08:49 [http-nio-8080-exec-8] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching workspace by id: 1
+2024-04-03 15:08:49 [http-nio-8080-exec-8] - INFO a.j.j.s.WorkspaceServiceImpl - Found workspace: Development updated
+2024-04-03 15:09:37 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@a96433be
+2024-04-03 15:09:46 [http-nio-8080-exec-6] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@b73ac678
+2024-04-03 15:09:46 [http-nio-8080-exec-6] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 7 
+2024-04-03 15:09:52 [http-nio-8080-exec-8] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching workspace by id: 1
+2024-04-03 15:09:52 [http-nio-8080-exec-8] - INFO a.j.j.s.WorkspaceServiceImpl - Found workspace: Development updated
+2024-04-03 15:12:38 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@d43d4545
+2024-04-03 15:12:38 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 7 
+2024-04-03 15:13:30 [http-nio-8080-exec-8] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching all workspaces
+2024-04-03 15:13:30 [http-nio-8080-exec-8] - INFO a.j.j.s.WorkspaceServiceImpl - Fetched 7 workspaces
+2024-04-03 15:13:33 [http-nio-8080-exec-1] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching workspace by id: 1
+2024-04-03 15:13:34 [http-nio-8080-exec-1] - INFO a.j.j.s.WorkspaceServiceImpl - Found workspace: Development updated
+2024-04-03 15:13:42 [http-nio-8080-exec-7] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@ae60abeb
+2024-04-03 15:13:42 [http-nio-8080-exec-7] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 7 
+2024-04-03 15:15:29 [http-nio-8080-exec-9] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@2610d120
+2024-04-03 15:15:29 [http-nio-8080-exec-9] - INFO a.j.j.serviceImpl.SprintServiceImpl - Sprint created successfully
+2024-04-03 15:16:34 [http-nio-8080-exec-6] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching workspace by id: 1
+2024-04-03 15:16:34 [http-nio-8080-exec-6] - INFO a.j.j.s.WorkspaceServiceImpl - Found workspace: Development updated
+2024-04-03 15:17:30 [http-nio-8080-exec-8] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@5423ea82
+2024-04-03 15:17:30 [http-nio-8080-exec-8] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 7 
+2024-04-03 15:17:32 [http-nio-8080-exec-3] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@7ded671e
+2024-04-03 15:17:32 [http-nio-8080-exec-3] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 7 
+2024-04-03 15:17:36 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@19958c13
+2024-04-03 15:17:36 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 7 
+2024-04-03 15:17:46 [http-nio-8080-exec-10] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching workspace by id: 1
+2024-04-03 15:17:46 [http-nio-8080-exec-10] - INFO a.j.j.s.WorkspaceServiceImpl - Found workspace: Development updated
+2024-04-03 15:17:48 [http-nio-8080-exec-9] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@61c93356
+2024-04-03 15:17:48 [http-nio-8080-exec-9] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-04-03 15:18:30 [http-nio-8080-exec-8] - INFO a.j.j.serviceImpl.TaskServiceImpl - Task with id: 1 has been updated successfully
+2024-04-03 15:19:55 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.TaskServiceImpl - Task with id: 7 has been updated successfully
+2024-04-03 16:45:10 [HikariPool-1 housekeeper] - WARN com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h24m9s191ms634µs900ns).
+2024-04-03 18:35:04 [SpringApplicationShutdownHook] - INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-04-03 18:35:05 [SpringApplicationShutdownHook] - INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

@@ -1,0 +1,1061 @@
+2024-03-22 01:03:30 [restartedMain] - INFO a.j.j.JitechpilotApplication - Starting JitechpilotApplication using Java 21.0.1 with PID 15716 (C:\Users\HP\Desktop\JavaProject\jitechpilot\target\classes started by HP in C:\Users\HP\Desktop\JavaProject\jitechpilot)
+2024-03-22 01:03:30 [restartedMain] - INFO a.j.j.JitechpilotApplication - No active profile set, falling back to 1 default profile: "default"
+2024-03-22 01:03:35 [restartedMain] - INFO o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-03-22 01:03:35 [restartedMain] - INFO o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-03-22 01:03:35 [restartedMain] - INFO o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-22 01:03:35 [restartedMain] - INFO o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-03-22 01:03:37 [restartedMain] - INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-03-22 01:03:38 [restartedMain] - INFO com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@409e6a91
+2024-03-22 01:03:38 [restartedMain] - INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-03-22 01:04:06 [restartedMain] - INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-03-22 01:04:06 [restartedMain] - INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-03-22 01:04:21 [restartedMain] - INFO a.j.j.JitechpilotApplication - Starting JitechpilotApplication using Java 21.0.1 with PID 20124 (C:\Users\HP\Desktop\JavaProject\jitechpilot\target\classes started by HP in C:\Users\HP\Desktop\JavaProject\jitechpilot)
+2024-03-22 01:04:21 [restartedMain] - INFO a.j.j.JitechpilotApplication - No active profile set, falling back to 1 default profile: "default"
+2024-03-22 01:04:24 [restartedMain] - INFO o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-03-22 01:04:24 [restartedMain] - INFO o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-03-22 01:04:24 [restartedMain] - INFO o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-22 01:04:24 [restartedMain] - INFO o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-03-22 01:04:26 [restartedMain] - INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-03-22 01:04:27 [restartedMain] - INFO com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2c5b89f
+2024-03-22 01:04:27 [restartedMain] - INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-03-22 01:04:48 [restartedMain] - INFO o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-03-22 01:04:48 [restartedMain] - INFO a.j.j.JitechpilotApplication - Started JitechpilotApplication in 28.387 seconds (process running for 29.81)
+2024-03-22 01:05:09 [http-nio-8080-exec-1] - INFO o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-22 01:05:15 [http-nio-8080-exec-8] - INFO o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 5213 ms
+2024-03-22 01:05:16 [http-nio-8080-exec-8] - ERROR a.j.j.e.GlobalExceptionHandler - An unexpected error occurred: java.io.IOException: Une connexion établie a été abandonnée par un logiciel de votre ordinateur hôte
+org.apache.catalina.connector.ClientAbortException: java.io.IOException: Une connexion établie a été abandonnée par un logiciel de votre ordinateur hôte
+	at org.apache.catalina.connector.OutputBuffer.realWriteBytes(OutputBuffer.java:344)
+	at org.apache.catalina.connector.OutputBuffer.appendByteArray(OutputBuffer.java:743)
+	at org.apache.catalina.connector.OutputBuffer.append(OutputBuffer.java:670)
+	at org.apache.catalina.connector.OutputBuffer.writeBytes(OutputBuffer.java:379)
+	at org.apache.catalina.connector.OutputBuffer.write(OutputBuffer.java:357)
+	at org.apache.catalina.connector.CoyoteOutputStream.write(CoyoteOutputStream.java:97)
+	at org.apache.catalina.connector.CoyoteOutputStream.write(CoyoteOutputStream.java:90)
+	at org.springframework.util.StreamUtils.copy(StreamUtils.java:117)
+	at org.springframework.http.converter.ByteArrayHttpMessageConverter.writeInternal(ByteArrayHttpMessageConverter.java:67)
+	at org.springframework.http.converter.ByteArrayHttpMessageConverter.writeInternal(ByteArrayHttpMessageConverter.java:38)
+	at org.springframework.http.converter.AbstractHttpMessageConverter.write(AbstractHttpMessageConverter.java:236)
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor.writeWithMessageConverters(AbstractMessageConverterMethodProcessor.java:300)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.handleReturnValue(RequestResponseBodyMethodProcessor.java:190)
+	at org.springframework.web.method.support.HandlerMethodReturnValueHandlerComposite.handleReturnValue(HandlerMethodReturnValueHandlerComposite.java:78)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:136)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:920)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:830)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.io.IOException: Une connexion établie a été abandonnée par un logiciel de votre ordinateur hôte
+	at java.base/sun.nio.ch.SocketDispatcher.write0(Native Method)
+	at java.base/sun.nio.ch.SocketDispatcher.write(SocketDispatcher.java:54)
+	at java.base/sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:137)
+	at java.base/sun.nio.ch.IOUtil.write(IOUtil.java:102)
+	at java.base/sun.nio.ch.IOUtil.write(IOUtil.java:58)
+	at java.base/sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:542)
+	at org.apache.tomcat.util.net.NioChannel.write(NioChannel.java:118)
+	at org.apache.tomcat.util.net.NioEndpoint$NioSocketWrapper.doWrite(NioEndpoint.java:1381)
+	at org.apache.tomcat.util.net.SocketWrapperBase.doWrite(SocketWrapperBase.java:764)
+	at org.apache.tomcat.util.net.SocketWrapperBase.writeBlocking(SocketWrapperBase.java:589)
+	at org.apache.tomcat.util.net.SocketWrapperBase.write(SocketWrapperBase.java:533)
+	at org.apache.coyote.http11.Http11OutputBuffer$SocketOutputBuffer.doWrite(Http11OutputBuffer.java:540)
+	at org.apache.coyote.http11.filters.IdentityOutputFilter.doWrite(IdentityOutputFilter.java:73)
+	at org.apache.coyote.http11.Http11OutputBuffer.doWrite(Http11OutputBuffer.java:193)
+	at org.apache.coyote.Response.doWrite(Response.java:616)
+	at org.apache.catalina.connector.OutputBuffer.realWriteBytes(OutputBuffer.java:331)
+	... 57 common frames omitted
+2024-03-22 01:06:28 [http-nio-8080-exec-10] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching all workspaces
+2024-03-22 01:06:29 [http-nio-8080-exec-10] - INFO a.j.j.s.WorkspaceServiceImpl - Fetched 6 workspaces
+2024-03-22 01:06:29 [http-nio-8080-exec-10] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 01:06:39 [http-nio-8080-exec-4] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching workspace by id: 1
+2024-03-22 01:06:39 [http-nio-8080-exec-4] - INFO a.j.j.s.WorkspaceServiceImpl - Found workspace: Development
+2024-03-22 01:06:39 [http-nio-8080-exec-2] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 01:06:39 [http-nio-8080-exec-6] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 01:06:39 [http-nio-8080-exec-4] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 01:06:42 [http-nio-8080-exec-3] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@890da4e0
+2024-03-22 01:06:42 [http-nio-8080-exec-3] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 01:06:42 [http-nio-8080-exec-3] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 01:08:43 [http-nio-8080-exec-1] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@c9ade751
+2024-03-22 01:08:43 [http-nio-8080-exec-1] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 01:08:43 [http-nio-8080-exec-1] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 01:08:44 [http-nio-8080-exec-2] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 01:23:22 [http-nio-8080-exec-7] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@c6b61c2f
+2024-03-22 01:23:22 [http-nio-8080-exec-7] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 01:23:23 [http-nio-8080-exec-7] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 01:23:23 [http-nio-8080-exec-10] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 01:24:52 [http-nio-8080-exec-6] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 01:24:53 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@7af6081b
+2024-03-22 01:24:53 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 01:24:54 [http-nio-8080-exec-5] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 01:31:42 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@d9581a5d
+2024-03-22 01:31:42 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 01:31:42 [http-nio-8080-exec-2] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 01:31:42 [http-nio-8080-exec-7] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 01:32:52 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@2c2a3363
+2024-03-22 01:32:52 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 01:32:54 [http-nio-8080-exec-5] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 01:32:54 [http-nio-8080-exec-3] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 01:33:44 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@f57eecff
+2024-03-22 01:33:44 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 01:33:44 [http-nio-8080-exec-4] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 01:33:45 [http-nio-8080-exec-7] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 01:34:11 [http-nio-8080-exec-3] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@822d46fb
+2024-03-22 01:34:11 [http-nio-8080-exec-3] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 01:34:11 [http-nio-8080-exec-5] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 01:34:11 [http-nio-8080-exec-3] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 01:40:09 [http-nio-8080-exec-7] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@44512d89
+2024-03-22 01:40:09 [http-nio-8080-exec-7] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 01:40:10 [http-nio-8080-exec-7] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 01:40:10 [http-nio-8080-exec-10] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 01:40:19 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@9076f9b3
+2024-03-22 01:40:19 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 01:40:19 [http-nio-8080-exec-5] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 01:40:20 [http-nio-8080-exec-2] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 01:45:37 [http-nio-8080-exec-10] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@7aff9d4
+2024-03-22 01:45:37 [http-nio-8080-exec-10] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 01:45:38 [http-nio-8080-exec-10] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 01:45:38 [http-nio-8080-exec-7] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 01:46:55 [http-nio-8080-exec-8] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@4ec2cc6e
+2024-03-22 01:46:55 [http-nio-8080-exec-8] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 01:46:56 [http-nio-8080-exec-6] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 01:46:56 [http-nio-8080-exec-8] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 01:48:09 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@3f22e05c
+2024-03-22 01:48:09 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 01:48:12 [http-nio-8080-exec-5] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 01:48:17 [http-nio-8080-exec-2] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 01:48:47 [http-nio-8080-exec-7] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@962ba6d2
+2024-03-22 01:48:47 [http-nio-8080-exec-7] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 01:48:48 [http-nio-8080-exec-7] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 01:48:48 [http-nio-8080-exec-10] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 01:49:05 [http-nio-8080-exec-6] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@2f73e573
+2024-03-22 01:49:07 [http-nio-8080-exec-6] - INFO a.j.j.serviceImpl.SprintServiceImpl - Sprint created successfully
+2024-03-22 01:53:16 [http-nio-8080-exec-8] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@75c417e5
+2024-03-22 01:53:16 [http-nio-8080-exec-8] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 01:53:17 [http-nio-8080-exec-8] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 01:53:17 [http-nio-8080-exec-2] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 01:53:50 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@4f862b1
+2024-03-22 01:53:50 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 01:53:50 [http-nio-8080-exec-1] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 01:53:50 [http-nio-8080-exec-4] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 01:54:34 [http-nio-8080-exec-2] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 01:54:34 [http-nio-8080-exec-10] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@fa2f9802
+2024-03-22 01:54:34 [http-nio-8080-exec-10] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 01:54:34 [http-nio-8080-exec-10] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 01:54:52 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@72d65316
+2024-03-22 01:54:52 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 01:54:52 [http-nio-8080-exec-6] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 01:54:52 [http-nio-8080-exec-4] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 01:55:29 [http-nio-8080-exec-7] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@21026a82
+2024-03-22 01:55:29 [http-nio-8080-exec-7] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 01:55:29 [http-nio-8080-exec-7] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 01:55:29 [http-nio-8080-exec-2] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 01:55:49 [http-nio-8080-exec-4] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 01:55:49 [http-nio-8080-exec-9] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@d1c6d2d8
+2024-03-22 01:55:49 [http-nio-8080-exec-9] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 01:55:50 [http-nio-8080-exec-9] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 01:57:02 [http-nio-8080-exec-7] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 01:57:05 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@a9c04ba7
+2024-03-22 01:57:05 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 01:57:06 [http-nio-8080-exec-2] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 01:57:28 [http-nio-8080-exec-4] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 01:57:28 [http-nio-8080-exec-9] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@b1bb1a6f
+2024-03-22 01:57:28 [http-nio-8080-exec-9] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 01:57:28 [http-nio-8080-exec-9] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 01:57:56 [http-nio-8080-exec-10] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 01:57:56 [http-nio-8080-exec-7] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@7fa74665
+2024-03-22 01:57:56 [http-nio-8080-exec-7] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 01:57:56 [http-nio-8080-exec-7] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 01:58:11 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@5271acc7
+2024-03-22 01:58:11 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 01:58:12 [http-nio-8080-exec-1] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 01:58:12 [http-nio-8080-exec-4] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 02:00:47 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@feaf11e3
+2024-03-22 02:00:47 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 02:00:47 [http-nio-8080-exec-2] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 02:00:47 [http-nio-8080-exec-5] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 02:03:33 [http-nio-8080-exec-8] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@d09a7544
+2024-03-22 02:03:33 [http-nio-8080-exec-8] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 02:03:33 [http-nio-8080-exec-8] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 02:03:33 [http-nio-8080-exec-10] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 02:05:47 [http-nio-8080-exec-1] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 02:05:47 [http-nio-8080-exec-9] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@5548f6e6
+2024-03-22 02:05:47 [http-nio-8080-exec-9] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 02:05:47 [http-nio-8080-exec-9] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 02:06:09 [http-nio-8080-exec-10] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 02:06:09 [http-nio-8080-exec-6] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@5c8908c7
+2024-03-22 02:06:09 [http-nio-8080-exec-6] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 02:06:09 [http-nio-8080-exec-6] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 02:06:52 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@21802f5e
+2024-03-22 02:06:52 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 02:06:56 [http-nio-8080-exec-4] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 02:06:57 [http-nio-8080-exec-1] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 02:07:54 [http-nio-8080-exec-6] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 02:07:54 [http-nio-8080-exec-7] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@ea69b5ba
+2024-03-22 02:07:54 [http-nio-8080-exec-7] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 02:07:54 [http-nio-8080-exec-7] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 02:08:19 [http-nio-8080-exec-10] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@885d9911
+2024-03-22 02:08:19 [http-nio-8080-exec-10] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 02:08:19 [http-nio-8080-exec-10] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 02:08:19 [http-nio-8080-exec-1] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 02:08:33 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@8dcb85
+2024-03-22 02:08:34 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.SprintServiceImpl - Sprint created successfully
+2024-03-22 02:12:16 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@52ab07e0
+2024-03-22 02:12:16 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 02:12:17 [http-nio-8080-exec-4] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 02:12:17 [http-nio-8080-exec-9] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 02:14:27 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@74b95640
+2024-03-22 02:14:27 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 02:14:27 [http-nio-8080-exec-3] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 02:14:27 [http-nio-8080-exec-2] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 02:14:40 [http-nio-8080-exec-1] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@2b696f11
+2024-03-22 02:14:40 [http-nio-8080-exec-1] - INFO a.j.j.serviceImpl.SprintServiceImpl - Sprint created successfully
+2024-03-22 02:15:28 [http-nio-8080-exec-10] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching all workspaces
+2024-03-22 02:15:28 [http-nio-8080-exec-10] - INFO a.j.j.s.WorkspaceServiceImpl - Fetched 6 workspaces
+2024-03-22 02:15:28 [http-nio-8080-exec-10] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 02:15:29 [http-nio-8080-exec-2] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching workspace by id: 1
+2024-03-22 02:15:30 [http-nio-8080-exec-2] - INFO a.j.j.s.WorkspaceServiceImpl - Found workspace: Development
+2024-03-22 02:15:30 [http-nio-8080-exec-3] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 02:15:30 [http-nio-8080-exec-2] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 02:15:30 [http-nio-8080-exec-5] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 02:15:31 [http-nio-8080-exec-4] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching all workspaces
+2024-03-22 02:15:32 [http-nio-8080-exec-4] - INFO a.j.j.s.WorkspaceServiceImpl - Fetched 6 workspaces
+2024-03-22 02:15:32 [http-nio-8080-exec-4] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 02:15:33 [http-nio-8080-exec-9] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching workspace by id: 1
+2024-03-22 02:15:33 [http-nio-8080-exec-9] - INFO a.j.j.s.WorkspaceServiceImpl - Found workspace: Development
+2024-03-22 02:15:33 [http-nio-8080-exec-9] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 02:15:33 [http-nio-8080-exec-7] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 02:15:33 [http-nio-8080-exec-8] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 02:15:36 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@a6009a18
+2024-03-22 02:15:36 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 02:15:36 [http-nio-8080-exec-2] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 02:16:21 [http-nio-8080-exec-7] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@e5a1ce2a
+2024-03-22 02:16:21 [http-nio-8080-exec-7] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 02:16:21 [http-nio-8080-exec-7] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 02:16:21 [http-nio-8080-exec-9] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 02:20:12 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@2cb98ea4
+2024-03-22 02:20:12 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 02:20:12 [http-nio-8080-exec-2] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 02:20:12 [http-nio-8080-exec-3] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 02:23:38 [http-nio-8080-exec-6] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@a04d548b
+2024-03-22 02:23:38 [http-nio-8080-exec-6] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 02:23:38 [http-nio-8080-exec-9] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 02:23:38 [http-nio-8080-exec-6] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 02:26:12 [http-nio-8080-exec-7] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@e0ca3531
+2024-03-22 02:26:12 [http-nio-8080-exec-7] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 02:26:12 [http-nio-8080-exec-7] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 02:26:12 [http-nio-8080-exec-3] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 02:27:22 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@4011c23
+2024-03-22 02:27:22 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 02:27:22 [http-nio-8080-exec-6] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 02:27:22 [http-nio-8080-exec-2] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 02:27:46 [http-nio-8080-exec-1] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@60ddc24d
+2024-03-22 02:27:46 [http-nio-8080-exec-1] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 02:27:47 [http-nio-8080-exec-3] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 02:27:47 [http-nio-8080-exec-1] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 02:28:13 [http-nio-8080-exec-7] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@354ca2aa
+2024-03-22 02:28:13 [http-nio-8080-exec-7] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 02:28:14 [http-nio-8080-exec-7] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 02:28:14 [http-nio-8080-exec-2] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 02:29:16 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@82702c69
+2024-03-22 02:29:16 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 02:29:16 [http-nio-8080-exec-4] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 02:29:16 [http-nio-8080-exec-1] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 02:31:07 [http-nio-8080-exec-3] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching workspace by id: 1
+2024-03-22 02:31:07 [http-nio-8080-exec-2] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 02:31:07 [http-nio-8080-exec-3] - INFO a.j.j.s.WorkspaceServiceImpl - Found workspace: Development
+2024-03-22 02:31:07 [http-nio-8080-exec-3] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 02:31:11 [http-nio-8080-exec-10] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching all workspaces
+2024-03-22 02:31:11 [http-nio-8080-exec-10] - INFO a.j.j.s.WorkspaceServiceImpl - Fetched 6 workspaces
+2024-03-22 02:31:11 [http-nio-8080-exec-10] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 02:31:12 [http-nio-8080-exec-4] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching workspace by id: 1
+2024-03-22 02:31:13 [http-nio-8080-exec-4] - INFO a.j.j.s.WorkspaceServiceImpl - Found workspace: Development
+2024-03-22 02:31:13 [http-nio-8080-exec-9] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 02:31:13 [http-nio-8080-exec-5] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 02:31:13 [http-nio-8080-exec-4] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 02:31:14 [http-nio-8080-exec-1] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@aaab363e
+2024-03-22 02:31:14 [http-nio-8080-exec-1] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 02:31:14 [http-nio-8080-exec-1] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 02:31:38 [http-nio-8080-exec-10] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching workspace by id: 1
+2024-03-22 02:31:38 [http-nio-8080-exec-10] - INFO a.j.j.s.WorkspaceServiceImpl - Found workspace: Development
+2024-03-22 02:31:38 [http-nio-8080-exec-3] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 02:31:38 [http-nio-8080-exec-10] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 02:31:39 [http-nio-8080-exec-9] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@97f3aabf
+2024-03-22 02:31:39 [http-nio-8080-exec-9] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 02:31:39 [http-nio-8080-exec-9] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 02:31:40 [http-nio-8080-exec-7] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching workspace by id: 1
+2024-03-22 02:31:40 [http-nio-8080-exec-7] - INFO a.j.j.s.WorkspaceServiceImpl - Found workspace: Development
+2024-03-22 02:31:40 [http-nio-8080-exec-4] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 02:31:40 [http-nio-8080-exec-7] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 02:31:43 [http-nio-8080-exec-1] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching all workspaces
+2024-03-22 02:31:44 [http-nio-8080-exec-1] - INFO a.j.j.s.WorkspaceServiceImpl - Fetched 6 workspaces
+2024-03-22 02:31:44 [http-nio-8080-exec-1] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 02:31:45 [http-nio-8080-exec-6] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching workspace by id: 1
+2024-03-22 02:31:45 [http-nio-8080-exec-6] - INFO a.j.j.s.WorkspaceServiceImpl - Found workspace: Development
+2024-03-22 02:31:45 [http-nio-8080-exec-2] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 02:31:46 [http-nio-8080-exec-8] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 02:31:46 [http-nio-8080-exec-6] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 02:31:47 [http-nio-8080-exec-3] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@46cd41e8
+2024-03-22 02:31:47 [http-nio-8080-exec-3] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 02:31:47 [http-nio-8080-exec-3] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 02:31:49 [http-nio-8080-exec-9] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching workspace by id: 1
+2024-03-22 02:31:49 [http-nio-8080-exec-9] - INFO a.j.j.s.WorkspaceServiceImpl - Found workspace: Development
+2024-03-22 02:31:49 [http-nio-8080-exec-5] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 02:31:49 [http-nio-8080-exec-9] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 02:31:50 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@771c863
+2024-03-22 02:31:50 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 02:31:50 [http-nio-8080-exec-4] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 03:11:00 [http-nio-8080-exec-10] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@254fb4ed
+2024-03-22 03:11:00 [http-nio-8080-exec-10] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 03:11:00 [http-nio-8080-exec-10] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 03:11:00 [http-nio-8080-exec-6] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 03:12:47 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@1dca2e35
+2024-03-22 03:12:47 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 03:12:47 [http-nio-8080-exec-2] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 03:12:47 [http-nio-8080-exec-4] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 03:13:57 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@bbd2a9fa
+2024-03-22 03:13:57 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 03:13:57 [http-nio-8080-exec-10] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 03:13:57 [http-nio-8080-exec-5] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 03:54:57 [SpringApplicationShutdownHook] - INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-03-22 03:54:57 [SpringApplicationShutdownHook] - INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-03-22 03:59:51 [restartedMain] - INFO a.j.j.JitechpilotApplication - Starting JitechpilotApplication using Java 21.0.1 with PID 15224 (C:\Users\HP\Desktop\JavaProject\jitechpilot\target\classes started by HP in C:\Users\HP\Desktop\JavaProject\jitechpilot)
+2024-03-22 03:59:51 [restartedMain] - INFO a.j.j.JitechpilotApplication - No active profile set, falling back to 1 default profile: "default"
+2024-03-22 03:59:57 [restartedMain] - INFO o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-03-22 03:59:57 [restartedMain] - INFO o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-03-22 03:59:57 [restartedMain] - INFO o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-22 03:59:57 [restartedMain] - INFO o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-03-22 03:59:58 [restartedMain] - INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-03-22 04:00:02 [restartedMain] - INFO com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6ac04700
+2024-03-22 04:00:02 [restartedMain] - INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-03-22 04:00:30 [restartedMain] - INFO o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-03-22 04:00:30 [restartedMain] - INFO a.j.j.JitechpilotApplication - Started JitechpilotApplication in 40.894 seconds (process running for 43.981)
+2024-03-22 04:00:45 [http-nio-8080-exec-2] - INFO o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-22 04:00:45 [http-nio-8080-exec-1] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@db658e80
+2024-03-22 04:00:45 [http-nio-8080-exec-1] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 04:00:46 [http-nio-8080-exec-1] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 04:00:46 [http-nio-8080-exec-3] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 04:00:53 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@d1628150
+2024-03-22 04:00:53 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 04:00:54 [http-nio-8080-exec-4] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 04:22:13 [http-nio-8080-exec-10] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@98433957
+2024-03-22 04:22:13 [http-nio-8080-exec-10] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 04:22:14 [http-nio-8080-exec-10] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 04:22:14 [http-nio-8080-exec-2] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 04:22:20 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@4f1ae86d
+2024-03-22 04:22:20 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 04:22:20 [http-nio-8080-exec-4] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 04:25:01 [http-nio-8080-exec-8] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@c35cf77c
+2024-03-22 04:25:01 [http-nio-8080-exec-8] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 04:25:02 [http-nio-8080-exec-8] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 04:25:04 [http-nio-8080-exec-9] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@c2aed2da
+2024-03-22 04:25:04 [http-nio-8080-exec-9] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 04:25:05 [http-nio-8080-exec-9] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 04:25:14 [http-nio-8080-exec-1] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@c3537b91
+2024-03-22 04:25:14 [http-nio-8080-exec-1] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 04:25:14 [http-nio-8080-exec-1] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 04:25:20 [http-nio-8080-exec-3] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@c08a4fb
+2024-03-22 04:25:20 [http-nio-8080-exec-3] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 04:25:20 [http-nio-8080-exec-3] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 04:25:21 [http-nio-8080-exec-7] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@66ffaa79
+2024-03-22 04:25:21 [http-nio-8080-exec-7] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 04:25:21 [http-nio-8080-exec-7] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 04:27:34 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@24cb272a
+2024-03-22 04:27:34 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 04:27:35 [http-nio-8080-exec-2] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 04:28:44 [http-nio-8080-exec-3] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@719f04dc
+2024-03-22 04:28:44 [http-nio-8080-exec-3] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 04:28:44 [http-nio-8080-exec-3] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 04:28:45 [http-nio-8080-exec-1] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 04:30:03 [http-nio-8080-exec-7] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@c7483dcb
+2024-03-22 04:30:03 [http-nio-8080-exec-7] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 04:30:04 [http-nio-8080-exec-7] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 04:30:04 [http-nio-8080-exec-8] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 04:30:55 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@79651ffa
+2024-03-22 04:30:55 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 04:30:56 [http-nio-8080-exec-5] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 04:30:56 [http-nio-8080-exec-2] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 04:34:26 [http-nio-8080-exec-6] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@e203012a
+2024-03-22 04:34:26 [http-nio-8080-exec-6] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 04:34:26 [http-nio-8080-exec-6] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 04:34:26 [http-nio-8080-exec-4] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 04:38:19 [http-nio-8080-exec-5] - INFO o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 10413 ms
+2024-03-22 04:48:14 [http-nio-8080-exec-8] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@8914557
+2024-03-22 04:48:14 [http-nio-8080-exec-8] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 04:48:14 [http-nio-8080-exec-8] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 04:48:15 [http-nio-8080-exec-10] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 04:49:02 [http-nio-8080-exec-3] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@1ac95033
+2024-03-22 04:49:02 [http-nio-8080-exec-3] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 04:49:03 [http-nio-8080-exec-3] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 04:49:03 [http-nio-8080-exec-1] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 04:50:37 [http-nio-8080-exec-9] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@fd75bba6
+2024-03-22 04:50:37 [http-nio-8080-exec-9] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 04:50:38 [http-nio-8080-exec-9] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 04:50:38 [http-nio-8080-exec-10] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 04:52:25 [http-nio-8080-exec-1] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 04:52:25 [http-nio-8080-exec-7] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@a30229b2
+2024-03-22 04:52:25 [http-nio-8080-exec-7] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 04:52:25 [http-nio-8080-exec-7] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 04:53:11 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.SectionServiceImpl - Fetching all Sections in board id 1 
+2024-03-22 04:53:12 [http-nio-8080-exec-5] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 04:54:30 [http-nio-8080-exec-10] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 04:54:30 [http-nio-8080-exec-6] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@745d9571
+2024-03-22 04:54:30 [http-nio-8080-exec-6] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 04:54:30 [http-nio-8080-exec-6] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 04:55:17 [http-nio-8080-exec-3] - INFO a.j.j.serviceImpl.SectionServiceImpl - Fetching all Sections in board id 1 
+2024-03-22 04:55:18 [http-nio-8080-exec-3] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 04:57:24 [http-nio-8080-exec-1] - INFO a.j.j.serviceImpl.SectionServiceImpl - Fetching all Sections in board id 1 
+2024-03-22 04:57:24 [http-nio-8080-exec-1] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 04:57:53 [http-nio-8080-exec-1] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@d1aacee6
+2024-03-22 04:57:53 [http-nio-8080-exec-1] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 04:57:53 [http-nio-8080-exec-1] - WARN a.j.j.e.GlobalExceptionHandler - Response already committed. Ignoring: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Infinite recursion (StackOverflowError)
+2024-03-22 05:02:48 [SpringApplicationShutdownHook] - INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-03-22 05:02:48 [SpringApplicationShutdownHook] - INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-03-22 05:03:14 [restartedMain] - INFO a.j.j.JitechpilotApplication - Starting JitechpilotApplication using Java 21.0.1 with PID 1108 (C:\Users\HP\Desktop\JavaProject\jitechpilot\target\classes started by HP in C:\Users\HP\Desktop\JavaProject\jitechpilot)
+2024-03-22 05:03:14 [restartedMain] - INFO a.j.j.JitechpilotApplication - No active profile set, falling back to 1 default profile: "default"
+2024-03-22 05:03:18 [restartedMain] - INFO o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-03-22 05:03:18 [restartedMain] - INFO o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-03-22 05:03:18 [restartedMain] - INFO o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-22 05:03:18 [restartedMain] - INFO o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-03-22 05:03:20 [restartedMain] - INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-03-22 05:03:21 [restartedMain] - INFO com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@f6f9b43
+2024-03-22 05:03:21 [restartedMain] - INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-03-22 05:03:45 [restartedMain] - INFO o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-03-22 05:03:45 [restartedMain] - INFO a.j.j.JitechpilotApplication - Started JitechpilotApplication in 32.26 seconds (process running for 36.877)
+2024-03-22 05:11:50 [http-nio-8080-exec-1] - INFO o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-22 05:11:56 [http-nio-8080-exec-5] - INFO o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 1392 ms
+2024-03-22 05:12:43 [http-nio-8080-exec-9] - INFO a.j.j.serviceImpl.SectionServiceImpl - Fetching all Sections in board id 1 
+2024-03-22 05:17:48 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@99dc5a17
+2024-03-22 05:17:48 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 05:18:45 [http-nio-8080-exec-8] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@4364bc5b
+2024-03-22 05:18:45 [http-nio-8080-exec-8] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 05:18:58 [http-nio-8080-exec-1] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@b767fabd
+2024-03-22 05:18:58 [http-nio-8080-exec-1] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 05:20:17 [http-nio-8080-exec-8] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@5631787b
+2024-03-22 05:20:17 [http-nio-8080-exec-8] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 05:20:51 [http-nio-8080-exec-6] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@5c78e3d7
+2024-03-22 05:20:51 [http-nio-8080-exec-6] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 05:21:30 [http-nio-8080-exec-8] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@e891a864
+2024-03-22 05:21:30 [http-nio-8080-exec-8] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 05:21:41 [http-nio-8080-exec-3] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@98a739f4
+2024-03-22 05:21:41 [http-nio-8080-exec-3] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 05:23:09 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@10f1bf0b
+2024-03-22 05:23:09 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 05:23:47 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@fe02df21
+2024-03-22 05:23:47 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 05:24:30 [http-nio-8080-exec-6] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@1ab36b40
+2024-03-22 05:24:30 [http-nio-8080-exec-6] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 05:25:04 [http-nio-8080-exec-10] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@884f023d
+2024-03-22 05:25:04 [http-nio-8080-exec-10] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 05:25:16 [http-nio-8080-exec-3] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@96e83553
+2024-03-22 05:25:16 [http-nio-8080-exec-3] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 05:26:32 [http-nio-8080-exec-10] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@79969150
+2024-03-22 05:26:32 [http-nio-8080-exec-10] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 05:27:48 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@d88a03f3
+2024-03-22 05:27:48 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 05:28:20 [http-nio-8080-exec-6] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@72701189
+2024-03-22 05:28:20 [http-nio-8080-exec-6] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 05:28:45 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@9b7ca1f8
+2024-03-22 05:28:45 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 05:29:53 [http-nio-8080-exec-3] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@691c1cc7
+2024-03-22 05:29:53 [http-nio-8080-exec-3] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 05:31:32 [http-nio-8080-exec-9] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@84e9cfbd
+2024-03-22 05:31:32 [http-nio-8080-exec-9] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 05:31:56 [http-nio-8080-exec-7] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@a08c7da0
+2024-03-22 05:31:56 [http-nio-8080-exec-7] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 05:32:56 [http-nio-8080-exec-8] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@521cdf5f
+2024-03-22 05:32:56 [http-nio-8080-exec-8] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 05:35:04 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@cc660d97
+2024-03-22 05:35:04 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 05:36:35 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@580a0799
+2024-03-22 05:36:35 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 05:37:26 [http-nio-8080-exec-8] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@1878a787
+2024-03-22 05:37:26 [http-nio-8080-exec-8] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 05:37:30 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@1af3c6a
+2024-03-22 05:37:30 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 05:37:49 [http-nio-8080-exec-6] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@d0e8de6b
+2024-03-22 05:37:49 [http-nio-8080-exec-6] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 05:38:07 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@b2be7255
+2024-03-22 05:38:07 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 05:38:26 [http-nio-8080-exec-9] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@facae571
+2024-03-22 05:38:26 [http-nio-8080-exec-9] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 05:39:05 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@7416d3a7
+2024-03-22 05:39:05 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 05:40:00 [http-nio-8080-exec-6] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@dccc1b28
+2024-03-22 05:40:00 [http-nio-8080-exec-6] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 05:42:43 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@acab717a
+2024-03-22 05:42:43 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 05:45:38 [http-nio-8080-exec-9] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@d32df6de
+2024-03-22 05:45:38 [http-nio-8080-exec-9] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 05:46:11 [http-nio-8080-exec-10] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@dde55754
+2024-03-22 05:46:11 [http-nio-8080-exec-10] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 05:47:27 [http-nio-8080-exec-6] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@cc133603
+2024-03-22 05:47:27 [http-nio-8080-exec-6] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 05:47:52 [http-nio-8080-exec-10] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@82928de1
+2024-03-22 05:47:52 [http-nio-8080-exec-10] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 05:48:19 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@2a36cef0
+2024-03-22 05:48:19 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 05:48:50 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@1a9dbc90
+2024-03-22 05:48:50 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 05:48:53 [http-nio-8080-exec-3] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@79e22bd8
+2024-03-22 05:48:53 [http-nio-8080-exec-3] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 05:50:22 [http-nio-8080-exec-1] - INFO a.j.j.serviceImpl.SectionServiceImpl - Fetching all Sections in board id 1 
+2024-03-22 05:51:21 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@87e97286
+2024-03-22 05:51:21 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 05:51:30 [http-nio-8080-exec-9] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@53f04c5b
+2024-03-22 05:51:30 [http-nio-8080-exec-9] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 05:52:04 [http-nio-8080-exec-8] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@d69d926c
+2024-03-22 05:52:04 [http-nio-8080-exec-8] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 05:52:44 [http-nio-8080-exec-3] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@129e288
+2024-03-22 05:52:44 [http-nio-8080-exec-3] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 05:53:20 [http-nio-8080-exec-10] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@1a527d45
+2024-03-22 05:53:20 [http-nio-8080-exec-10] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 05:53:40 [http-nio-8080-exec-9] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@a506e6f3
+2024-03-22 05:53:40 [http-nio-8080-exec-9] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 05:55:09 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@e9f80c41
+2024-03-22 05:55:09 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 05:56:22 [http-nio-8080-exec-7] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@f6df4bed
+2024-03-22 05:56:22 [http-nio-8080-exec-7] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 05:57:09 [http-nio-8080-exec-6] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@2ed0e3e
+2024-03-22 05:57:09 [http-nio-8080-exec-6] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 05:57:57 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@452abba7
+2024-03-22 05:57:57 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 06:00:21 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@124b7464
+2024-03-22 06:00:21 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 06:07:08 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.TicketServiceImpl - Ticket created successfully title : task 1 
+2024-03-22 06:08:07 [http-nio-8080-exec-7] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@81e23ce3
+2024-03-22 06:08:07 [http-nio-8080-exec-7] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 06:09:26 [SpringApplicationShutdownHook] - INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-03-22 06:09:26 [SpringApplicationShutdownHook] - INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-03-22 09:45:15 [restartedMain] - INFO a.j.j.JitechpilotApplication - Starting JitechpilotApplication using Java 21.0.1 with PID 16156 (C:\Users\HP\Desktop\JavaProject\jitechpilot\target\classes started by HP in C:\Users\HP\Desktop\JavaProject\jitechpilot)
+2024-03-22 09:45:15 [restartedMain] - INFO a.j.j.JitechpilotApplication - No active profile set, falling back to 1 default profile: "default"
+2024-03-22 09:45:21 [restartedMain] - INFO o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-03-22 09:45:21 [restartedMain] - INFO o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-03-22 09:45:21 [restartedMain] - INFO o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-22 09:45:21 [restartedMain] - INFO o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-03-22 09:45:23 [restartedMain] - INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-03-22 09:45:26 [restartedMain] - INFO com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@33c98fe8
+2024-03-22 09:45:26 [restartedMain] - INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-03-22 09:46:21 [restartedMain] - INFO o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-03-22 09:46:21 [restartedMain] - INFO a.j.j.JitechpilotApplication - Started JitechpilotApplication in 67.64 seconds (process running for 70.783)
+2024-03-22 09:47:04 [http-nio-8080-exec-2] - INFO o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-22 09:47:05 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@c9b7f6fe
+2024-03-22 09:47:05 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 09:47:30 [http-nio-8080-exec-8] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@9be4df97
+2024-03-22 09:47:30 [http-nio-8080-exec-8] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 09:48:43 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@ae80dee3
+2024-03-22 09:48:43 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 09:49:11 [http-nio-8080-exec-10] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@86b67b4
+2024-03-22 09:49:11 [http-nio-8080-exec-10] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 09:51:20 [SpringApplicationShutdownHook] - INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-03-22 09:51:21 [SpringApplicationShutdownHook] - INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-03-22 09:51:42 [restartedMain] - INFO a.j.j.JitechpilotApplication - Starting JitechpilotApplication using Java 21.0.1 with PID 21836 (C:\Users\HP\Desktop\JavaProject\jitechpilot\target\classes started by HP in C:\Users\HP\Desktop\JavaProject\jitechpilot)
+2024-03-22 09:51:42 [restartedMain] - INFO a.j.j.JitechpilotApplication - No active profile set, falling back to 1 default profile: "default"
+2024-03-22 09:51:45 [restartedMain] - INFO o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-03-22 09:51:45 [restartedMain] - INFO o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-03-22 09:51:45 [restartedMain] - INFO o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-22 09:51:45 [restartedMain] - INFO o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-03-22 09:51:46 [restartedMain] - INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-03-22 09:51:47 [restartedMain] - INFO com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@358b94d3
+2024-03-22 09:51:47 [restartedMain] - INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-03-22 09:52:07 [restartedMain] - INFO o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-03-22 09:52:07 [restartedMain] - INFO a.j.j.JitechpilotApplication - Started JitechpilotApplication in 25.915 seconds (process running for 27.841)
+2024-03-22 09:52:15 [http-nio-8080-exec-2] - INFO o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-22 09:52:16 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.TicketServiceImpl - Ticket created successfully title : task 2 
+2024-03-22 09:52:28 [http-nio-8080-exec-3] - INFO a.j.j.serviceImpl.TicketServiceImpl - Ticket created successfully title : task 3 
+2024-03-22 09:52:37 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@9793db0f
+2024-03-22 09:52:37 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 09:52:45 [http-nio-8080-exec-8] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@9ff7882f
+2024-03-22 09:52:45 [http-nio-8080-exec-8] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 09:52:50 [http-nio-8080-exec-10] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@4838689d
+2024-03-22 09:52:50 [http-nio-8080-exec-10] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 09:53:28 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@81ee4e16
+2024-03-22 09:53:28 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.SprintServiceImpl - Sprint created successfully
+2024-03-22 09:54:01 [http-nio-8080-exec-8] - INFO a.j.j.serviceImpl.TicketServiceImpl - Ticket created successfully title : sprint 3 ticket 1 
+2024-03-22 09:54:10 [http-nio-8080-exec-1] - INFO a.j.j.serviceImpl.TicketServiceImpl - Ticket created successfully title : sprint 3 ticket 2 
+2024-03-22 09:54:27 [http-nio-8080-exec-10] - INFO a.j.j.serviceImpl.TicketServiceImpl - Ticket created successfully title : sprint 3 ticket 3 
+2024-03-22 09:54:37 [http-nio-8080-exec-3] - INFO a.j.j.serviceImpl.TicketServiceImpl - Ticket created successfully title : sprint 3 ticket 4 
+2024-03-22 09:55:00 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.TicketServiceImpl - Ticket created successfully title : sprint 3 ticket 1 
+2024-03-22 09:55:10 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.TicketServiceImpl - Ticket created successfully title : sprint 3 ticket 2 
+2024-03-22 09:55:17 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.TicketServiceImpl - Ticket created successfully title : sprint 3 ticket 3 
+2024-03-22 09:55:25 [http-nio-8080-exec-7] - INFO a.j.j.serviceImpl.TicketServiceImpl - Ticket created successfully title : sprint 3 ticket 4 
+2024-03-22 09:55:32 [http-nio-8080-exec-6] - INFO a.j.j.serviceImpl.TicketServiceImpl - Ticket created successfully title : sprint 3 ticket 5 
+2024-03-22 09:55:41 [http-nio-8080-exec-9] - INFO a.j.j.serviceImpl.TicketServiceImpl - Ticket created successfully title : sprint 3 ticket 6 
+2024-03-22 09:55:48 [http-nio-8080-exec-8] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching workspace by id: 1
+2024-03-22 09:55:48 [http-nio-8080-exec-8] - INFO a.j.j.s.WorkspaceServiceImpl - Found workspace: Development
+2024-03-22 09:55:49 [http-nio-8080-exec-3] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@356cb4fb
+2024-03-22 09:55:49 [http-nio-8080-exec-3] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 09:56:07 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@b090cd5
+2024-03-22 09:56:07 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 09:56:49 [http-nio-8080-exec-8] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@c7a25552
+2024-03-22 09:56:49 [http-nio-8080-exec-8] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 09:57:05 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@b90cee62
+2024-03-22 09:57:05 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.SprintServiceImpl - Sprint created successfully
+2024-03-22 09:57:18 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.TicketServiceImpl - Ticket created successfully title : sprint 1 ticket 1 
+2024-03-22 09:57:27 [http-nio-8080-exec-6] - INFO a.j.j.serviceImpl.TicketServiceImpl - Ticket created successfully title : sprint 4 ticket 1 
+2024-03-22 09:57:36 [http-nio-8080-exec-9] - INFO a.j.j.serviceImpl.TicketServiceImpl - Ticket created successfully title : sprint 4 ticket 2 
+2024-03-22 09:57:42 [http-nio-8080-exec-1] - INFO a.j.j.serviceImpl.TicketServiceImpl - Ticket created successfully title : sprint 4 ticket 3 
+2024-03-22 09:57:48 [http-nio-8080-exec-10] - INFO a.j.j.serviceImpl.TicketServiceImpl - Ticket created successfully title : sprint 4 ticket 3 
+2024-03-22 09:58:05 [http-nio-8080-exec-8] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@a155db96
+2024-03-22 09:58:05 [http-nio-8080-exec-8] - INFO a.j.j.serviceImpl.SprintServiceImpl - Sprint created successfully
+2024-03-22 09:58:24 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@dbe51b99
+2024-03-22 09:58:24 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.SectionServiceImpl - section created successfully title : Doing 
+2024-03-22 09:58:33 [http-nio-8080-exec-7] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@c909ab70
+2024-03-22 09:58:33 [http-nio-8080-exec-7] - INFO a.j.j.serviceImpl.SectionServiceImpl - section created successfully title : Done 
+2024-03-22 09:58:39 [http-nio-8080-exec-9] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@2556f683
+2024-03-22 09:58:39 [http-nio-8080-exec-9] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 09:58:40 [http-nio-8080-exec-8] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@a655f37c
+2024-03-22 09:58:40 [http-nio-8080-exec-8] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 09:58:41 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@4c994978
+2024-03-22 09:58:41 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 09:58:43 [http-nio-8080-exec-6] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@c59f2fdb
+2024-03-22 09:58:43 [http-nio-8080-exec-6] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 09:58:48 [http-nio-8080-exec-10] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@69a8b292
+2024-03-22 09:58:48 [http-nio-8080-exec-10] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 09:58:49 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@4c54d00
+2024-03-22 09:58:49 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 09:58:51 [http-nio-8080-exec-6] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@bc21efee
+2024-03-22 09:58:51 [http-nio-8080-exec-6] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 09:58:55 [http-nio-8080-exec-8] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@c95a1216
+2024-03-22 09:58:55 [http-nio-8080-exec-8] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 09:58:59 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@f49b0d2d
+2024-03-22 09:58:59 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 09:59:01 [http-nio-8080-exec-9] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@615b40af
+2024-03-22 09:59:01 [http-nio-8080-exec-9] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 09:59:08 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@50f1e8a8
+2024-03-22 09:59:08 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 09:59:10 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@c7e34692
+2024-03-22 09:59:10 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 09:59:13 [http-nio-8080-exec-1] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@1d54cd01
+2024-03-22 09:59:13 [http-nio-8080-exec-1] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 09:59:17 [http-nio-8080-exec-3] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@3215d4fb
+2024-03-22 09:59:17 [http-nio-8080-exec-3] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 09:59:27 [http-nio-8080-exec-7] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching workspace by id: 1
+2024-03-22 09:59:27 [http-nio-8080-exec-7] - INFO a.j.j.s.WorkspaceServiceImpl - Found workspace: Development
+2024-03-22 09:59:28 [http-nio-8080-exec-9] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@77547756
+2024-03-22 09:59:28 [http-nio-8080-exec-9] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 09:59:54 [http-nio-8080-exec-10] - INFO a.j.j.serviceImpl.TicketServiceImpl - Ticket created successfully title : sprint 4 ticket 1 
+2024-03-22 10:00:31 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.TicketServiceImpl - Ticket created successfully title : sprint 4 ticket 1 
+2024-03-22 10:00:34 [http-nio-8080-exec-7] - INFO a.j.j.serviceImpl.TicketServiceImpl - Ticket created successfully title : sprint 4 ticket 1 
+2024-03-22 10:00:40 [http-nio-8080-exec-5] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching workspace by id: 1
+2024-03-22 10:00:40 [http-nio-8080-exec-5] - INFO a.j.j.s.WorkspaceServiceImpl - Found workspace: Development
+2024-03-22 10:00:42 [http-nio-8080-exec-6] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@99cf8c58
+2024-03-22 10:00:42 [http-nio-8080-exec-6] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 10:00:45 [http-nio-8080-exec-3] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@160185dc
+2024-03-22 10:00:45 [http-nio-8080-exec-3] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 10:00:48 [http-nio-8080-exec-7] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@43317ad8
+2024-03-22 10:00:48 [http-nio-8080-exec-7] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 10:03:31 [http-nio-8080-exec-1] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@21cfe1c4
+2024-03-22 10:03:31 [http-nio-8080-exec-1] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 10:03:44 [http-nio-8080-exec-10] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@10ef8c1e
+2024-03-22 10:03:44 [http-nio-8080-exec-10] - INFO a.j.j.serviceImpl.SprintServiceImpl - Sprint created successfully
+2024-03-22 10:04:01 [http-nio-8080-exec-7] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@70cecef3
+2024-03-22 10:04:01 [http-nio-8080-exec-7] - INFO a.j.j.serviceImpl.SprintServiceImpl - Sprint created successfully
+2024-03-22 10:04:07 [http-nio-8080-exec-6] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@6be92ce1
+2024-03-22 10:04:07 [http-nio-8080-exec-6] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 10:07:26 [http-nio-8080-exec-3] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@c1a6ddd3
+2024-03-22 10:07:26 [http-nio-8080-exec-3] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 10:08:08 [http-nio-8080-exec-9] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@f01f4a89
+2024-03-22 10:08:08 [http-nio-8080-exec-9] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 10:09:28 [http-nio-8080-exec-7] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@64050b45
+2024-03-22 10:09:28 [http-nio-8080-exec-7] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 10:09:50 [http-nio-8080-exec-3] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@194a67c1
+2024-03-22 10:09:50 [http-nio-8080-exec-3] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 10:10:31 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@2a544b0a
+2024-03-22 10:10:31 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 10:11:13 [http-nio-8080-exec-3] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@a4e5a2f8
+2024-03-22 10:11:13 [http-nio-8080-exec-3] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 10:12:28 [http-nio-8080-exec-8] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@724673e8
+2024-03-22 10:12:28 [http-nio-8080-exec-8] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 10:12:34 [http-nio-8080-exec-10] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@b4bc19fd
+2024-03-22 10:12:34 [http-nio-8080-exec-10] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 10:12:36 [http-nio-8080-exec-6] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@f2aeb5cc
+2024-03-22 10:12:36 [http-nio-8080-exec-6] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 10:15:59 [http-nio-8080-exec-1] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@ca48ad50
+2024-03-22 10:15:59 [http-nio-8080-exec-1] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 10:16:37 [http-nio-8080-exec-6] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@321d1b72
+2024-03-22 10:16:37 [http-nio-8080-exec-6] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 10:17:01 [http-nio-8080-exec-1] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@c64a4717
+2024-03-22 10:17:01 [http-nio-8080-exec-1] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 10:17:17 [http-nio-8080-exec-9] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@330f9d91
+2024-03-22 10:17:17 [http-nio-8080-exec-9] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 10:17:31 [http-nio-8080-exec-8] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@eb460007
+2024-03-22 10:17:31 [http-nio-8080-exec-8] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 10:17:57 [http-nio-8080-exec-6] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@1557665b
+2024-03-22 10:17:57 [http-nio-8080-exec-6] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 10:18:32 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@648358ce
+2024-03-22 10:18:32 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 10:18:56 [http-nio-8080-exec-10] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@5f9d0397
+2024-03-22 10:18:56 [http-nio-8080-exec-10] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 10:19:06 [http-nio-8080-exec-8] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@dd71db
+2024-03-22 10:19:06 [http-nio-8080-exec-8] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 10:19:16 [http-nio-8080-exec-6] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@448469f7
+2024-03-22 10:19:16 [http-nio-8080-exec-6] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 10:19:34 [http-nio-8080-exec-1] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@480a833c
+2024-03-22 10:19:34 [http-nio-8080-exec-1] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 10:19:54 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@64852063
+2024-03-22 10:19:54 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 10:20:07 [http-nio-8080-exec-9] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@5d62a26e
+2024-03-22 10:20:07 [http-nio-8080-exec-9] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 10:20:26 [http-nio-8080-exec-10] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@227924fb
+2024-03-22 10:20:26 [http-nio-8080-exec-10] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 10:20:47 [http-nio-8080-exec-9] - INFO a.j.j.serviceImpl.SectionServiceImpl - Fetching all Sections in board id 1 
+2024-03-22 10:23:03 [http-nio-8080-exec-8] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@47b71cb5
+2024-03-22 10:23:03 [http-nio-8080-exec-8] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 10:23:25 [http-nio-8080-exec-1] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@82a662b5
+2024-03-22 10:23:25 [http-nio-8080-exec-1] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 10:23:45 [http-nio-8080-exec-4] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching workspace by id: 1
+2024-03-22 10:23:45 [http-nio-8080-exec-4] - INFO a.j.j.s.WorkspaceServiceImpl - Found workspace: Development
+2024-03-22 10:24:00 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@6cb5393d
+2024-03-22 10:24:00 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 10:25:00 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.TaskServiceImpl - Task with id: 9 has been updated successfully
+2024-03-22 10:25:00 [http-nio-8080-exec-6] - INFO a.j.j.serviceImpl.TaskServiceImpl - Task with id: 7 has been updated successfully
+2024-03-22 10:25:02 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.TicketServiceImpl - Ticket updated successfully title : sprint 4 ticket 1 
+2024-03-22 10:26:35 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@ba3eff84
+2024-03-22 10:26:35 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 10:26:58 [http-nio-8080-exec-8] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@602c0f6e
+2024-03-22 10:26:58 [http-nio-8080-exec-8] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 10:27:25 [http-nio-8080-exec-1] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@7a3ccaa6
+2024-03-22 10:27:25 [http-nio-8080-exec-1] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 10:27:45 [http-nio-8080-exec-10] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@e76b3c6
+2024-03-22 10:27:45 [http-nio-8080-exec-10] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 10:27:49 [http-nio-8080-exec-5] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching workspace by id: 1
+2024-03-22 10:27:49 [http-nio-8080-exec-5] - INFO a.j.j.s.WorkspaceServiceImpl - Found workspace: Development
+2024-03-22 10:28:00 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@ef995b83
+2024-03-22 10:28:00 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 10:28:22 [http-nio-8080-exec-7] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@a1e67b17
+2024-03-22 10:28:22 [http-nio-8080-exec-7] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 10:28:26 [http-nio-8080-exec-1] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@f90f92c0
+2024-03-22 10:28:26 [http-nio-8080-exec-1] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 10:30:32 [http-nio-8080-exec-10] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@7dcb761a
+2024-03-22 10:30:32 [http-nio-8080-exec-10] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 10:30:44 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.TicketServiceImpl - Ticket updated successfully title : Fix login bug 
+2024-03-22 10:30:53 [http-nio-8080-exec-8] - INFO a.j.j.serviceImpl.TicketServiceImpl - Ticket updated successfully title : Fix login bug 
+2024-03-22 10:31:10 [http-nio-8080-exec-7] - INFO a.j.j.serviceImpl.TicketServiceImpl - Ticket updated successfully title : Fix login bug 
+2024-03-22 10:32:12 [http-nio-8080-exec-6] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching workspace by id: 1
+2024-03-22 10:32:12 [http-nio-8080-exec-6] - INFO a.j.j.s.WorkspaceServiceImpl - Found workspace: Development
+2024-03-22 10:32:14 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@99a61db7
+2024-03-22 10:32:14 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 10:32:46 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@38e02773
+2024-03-22 10:32:46 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 10:33:01 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@482a5374
+2024-03-22 10:33:01 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 10:33:24 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@5dd38dde
+2024-03-22 10:33:24 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 10:33:44 [http-nio-8080-exec-8] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@d4fcad47
+2024-03-22 10:33:44 [http-nio-8080-exec-8] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 10:33:49 [http-nio-8080-exec-10] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching all workspaces
+2024-03-22 10:33:50 [http-nio-8080-exec-10] - INFO a.j.j.s.WorkspaceServiceImpl - Fetched 6 workspaces
+2024-03-22 10:35:35 [http-nio-8080-exec-3] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching workspace by id: 1
+2024-03-22 10:35:35 [http-nio-8080-exec-3] - INFO a.j.j.s.WorkspaceServiceImpl - Found workspace: Workspace Jobintech Promo 3 Java Angular
+2024-03-22 10:35:37 [http-nio-8080-exec-5] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching all workspaces
+2024-03-22 10:35:37 [http-nio-8080-exec-5] - INFO a.j.j.s.WorkspaceServiceImpl - Fetched 6 workspaces
+2024-03-22 10:35:41 [http-nio-8080-exec-6] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching workspace by id: 1
+2024-03-22 10:35:41 [http-nio-8080-exec-6] - INFO a.j.j.s.WorkspaceServiceImpl - Found workspace: Workspace Jobintech Promo 3 Java Angular
+2024-03-22 10:36:47 [http-nio-8080-exec-3] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching workspace by id: 1
+2024-03-22 10:36:47 [http-nio-8080-exec-3] - INFO a.j.j.s.WorkspaceServiceImpl - Found workspace: Workspace Jobintech Promo 3 Java Angular
+2024-03-22 10:39:22 [http-nio-8080-exec-1] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching workspace by id: 1
+2024-03-22 10:39:23 [http-nio-8080-exec-1] - INFO a.j.j.s.WorkspaceServiceImpl - Found workspace: Workspace Jobintech Promo 3 Java Angular
+2024-03-22 10:39:54 [http-nio-8080-exec-7] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching workspace by id: 1
+2024-03-22 10:39:56 [http-nio-8080-exec-7] - INFO a.j.j.s.WorkspaceServiceImpl - Found workspace: Workspace Jobintech Promo 3 Java Angular
+2024-03-22 10:40:40 [http-nio-8080-exec-4] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching workspace by id: 1
+2024-03-22 10:40:43 [http-nio-8080-exec-4] - INFO a.j.j.s.WorkspaceServiceImpl - Found workspace: Workspace Jobintech Promo 3 Java Angular
+2024-03-22 10:41:10 [http-nio-8080-exec-9] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching workspace by id: 1
+2024-03-22 10:41:11 [http-nio-8080-exec-9] - INFO a.j.j.s.WorkspaceServiceImpl - Found workspace: Workspace Jobintech Promo 3 Java Angular
+2024-03-22 10:42:07 [http-nio-8080-exec-3] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching workspace by id: 1
+2024-03-22 10:42:08 [http-nio-8080-exec-3] - INFO a.j.j.s.WorkspaceServiceImpl - Found workspace: Workspace Jobintech Promo 3 Java Angular
+2024-03-22 10:42:27 [http-nio-8080-exec-9] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@39228405
+2024-03-22 10:42:27 [http-nio-8080-exec-9] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 10:43:08 [http-nio-8080-exec-3] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@bd0cba08
+2024-03-22 10:43:08 [http-nio-8080-exec-3] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 10:43:24 [http-nio-8080-exec-9] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@db62c745
+2024-03-22 10:43:24 [http-nio-8080-exec-9] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 10:43:45 [http-nio-8080-exec-10] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@632f857c
+2024-03-22 10:43:45 [http-nio-8080-exec-10] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 10:47:18 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@add229a7
+2024-03-22 10:47:18 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 10:47:43 [http-nio-8080-exec-9] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@16516d55
+2024-03-22 10:47:43 [http-nio-8080-exec-9] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 10:48:05 [http-nio-8080-exec-7] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@b7c542b5
+2024-03-22 10:48:05 [http-nio-8080-exec-7] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 10:48:30 [http-nio-8080-exec-1] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@4eb9f310
+2024-03-22 10:48:30 [http-nio-8080-exec-1] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 10:50:37 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@13be590b
+2024-03-22 10:50:37 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 10:51:13 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@a98025e0
+2024-03-22 10:51:13 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 10:51:23 [http-nio-8080-exec-3] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@d1f9df80
+2024-03-22 10:51:23 [http-nio-8080-exec-3] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 10:52:24 [http-nio-8080-exec-7] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@6b154de7
+2024-03-22 10:52:24 [http-nio-8080-exec-7] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 10:52:44 [http-nio-8080-exec-3] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@646b006f
+2024-03-22 10:52:44 [http-nio-8080-exec-3] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 10:52:56 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@a2fb290
+2024-03-22 10:52:56 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 10:55:08 [http-nio-8080-exec-9] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@85d0b8ae
+2024-03-22 10:55:08 [http-nio-8080-exec-9] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 10:55:21 [http-nio-8080-exec-10] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@7d851cc
+2024-03-22 10:55:21 [http-nio-8080-exec-10] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 10:55:48 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@6d3130e7
+2024-03-22 10:55:48 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 10:56:10 [http-nio-8080-exec-7] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@3cc6beb9
+2024-03-22 10:56:10 [http-nio-8080-exec-7] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 10:57:13 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@4c78c52b
+2024-03-22 10:57:13 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 10:58:10 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@404436e1
+2024-03-22 10:58:10 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 10:59:00 [http-nio-8080-exec-3] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@b5dd2e51
+2024-03-22 10:59:00 [http-nio-8080-exec-3] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 10:59:12 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@40111ceb
+2024-03-22 10:59:12 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 11:02:16 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@77b4fb5b
+2024-03-22 11:02:16 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 11:02:47 [http-nio-8080-exec-10] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching all workspaces
+2024-03-22 11:03:02 [http-nio-8080-exec-6] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching all workspaces
+2024-03-22 11:03:14 [http-nio-8080-exec-10] - INFO a.j.j.s.WorkspaceServiceImpl - Fetched 6 workspaces
+2024-03-22 11:03:14 [http-nio-8080-exec-6] - INFO a.j.j.s.WorkspaceServiceImpl - Fetched 6 workspaces
+2024-03-22 11:03:14 [http-nio-8080-exec-10] - ERROR a.j.j.e.GlobalExceptionHandler - An unexpected error occurred: java.io.IOException: Une connexion établie a été abandonnée par un logiciel de votre ordinateur hôte
+org.apache.catalina.connector.ClientAbortException: java.io.IOException: Une connexion établie a été abandonnée par un logiciel de votre ordinateur hôte
+	at org.apache.catalina.connector.OutputBuffer.doFlush(OutputBuffer.java:305)
+	at org.apache.catalina.connector.OutputBuffer.flush(OutputBuffer.java:267)
+	at org.apache.catalina.connector.CoyoteOutputStream.flush(CoyoteOutputStream.java:120)
+	at java.base/java.io.FilterOutputStream.flush(FilterOutputStream.java:155)
+	at com.fasterxml.jackson.core.json.UTF8JsonGenerator.flush(UTF8JsonGenerator.java:1200)
+	at com.fasterxml.jackson.databind.ObjectWriter.writeValue(ObjectWriter.java:1063)
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.writeInternal(AbstractJackson2HttpMessageConverter.java:483)
+	at org.springframework.http.converter.AbstractGenericHttpMessageConverter.write(AbstractGenericHttpMessageConverter.java:114)
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor.writeWithMessageConverters(AbstractMessageConverterMethodProcessor.java:297)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.handleReturnValue(RequestResponseBodyMethodProcessor.java:190)
+	at org.springframework.web.method.support.HandlerMethodReturnValueHandlerComposite.handleReturnValue(HandlerMethodReturnValueHandlerComposite.java:78)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:136)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:920)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:830)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.io.IOException: Une connexion établie a été abandonnée par un logiciel de votre ordinateur hôte
+	at java.base/sun.nio.ch.SocketDispatcher.write0(Native Method)
+	at java.base/sun.nio.ch.SocketDispatcher.write(SocketDispatcher.java:54)
+	at java.base/sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:137)
+	at java.base/sun.nio.ch.IOUtil.write(IOUtil.java:102)
+	at java.base/sun.nio.ch.IOUtil.write(IOUtil.java:58)
+	at java.base/sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:542)
+	at org.apache.tomcat.util.net.NioChannel.write(NioChannel.java:118)
+	at org.apache.tomcat.util.net.NioEndpoint$NioSocketWrapper.doWrite(NioEndpoint.java:1381)
+	at org.apache.tomcat.util.net.SocketWrapperBase.doWrite(SocketWrapperBase.java:764)
+	at org.apache.tomcat.util.net.SocketWrapperBase.flushBlocking(SocketWrapperBase.java:728)
+	at org.apache.tomcat.util.net.SocketWrapperBase.flush(SocketWrapperBase.java:712)
+	at org.apache.coyote.http11.Http11OutputBuffer$SocketOutputBuffer.flush(Http11OutputBuffer.java:566)
+	at org.apache.coyote.http11.filters.ChunkedOutputFilter.flush(ChunkedOutputFilter.java:157)
+	at org.apache.coyote.http11.Http11OutputBuffer.flush(Http11OutputBuffer.java:220)
+	at org.apache.coyote.http11.Http11Processor.flush(Http11Processor.java:1245)
+	at org.apache.coyote.AbstractProcessor.action(AbstractProcessor.java:400)
+	at org.apache.coyote.Response.action(Response.java:208)
+	at org.apache.catalina.connector.OutputBuffer.doFlush(OutputBuffer.java:301)
+	... 54 common frames omitted
+2024-03-22 11:03:26 [http-nio-8080-exec-4] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching workspace by id: 5
+2024-03-22 11:03:26 [http-nio-8080-exec-4] - INFO a.j.j.s.WorkspaceServiceImpl - Found workspace: HR
+2024-03-22 11:03:28 [http-nio-8080-exec-1] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching all workspaces
+2024-03-22 11:03:29 [http-nio-8080-exec-1] - INFO a.j.j.s.WorkspaceServiceImpl - Fetched 6 workspaces
+2024-03-22 11:03:31 [http-nio-8080-exec-7] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching workspace by id: 6
+2024-03-22 11:03:31 [http-nio-8080-exec-7] - INFO a.j.j.s.WorkspaceServiceImpl - Found workspace: Development
+2024-03-22 11:03:34 [http-nio-8080-exec-2] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching all workspaces
+2024-03-22 11:03:35 [http-nio-8080-exec-2] - INFO a.j.j.s.WorkspaceServiceImpl - Fetched 6 workspaces
+2024-03-22 11:03:36 [http-nio-8080-exec-1] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching workspace by id: 1
+2024-03-22 11:03:36 [http-nio-8080-exec-1] - INFO a.j.j.s.WorkspaceServiceImpl - Found workspace: Workspace Jobintech Promo 3 Java Angular
+2024-03-22 11:03:44 [http-nio-8080-exec-10] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@d32a1e5d
+2024-03-22 11:03:44 [http-nio-8080-exec-10] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 11:03:46 [http-nio-8080-exec-3] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@99858992
+2024-03-22 11:03:46 [http-nio-8080-exec-3] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 11:05:23 [http-nio-8080-exec-7] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@10ebf0dd
+2024-03-22 11:05:23 [http-nio-8080-exec-7] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 11:07:43 [http-nio-8080-exec-3] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@286163a0
+2024-03-22 11:07:43 [http-nio-8080-exec-3] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 13:56:55 [HikariPool-1 housekeeper] - WARN com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2h23m35s184ms736µs100ns).
+2024-03-22 18:38:04 [HikariPool-1 housekeeper] - WARN com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4h19m38s255ms263µs100ns).
+2024-03-22 18:40:28 [http-nio-8080-exec-8] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@25b597f3
+2024-03-22 18:40:28 [http-nio-8080-exec-8] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 18:48:28 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@352535b0
+2024-03-22 18:48:28 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 18:48:29 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@36891c7b
+2024-03-22 18:48:29 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 18:48:33 [http-nio-8080-exec-1] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching workspace by id: 1
+2024-03-22 18:48:33 [http-nio-8080-exec-1] - INFO a.j.j.s.WorkspaceServiceImpl - Found workspace: Workspace Jobintech Promo 3 Java Angular
+2024-03-22 18:48:35 [http-nio-8080-exec-9] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@44d3b8a8
+2024-03-22 18:48:35 [http-nio-8080-exec-9] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-22 18:48:38 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@c19c9b77
+2024-03-22 18:48:38 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-23 01:24:44 [HikariPool-1 housekeeper] - WARN com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=6h15m10s33ms465µs700ns).
+2024-03-23 01:30:17 [http-nio-8080-exec-8] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@cc3c2cc
+2024-03-23 01:30:17 [http-nio-8080-exec-8] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-23 01:30:22 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@fbaf2ef3
+2024-03-23 01:30:22 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-23 01:32:31 [SpringApplicationShutdownHook] - INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-03-23 01:32:31 [SpringApplicationShutdownHook] - INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-03-23 01:33:18 [restartedMain] - INFO a.j.j.JitechpilotApplication - Starting JitechpilotApplication using Java 21.0.1 with PID 18216 (C:\Users\HP\Desktop\JavaProject\jitechpilot\target\classes started by HP in C:\Users\HP\Desktop\JavaProject\jitechpilot)
+2024-03-23 01:33:18 [restartedMain] - INFO a.j.j.JitechpilotApplication - No active profile set, falling back to 1 default profile: "default"
+2024-03-23 01:33:22 [restartedMain] - INFO o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-03-23 01:33:22 [restartedMain] - INFO o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-03-23 01:33:22 [restartedMain] - INFO o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-23 01:33:22 [restartedMain] - INFO o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-03-23 01:33:23 [restartedMain] - INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-03-23 01:33:24 [restartedMain] - INFO com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2f415539
+2024-03-23 01:33:24 [restartedMain] - INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-03-23 01:33:42 [restartedMain] - INFO o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-03-23 01:33:42 [restartedMain] - INFO a.j.j.JitechpilotApplication - Started JitechpilotApplication in 25.125 seconds (process running for 26.984)
+2024-03-23 01:33:50 [http-nio-8080-exec-1] - INFO o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-23 01:36:28 [http-nio-8080-exec-9] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching workspace by id: 1
+2024-03-23 01:36:28 [http-nio-8080-exec-9] - INFO a.j.j.s.WorkspaceServiceImpl - Found workspace: Development
+2024-03-23 01:36:31 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@146cf577
+2024-03-23 01:36:31 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-23 01:36:43 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@d8c45f4b
+2024-03-23 01:36:43 [http-nio-8080-exec-4] - INFO a.j.j.serviceImpl.SprintServiceImpl - Sprint created successfully
+2024-03-23 01:36:50 [http-nio-8080-exec-6] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@51595c78
+2024-03-23 01:36:50 [http-nio-8080-exec-6] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-23 01:37:06 [SpringApplicationShutdownHook] - INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-03-23 01:37:06 [SpringApplicationShutdownHook] - INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2024-03-25 10:23:12 [restartedMain] - INFO a.j.j.JitechpilotApplication - Starting JitechpilotApplication using Java 21.0.1 with PID 6324 (C:\Users\HP\Desktop\JavaProject\jitechpilot\target\classes started by HP in C:\Users\HP\Desktop\JavaProject\jitechpilot)
+2024-03-25 10:23:12 [restartedMain] - INFO a.j.j.JitechpilotApplication - No active profile set, falling back to 1 default profile: "default"
+2024-03-25 10:23:27 [restartedMain] - INFO o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-03-25 10:23:27 [restartedMain] - INFO o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-03-25 10:23:27 [restartedMain] - INFO o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-25 10:23:27 [restartedMain] - INFO o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-03-25 10:23:29 [restartedMain] - INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2024-03-25 10:23:35 [restartedMain] - INFO com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5015c814
+2024-03-25 10:23:35 [restartedMain] - INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2024-03-25 10:24:11 [restartedMain] - INFO o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2024-03-25 10:24:11 [restartedMain] - INFO a.j.j.JitechpilotApplication - Started JitechpilotApplication in 63.312 seconds (process running for 66.945)
+2024-03-25 10:25:42 [http-nio-8080-exec-1] - INFO o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-25 10:25:42 [http-nio-8080-exec-1] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching all workspaces
+2024-03-25 10:25:44 [http-nio-8080-exec-1] - INFO a.j.j.s.WorkspaceServiceImpl - Fetched 6 workspaces
+2024-03-25 10:25:49 [http-nio-8080-exec-4] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching workspace by id: 1
+2024-03-25 10:25:49 [http-nio-8080-exec-4] - INFO a.j.j.s.WorkspaceServiceImpl - Found workspace: Development
+2024-03-25 10:25:52 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@9804340
+2024-03-25 10:25:52 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-25 10:26:42 [http-nio-8080-exec-3] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@56cde76b
+2024-03-25 10:26:42 [http-nio-8080-exec-3] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 1 
+2024-03-25 10:31:00 [http-nio-8080-exec-9] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching all workspaces
+2024-03-25 10:31:01 [http-nio-8080-exec-9] - INFO a.j.j.s.WorkspaceServiceImpl - Fetched 6 workspaces
+2024-03-25 10:32:32 [http-nio-8080-exec-7] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching all workspaces
+2024-03-25 10:32:36 [http-nio-8080-exec-7] - INFO a.j.j.s.WorkspaceServiceImpl - Fetched 6 workspaces
+2024-03-25 10:32:39 [http-nio-8080-exec-9] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching workspace by id: 6
+2024-03-25 10:32:40 [http-nio-8080-exec-9] - INFO a.j.j.s.WorkspaceServiceImpl - Found workspace: Development Description 
+2024-03-25 10:32:45 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@ddf01e46
+2024-03-25 10:32:45 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 6 
+2024-03-25 10:33:13 [http-nio-8080-exec-10] - INFO a.j.j.s.WorkspaceServiceImpl - Fetching workspace by id: 6
+2024-03-25 10:33:13 [http-nio-8080-exec-10] - INFO a.j.j.s.WorkspaceServiceImpl - Found workspace: Development Description 
+2024-03-25 10:33:27 [http-nio-8080-exec-3] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@47979973
+2024-03-25 10:33:33 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@90d695d9
+2024-03-25 10:33:33 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 7 
+2024-03-25 10:33:49 [http-nio-8080-exec-10] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@7d8483d
+2024-03-25 10:33:49 [http-nio-8080-exec-10] - INFO a.j.j.serviceImpl.SprintServiceImpl - Sprint created successfully
+2024-03-25 10:34:16 [http-nio-8080-exec-3] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@a31f86a1
+2024-03-25 10:34:16 [http-nio-8080-exec-3] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 7 
+2024-03-25 10:44:10 [http-nio-8080-exec-9] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@15358e1c
+2024-03-25 10:44:10 [http-nio-8080-exec-9] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 7 
+2024-03-25 10:45:50 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@5dc648fc
+2024-03-25 10:45:50 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 7 
+2024-03-25 10:47:17 [http-nio-8080-exec-8] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@7aafd492
+2024-03-25 10:47:17 [http-nio-8080-exec-8] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 7 
+2024-03-25 10:48:08 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@e919274b
+2024-03-25 10:48:08 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 7 
+2024-03-25 10:48:35 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@96ed72f5
+2024-03-25 10:48:35 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 7 
+2024-03-25 10:50:30 [http-nio-8080-exec-1] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@3ac60784
+2024-03-25 10:50:30 [http-nio-8080-exec-1] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 7 
+2024-03-25 10:51:26 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@29b75d51
+2024-03-25 10:51:26 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 7 
+2024-03-25 10:52:00 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@5a27d269
+2024-03-25 10:52:00 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 7 
+2024-03-25 10:53:05 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@eef67e62
+2024-03-25 10:53:05 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 7 
+2024-03-25 10:53:45 [http-nio-8080-exec-6] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@c82b4732
+2024-03-25 10:53:45 [http-nio-8080-exec-6] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 7 
+2024-03-25 10:57:16 [http-nio-8080-exec-7] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@958afe6c
+2024-03-25 10:57:16 [http-nio-8080-exec-7] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 7 
+2024-03-25 11:00:55 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@3cedf9cf
+2024-03-25 11:00:55 [http-nio-8080-exec-2] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 7 
+2024-03-25 11:02:18 [http-nio-8080-exec-6] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@5b33ec60
+2024-03-25 11:02:18 [http-nio-8080-exec-6] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 7 
+2024-03-25 11:04:56 [http-nio-8080-exec-3] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@2a3f4085
+2024-03-25 11:04:56 [http-nio-8080-exec-3] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 7 
+2024-03-25 11:05:17 [http-nio-8080-exec-10] - INFO a.j.j.serviceImpl.TicketServiceImpl - Ticket created successfully title : tasl 
+2024-03-25 11:06:15 [http-nio-8080-exec-3] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@420ff3ea
+2024-03-25 11:06:15 [http-nio-8080-exec-3] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 7 
+2024-03-25 11:08:22 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.BoardServiceImpl - Not found: academy.jobintech.jitechpilot.entity.Board@dca2442c
+2024-03-25 11:08:22 [http-nio-8080-exec-5] - INFO a.j.j.serviceImpl.BoardServiceImpl - Fetching board by id: 7 
+2024-03-25 11:28:27 [SpringApplicationShutdownHook] - INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2024-03-25 11:28:27 [SpringApplicationShutdownHook] - INFO com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
